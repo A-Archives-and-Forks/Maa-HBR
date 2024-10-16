@@ -1,0 +1,22 @@
+{
+    "AtHomepage": {
+        "recognition": "OCR",
+        "expected": [
+            "主页",
+            "Home"
+        ]
+    },
+    "GoBack": {
+        "action": "Click",
+        "target": [
+            13,
+            17,
+            79,
+            70
+        ],
+        "next": [
+            "AtHomepage",
+            "GoBack"
+        ]
+    }
+}

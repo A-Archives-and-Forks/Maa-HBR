@@ -3,14 +3,6 @@
         {
             "name": "安卓端",
             "type": "Adb"
-        },
-        {
-            "name": "桌面端",
-            "type": "Win32",
-            "win32": {
-                "class_regex": ".*",
-                "window_regex": "Visual Studio"
-            }
         }
     ],
     "resource": [
@@ -19,56 +11,385 @@
             "path": [
                 "{PROJECT_DIR}/resource"
             ]
-        },
-        {
-            "name": "B 服",
-            "path": [
-                "{PROJECT_DIR}/resource",
-                "{PROJECT_DIR}/resource_bilibili"
-            ]
         }
     ],
     "task": [
         {
-            "name": "普通任务",
-            "entry": "MyTask1"
+            "name": "领取任务奖励",
+            "entry": "Mission"
         },
         {
-            "name": "选项任务",
-            "entry": "MyTask2",
-            "option": [
-                "任务选项1"
-            ]
+            "name": "领取礼物",
+            "entry": "Gift"
         },
         {
-            "name": "参数任务",
-            "entry": "MyTask3",
+            "name": "棱镜战",
+            "entry": "Start",
             "option": [
-                "任务选项1"
+                "棱镜战boss",
+                "消耗体力数",
+                "选择队伍"
             ],
-            "pipeline_override": {}
+            "pipeline_override": {
+                "SelectStageType": {
+                    "expected": "棱镜战",
+                    "roi": [
+                        724,
+                        517,
+                        103,
+                        45
+                    ]
+                }
+            }
+        },
+        {
+            "name": "宝石棱镜战",
+            "entry": "Start",
+            "option": [
+                "宝石棱镜战boss",
+                "消耗体力数",
+                "选择队伍"
+            ],
+            "pipeline_override": {
+                "SelectStageType": {
+                    "expected": "宝石棱镜战"
+                }
+            }
         }
     ],
     "option": {
-        "任务选项1": {
+        "棱镜战boss": {
             "cases": [
                 {
-                    "name": "文本1",
+                    "name": "深渊重锤",
                     "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本1"
+                        "选择boss": {
+                            "expected": "深渊重锤"
                         }
                     }
                 },
                 {
-                    "name": "文本2",
+                    "name": "钻石眼魔",
                     "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本2"
+                        "选择boss": {
+                            "expected": "钻石眼魔"
+                        }
+                    }
+                },
+                {
+                    "name": "针嘴鸟",
+                    "pipeline_override": {
+                        "选择boss": {
+                            "expected": "针嘴鸟"
+                        }
+                    }
+                }
+            ]
+        },
+        "宝石棱镜战boss": {
+            "cases": [
+                {
+                    "name": "群山重锤",
+                    "pipeline_override": {
+                        "选择boss": {
+                            "expected": "群山重锤"
+                        }
+                    }
+                },
+                {
+                    "name": "冰雹马",
+                    "pipeline_override": {
+                        "选择boss": {
+                            "expected": "冰电马"
+                        }
+                    }
+                },
+                {
+                    "name": "石柱像T",
+                    "pipeline_override": {
+                        "选择boss": {
+                            "expected": "石柱像T"
+                        }
+                    }
+                },
+                {
+                    "name": "坚甲皓珠",
+                    "pipeline_override": {
+                        "选择boss": {
+                            "expected": "坚甲皓珠"
+                        }
+                    }
+                },
+                {
+                    "name": "掩面死神O",
+                    "pipeline_override": {
+                        "宝石棱镜战": {
+                            "next": "SwipeUp"
+                        },
+                        "选择boss": {
+                            "expected": "掩面死神O"
+                        }
+                    }
+                }
+            ]
+        },
+        "消耗体力数": {
+            "cases": [
+                {
+                    "name": "清空剩余体力",
+                    "pipeline_override": {
+                        "战斗": {
+                            "next": [
+                                "Clear AP",
+                                "OK"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "1",
+                    "pipeline_override": {
+                        "战斗": {
+                            "next": "OK"
+                        },
+                        "Consume nAPs": {
+                            "expected": "1"
+                        }
+                    }
+                },
+                {
+                    "name": "2",
+                    "pipeline_override": {
+                        "Consume nAPs": {
+                            "expected": "2"
+                        }
+                    }
+                },
+                {
+                    "name": "3",
+                    "pipeline_override": {
+                        "Consume nAPs": {
+                            "expected": "3"
+                        }
+                    }
+                },
+                {
+                    "name": "4",
+                    "pipeline_override": {
+                        "Consume nAPs": {
+                            "expected": "4"
+                        }
+                    }
+                },
+                {
+                    "name": "5",
+                    "pipeline_override": {
+                        "Consume nAPs": {
+                            "expected": "5"
+                        }
+                    }
+                }
+            ]
+        },
+        "选择队伍": {
+            "cases": [
+                {
+                    "name": "1",
+                    "pipeline_override": {
+                        "SelectTeam": {
+                            "target": [
+                                317,
+                                48,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2",
+                    "pipeline_override": {
+                        "SelectTeam": {
+                            "target": [
+                                359,
+                                48,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3",
+                    "pipeline_override": {
+                        "SelectTeam": {
+                            "target": [
+                                401,
+                                48,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "4",
+                    "pipeline_override": {
+                        "SelectTeam": {
+                            "target": [
+                                444,
+                                48,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "5",
+                    "pipeline_override": {
+                        "SelectTeam": {
+                            "target": [
+                                489,
+                                48,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "6",
+                    "pipeline_override": {
+                        "SelectTeam": {
+                            "target": [
+                                546,
+                                48,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "7",
+                    "pipeline_override": {
+                        "SelectTeam": {
+                            "target": [
+                                593,
+                                48,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "8",
+                    "pipeline_override": {
+                        "SelectTeam": {
+                            "target": [
+                                633,
+                                48,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "9",
+                    "pipeline_override": {
+                        "SelectTeam": {
+                            "target": [
+                                679,
+                                48,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "10",
+                    "pipeline_override": {
+                        "SelectTeam": {
+                            "target": [
+                                723,
+                                48,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "11",
+                    "pipeline_override": {
+                        "SelectTeam": {
+                            "target": [
+                                780,
+                                48,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "12",
+                    "pipeline_override": {
+                        "SelectTeam": {
+                            "target": [
+                                823,
+                                48,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "13",
+                    "pipeline_override": {
+                        "SelectTeam": {
+                            "target": [
+                                868,
+                                48,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "14",
+                    "pipeline_override": {
+                        "SelectTeam": {
+                            "target": [
+                                910,
+                                48,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "15",
+                    "pipeline_override": {
+                        "SelectTeam": {
+                            "target": [
+                                952,
+                                48,
+                                10,
+                                10
+                            ]
                         }
                     }
                 }
             ]
         }
-    }
+    },
+    "version": "v0.0.1"
 }

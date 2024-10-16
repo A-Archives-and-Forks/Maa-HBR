@@ -1,0 +1,187 @@
+{
+    "Start": {
+        "next": [
+            "强化养成",
+            "SelectStageType",
+            "Auto",
+            "FightEnd",
+            "ClickScreen",
+            "选择boss"
+        ]
+    },
+    "强化养成": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": [
+            "SelectStageType"
+        ],
+        "expected": "强化/养成"
+    },
+    "SelectStageType": {
+        "recognition": "OCR",
+        "action": "Click",
+        "target_offset": [
+            0,
+            -45,
+            -20,
+            0
+        ],
+        "next": "选择boss",
+        "post_delay": 300
+    },
+    "SwipeUp": {
+        "action": "Swipe",
+        "begin": [
+            640,
+            500,
+            0,
+            0
+        ],
+        "end": [
+            640,
+            200,
+            0,
+            0
+        ],
+        "next": "选择boss"
+    },
+    "选择boss": {
+        "recognition": "OCR",
+        "action": "Click",
+        "post_delay": 500,
+        "next": "TopLevel",
+        "target_offset": [
+            796,
+            21,
+            -172,
+            -2
+        ]
+    },
+    "TopLevel": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": [
+            "等级10",
+            "等级13"
+        ],
+        "target_offset": [
+            791,
+            18,
+            -311,
+            -2
+        ],
+        "post_delay": 500,
+        "next": "战斗"
+    },
+    "战斗": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "战斗",
+        "post_delay": 500,
+        "next": "Add AP"
+    },
+    "Clear AP": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            790,
+            346,
+            143,
+            142
+        ],
+        "action": "Click",
+        "template": "clear_AP_icon__840_396_43_42__790_346_143_142.png",
+        "next": "OK"
+    },
+    "Add AP": {
+        "action": "Click",
+        "target": [
+            774,
+            398,
+            35,
+            34
+        ],
+        "next": [
+            "Consume nAPs",
+            "Add AP"
+        ]
+    },
+    "Consume nAPs": {
+        "recognition": "OCR",
+        "roi": [
+            642,
+            343,
+            145,
+            146
+        ],
+        "action": "DoNothing",
+        "next": "OK"
+    },
+    "OK": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "OK",
+        "next": [
+            "Consume AP stones",
+            "OK",
+            "SelectTeam"
+        ]
+    },
+    "Consume AP stones": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "消耗体力石",
+        "next": "OK"
+    },
+    "SelectTeam": {
+        "pre_delay": 500,
+        "action": "Click",
+        "next": "出击"
+    },
+    "出击": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "出击",
+        "next": [
+            "Auto",
+            "FightEnd"
+        ],
+        "timeout": 180000
+    },
+    "Auto": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "AUTO OFF",
+        "next": "Full"
+    },
+    "Full": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "FULL",
+        "next": "FightEnd",
+        "timeout": 180000
+    },
+    "FightEnd": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "战斗奖励",
+        "next": [
+            "GiveUp",
+            "FightEnd"
+        ]
+    },
+    "GiveUp": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "放弃",
+        "next": "ClickScreen"
+    },
+    "ClickScreen": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "点击画面继续",
+        "next": [
+            "ClickScreen",
+            "AtHomepage"
+        ]
+    }
+}
