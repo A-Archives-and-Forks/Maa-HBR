@@ -133,9 +133,9 @@
         "action": "Click",
         "expected": "战斗",
         "post_delay": 500,
-        "next": "Add AP"
+        "next": "AddAP"
     },
-    "Clear AP": {
+    "ClearAP": {
         "recognition": "TemplateMatch",
         "roi": [
             790,
@@ -147,7 +147,12 @@
         "template": "clear_AP_icon__840_396_43_42__790_346_143_142.png",
         "next": "OK"
     },
-    "Add AP": {
+    "ZeroAP": {
+        "recognition": "OCR",
+        "expected": "体力不足",
+        "next": "ForceGoBack"
+    },
+    "AddAP": {
         "action": "Click",
         "target": [
             774,
@@ -156,11 +161,11 @@
             34
         ],
         "next": [
-            "Consume nAPs",
-            "Add AP"
+            "ConsumeNAPs",
+            "AddAP"
         ]
     },
-    "Consume nAPs": {
+    "ConsumeNAPs": {
         "recognition": "OCR",
         "roi": [
             642,
@@ -176,12 +181,12 @@
         "action": "Click",
         "expected": "OK",
         "next": [
-            "Consume AP stones",
+            "ConsumeAPStones",
             "OK",
             "SelectTeam"
         ]
     },
-    "Consume AP stones": {
+    "ConsumeAPStones": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "消耗体力石",

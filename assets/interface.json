@@ -208,7 +208,8 @@
                     "pipeline_override": {
                         "StartFight": {
                             "next": [
-                                "Clear AP",
+                                "ZeroAP",
+                                "ClearAP",
                                 "OK"
                             ]
                         }
@@ -220,7 +221,7 @@
                         "StartFight": {
                             "next": "OK"
                         },
-                        "Consume nAPs": {
+                        "ConsumeNAPs": {
                             "expected": "1"
                         }
                     }
@@ -228,7 +229,7 @@
                 {
                     "name": "2",
                     "pipeline_override": {
-                        "Consume nAPs": {
+                        "ConsumeNAPs": {
                             "expected": "2"
                         }
                     }
@@ -236,7 +237,7 @@
                 {
                     "name": "3",
                     "pipeline_override": {
-                        "Consume nAPs": {
+                        "ConsumeNAPs": {
                             "expected": "3"
                         }
                     }
@@ -244,7 +245,7 @@
                 {
                     "name": "4",
                     "pipeline_override": {
-                        "Consume nAPs": {
+                        "ConsumeNAPs": {
                             "expected": "4"
                         }
                     }
@@ -252,7 +253,7 @@
                 {
                     "name": "5",
                     "pipeline_override": {
-                        "Consume nAPs": {
+                        "ConsumeNAPs": {
                             "expected": "5"
                         }
                     }

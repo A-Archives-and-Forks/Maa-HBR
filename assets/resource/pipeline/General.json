@@ -50,6 +50,19 @@
             "GoBack"
         ]
     },
+    "ForceGoBack": {
+        "roi": [
+            27,
+            22,
+            50,
+            55
+        ],
+        "action": "Click",
+        "next": [
+            "AtHomepage",
+            "ForceGoBack"
+        ]
+    },
     "ClickScreen": {
         "recognition": "OCR",
         "action": "Click",
