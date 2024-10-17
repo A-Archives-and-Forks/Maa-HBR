@@ -1,21 +1,45 @@
 {
-    "Start": {
+    "StartBattle": {
         "next": [
+            "GoBack",
             "强化养成",
             "SelectStageType",
             "Auto",
-            "FightEnd",
+            "EndFight",
             "ClickScreen",
-            "选择boss"
+            "SelectBoss"
+        ]
+    },
+    "MainStory": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "主线剧情",
+        "post_delay": 1000,
+        "next": [
+            "SelectStageType"
         ]
     },
     "强化养成": {
         "recognition": "OCR",
         "action": "Click",
+        "expected": "强化/养成",
         "next": [
             "SelectStageType"
+        ]
+    },
+    "Event": {
+        "recognition": "OCR",
+        "roi": [
+            648,
+            542,
+            85,
+            95
         ],
-        "expected": "强化/养成"
+        "action": "Click",
+        "expected": "活动",
+        "next": [
+            "SelectEvent"
+        ]
     },
     "SelectStageType": {
         "recognition": "OCR",
@@ -26,55 +50,86 @@
             -20,
             0
         ],
-        "next": "选择boss",
-        "post_delay": 300
+        "post_delay": 500,
+        "next": "SelectBoss"
     },
-    "SwipeUp": {
-        "action": "Swipe",
-        "begin": [
-            640,
-            500,
+    "SelectEvent": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "开放中",
+        "target_offset": [
+            0,
+            250,
             0,
             0
         ],
-        "end": [
-            640,
-            200,
-            0,
-            0
-        ],
-        "next": "选择boss"
+        "next": [
+            "EnterEventPrismBattle",
+            "SelectEvent"
+        ]
     },
-    "选择boss": {
+    "EnterEventPrismBattle": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "活动棱镜战",
+        "next": "TopLevel"
+    },
+    "SelectBoss": {
         "recognition": "OCR",
         "action": "Click",
         "post_delay": 500,
-        "next": "TopLevel",
         "target_offset": [
             796,
             21,
             -172,
             -2
+        ],
+        "next": "TopLevel"
+    },
+    "SelectLevel": {
+        "recognition": "OCR",
+        "action": "Click",
+        "target_offset": [
+            200,
+            -25,
+            -140,
+            10
+        ],
+        "post_delay": 500,
+        "next": [
+            "SelectLevel",
+            "StartFight"
         ]
     },
     "TopLevel": {
         "recognition": "OCR",
         "action": "Click",
         "expected": [
-            "等级10",
-            "等级13"
+            "推荐战力：14,000",
+            "推荐战力：11,500"
         ],
+        "index": -1,
+        "order_by": "Vertical",
         "target_offset": [
-            791,
-            18,
-            -311,
-            -2
+            200,
+            -25,
+            -140,
+            10
         ],
         "post_delay": 500,
-        "next": "战斗"
+        "next": [
+            "TopLevel",
+            "StartFight"
+        ]
     },
-    "战斗": {
+    "StartFight": {
         "recognition": "OCR",
+        "roi": [
+            277,
+            411,
+            723,
+            265
+        ],
         "action": "Click",
         "expected": "战斗",
         "post_delay": 500,
@@ -135,15 +190,15 @@
     "SelectTeam": {
         "pre_delay": 500,
         "action": "Click",
-        "next": "出击"
+        "next": "Sally"
     },
-    "出击": {
+    "Sally": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "出击",
         "next": [
             "Auto",
-            "FightEnd"
+            "EndFight"
         ],
         "timeout": 180000
     },
@@ -151,22 +206,27 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "AUTO OFF",
+        "replace": [
+            "AUTOOFF",
+            "AUTO OFF"
+        ],
         "next": "Full"
     },
     "Full": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "FULL",
-        "next": "FightEnd",
+        "next": "EndFight",
         "timeout": 180000
     },
-    "FightEnd": {
+    "EndFight": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "战斗奖励",
         "next": [
-            "GiveUp",
-            "FightEnd"
+            "EndFight",
+            "ClickScreen",
+            "GiveUp"
         ]
     },
     "GiveUp": {
@@ -175,12 +235,48 @@
         "expected": "放弃",
         "next": "ClickScreen"
     },
-    "ClickScreen": {
+    "ChallengeSetting": {
+        "recognition": "OCR",
+        "roi": [
+            702,
+            543,
+            214,
+            154
+        ],
+        "action": "Click",
+        "expected": "设定",
+        "post_delay": 1000,
+        "next": "SelectTeam"
+    },
+    "PowerSavingMode": {
         "recognition": "OCR",
         "action": "Click",
-        "expected": "点击画面继续",
+        "expected": "省电模式",
+        "next": "FightAgain"
+    },
+    "FightAgain": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "再次挑战",
+        "post_delay": 3000,
+        "next": "EndHBR"
+    },
+    "FightAgainLoop": {
+        "action": "Click",
+        "target": [
+            732,
+            483,
+            128,
+            34
+        ],
+        "next": "FightAgainLoop"
+    },
+    "EndAutoSweep": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "结束自动刷图",
         "next": [
-            "ClickScreen",
+            "EndFight",
             "AtHomepage"
         ]
     }

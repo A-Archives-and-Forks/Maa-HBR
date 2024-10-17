@@ -15,16 +15,16 @@
     ],
     "task": [
         {
-            "name": "领取任务奖励",
-            "entry": "Mission"
+            "name": "启动游戏",
+            "entry": "StartHBR"
         },
         {
-            "name": "领取礼物",
-            "entry": "Gift"
+            "name": "关闭游戏",
+            "entry": "EndHBR"
         },
         {
             "name": "棱镜战",
-            "entry": "Start",
+            "entry": "StartBattle",
             "option": [
                 "棱镜战boss",
                 "消耗体力数",
@@ -44,7 +44,7 @@
         },
         {
             "name": "宝石棱镜战",
-            "entry": "Start",
+            "entry": "StartBattle",
             "option": [
                 "宝石棱镜战boss",
                 "消耗体力数",
@@ -55,6 +55,71 @@
                     "expected": "宝石棱镜战"
                 }
             }
+        },
+        {
+            "name": "活动棱镜战",
+            "entry": "StartBattle",
+            "option": [
+                "消耗体力数",
+                "选择队伍"
+            ],
+            "pipeline_override": {
+                "StartBattle": {
+                    "next": "Event"
+                }
+            }
+        },
+        {
+            "name": "领取礼物",
+            "entry": "Gift"
+        },
+        {
+            "name": "领取任务奖励",
+            "entry": "Mission"
+        },
+        {
+            "name": "竞技场",
+            "entry": "StartBattle",
+            "option": [
+                "选择队伍",
+                "挂机方式",
+                "选择关卡"
+            ],
+            "pipeline_override": {
+                "StartBattle": {
+                    "next": "MainStory"
+                },
+                "SelectStageType": {
+                    "expected": "竞技场",
+                    "next": "SkipStory"
+                },
+                "SkipStory": {
+                    "pre_delay": 1000,
+                    "post_delay": 2000,
+                    "next": [
+                        "SkipStory",
+                        "SelectLevel"
+                    ],
+                    "interrupt": "SwipeDown"
+                },
+                "StartFight": {
+                    "next": "SelectTeam"
+                }
+            }
+        },
+        {
+            "name": "时之修炼场",
+            "entry": "StartBattle",
+            "option": [
+                "选择队伍",
+                "挂机方式"
+            ],
+            "pipeline_override": {
+                "SelectStageType": {
+                    "expected": "时之修炼场",
+                    "next": "ChallengeSetting"
+                }
+            }
         }
     ],
     "option": {
@@ -63,7 +128,7 @@
                 {
                     "name": "深渊重锤",
                     "pipeline_override": {
-                        "选择boss": {
+                        "SelectBoss": {
                             "expected": "深渊重锤"
                         }
                     }
@@ -71,7 +136,7 @@
                 {
                     "name": "钻石眼魔",
                     "pipeline_override": {
-                        "选择boss": {
+                        "SelectBoss": {
                             "expected": "钻石眼魔"
                         }
                     }
@@ -79,7 +144,7 @@
                 {
                     "name": "针嘴鸟",
                     "pipeline_override": {
-                        "选择boss": {
+                        "SelectBoss": {
                             "expected": "针嘴鸟"
                         }
                     }
@@ -91,7 +156,7 @@
                 {
                     "name": "群山重锤",
                     "pipeline_override": {
-                        "选择boss": {
+                        "SelectBoss": {
                             "expected": "群山重锤"
                         }
                     }
@@ -99,7 +164,7 @@
                 {
                     "name": "冰雹马",
                     "pipeline_override": {
-                        "选择boss": {
+                        "SelectBoss": {
                             "expected": "冰电马"
                         }
                     }
@@ -107,7 +172,7 @@
                 {
                     "name": "石柱像T",
                     "pipeline_override": {
-                        "选择boss": {
+                        "SelectBoss": {
                             "expected": "石柱像T"
                         }
                     }
@@ -115,7 +180,7 @@
                 {
                     "name": "坚甲皓珠",
                     "pipeline_override": {
-                        "选择boss": {
+                        "SelectBoss": {
                             "expected": "坚甲皓珠"
                         }
                     }
@@ -126,8 +191,11 @@
                         "宝石棱镜战": {
                             "next": "SwipeUp"
                         },
-                        "选择boss": {
+                        "SelectBoss": {
                             "expected": "掩面死神O"
+                        },
+                        "SwipeUp": {
+                            "next": "SelectBoss"
                         }
                     }
                 }
@@ -138,7 +206,7 @@
                 {
                     "name": "清空剩余体力",
                     "pipeline_override": {
-                        "战斗": {
+                        "StartFight": {
                             "next": [
                                 "Clear AP",
                                 "OK"
@@ -149,7 +217,7 @@
                 {
                     "name": "1",
                     "pipeline_override": {
-                        "战斗": {
+                        "StartFight": {
                             "next": "OK"
                         },
                         "Consume nAPs": {
@@ -385,6 +453,282 @@
                                 10,
                                 10
                             ]
+                        }
+                    }
+                }
+            ]
+        },
+        "挂机方式": {
+            "cases": [
+                {
+                    "name": "离线挂机",
+                    "pipeline_override": {
+                        "EndFight": {
+                            "next": "PowerSavingMode"
+                        }
+                    }
+                },
+                {
+                    "name": "在线挂机",
+                    "pipeline_override": {
+                        "EndFight": {
+                            "next": "FightAgainLoop"
+                        }
+                    }
+                }
+            ]
+        },
+        "选择关卡": {
+            "cases": [
+                {
+                    "name": "高级1（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：7,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级1（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：7,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级1（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：7,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级2（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：8,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级2（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：8,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级2（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：8,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级3（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：10,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级3（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：10,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级3（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：10,500"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级1（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：11,500"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级1（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：11,500"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级1（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：11,500"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级2（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：12,300"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级2（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：12,300"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级2（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：12,300"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级3（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：12,800"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级3（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：12,800"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级3（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：12,800"
                         }
                     }
                 }

@@ -23,7 +23,7 @@
             "WeeklyMission",
             "AccumulatedMission",
             "ChallengeMission",
-            "ActivityMission",
+            "EventMission",
             "LimitedTimeMission",
             "BackToHomepage"
         ]
@@ -38,7 +38,7 @@
             "WeeklyMission",
             "AccumulatedMission",
             "ChallengeMission",
-            "ActivityMission",
+            "EventMission",
             "LimitedTimeMission",
             "BackToHomepage"
         ]
@@ -115,7 +115,7 @@
         ],
         "next": "GetReward"
     },
-    "ActivityMission": {
+    "EventMission": {
         "recognition": "TemplateMatch",
         "roi": [
             0,
@@ -141,7 +141,7 @@
             1280,
             150
         ],
-        "template": "AtActivityMission__28_117_1220_50__0_67_1280_150.png",
+        "template": "AtEventMission__28_117_1220_50__0_67_1280_150.png",
         "action": "Click",
         "target": [
             1066,
