@@ -1,20 +1,20 @@
 {
     "StartBattle": {
         "next": [
-            "GoBack",
             "强化养成",
             "SelectStageType",
             "Auto",
             "EndFight",
             "ClickScreen",
             "SelectBoss"
-        ]
+        ],
+        "interrupt": "GoBack"
     },
     "MainStory": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "主线剧情",
-        "post_delay": 1000,
+        "post_wait_freezes": 200,
         "next": [
             "SelectStageType"
         ]
@@ -23,6 +23,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "强化/养成",
+        "post_wait_freezes": 200,
         "next": [
             "SelectStageType"
         ]
@@ -50,7 +51,7 @@
             -20,
             0
         ],
-        "post_delay": 500,
+        "post_wait_freezes": 200,
         "next": "SelectBoss"
     },
     "SelectEvent": {
@@ -63,6 +64,7 @@
             0,
             0
         ],
+        "post_wait_freezes": 200,
         "next": [
             "EnterEventPrismBattle",
             "SelectEvent"
@@ -77,13 +79,13 @@
     "SelectBoss": {
         "recognition": "OCR",
         "action": "Click",
-        "post_delay": 500,
         "target_offset": [
             796,
             21,
             -172,
             -2
         ],
+        "post_wait_freezes": 200,
         "next": "TopLevel"
     },
     "SelectLevel": {
@@ -95,28 +97,22 @@
             -140,
             10
         ],
-        "post_delay": 500,
+        "post_wait_freezes": 200,
         "next": [
             "SelectLevel",
             "StartFight"
         ]
     },
     "TopLevel": {
-        "recognition": "OCR",
+        "recognition": "TemplateMatch",
         "action": "Click",
-        "expected": [
-            "推荐战力：14,000",
-            "推荐战力：11,500"
+        "template": [
+            "SelectBossLevel1__932_514_164_39__882_464_264_139.png",
+            "SelectBossLevel2__1152_573_54_54__1102_523_154_154.png"
         ],
         "index": -1,
         "order_by": "Vertical",
-        "target_offset": [
-            200,
-            -25,
-            -140,
-            10
-        ],
-        "post_delay": 500,
+        "post_wait_freezes": 200,
         "next": [
             "TopLevel",
             "StartFight"
@@ -132,7 +128,7 @@
         ],
         "action": "Click",
         "expected": "战斗",
-        "post_delay": 500,
+        "post_wait_freezes": 200,
         "next": "AddAP"
     },
     "ClearAP": {
@@ -180,6 +176,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "OK",
+        "post_wait_freezes": 200,
         "next": [
             "ConsumeAPStones",
             "OK",
@@ -193,7 +190,6 @@
         "next": "OK"
     },
     "SelectTeam": {
-        "pre_delay": 500,
         "action": "Click",
         "next": "Sally"
     },
@@ -250,7 +246,7 @@
         ],
         "action": "Click",
         "expected": "设定",
-        "post_delay": 1000,
+        "pre_wait_freezes": 200,
         "next": "SelectTeam"
     },
     "PowerSavingMode": {

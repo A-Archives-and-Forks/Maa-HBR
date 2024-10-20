@@ -10,31 +10,21 @@
         ],
         "expected": "任务",
         "next": "MonthlyMission",
-        "post_delay": 1000
+        "post_wait_freezes": 200
     },
     "GetReward": {
-        "recognition": "OCR",
+        "recognition": "TemplateMatch",
+        "template": "MissionGetReward__999_606_210_53__949_556_310_153.png",
         "action": "Click",
-        "expected": "键领取",
-        "post_delay": 2000,
-        "next": [
-            "MissionOK",
-            "BackToMission",
-            "WeeklyMission",
-            "AccumulatedMission",
-            "ChallengeMission",
-            "EventMission",
-            "LimitedTimeMission",
-            "BackToHomepage"
-        ]
+        "next": "MissionOK"
     },
     "MissionOK": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "OK",
-        "post_delay": 2000,
+        "post_wait_freezes": 200,
         "next": [
-            "BackToMission",
+            "DailyMission",
             "WeeklyMission",
             "AccumulatedMission",
             "ChallengeMission",
@@ -43,7 +33,7 @@
             "BackToHomepage"
         ]
     },
-    "BackToMission": {
+    "DailyMission": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "通行证",
@@ -53,13 +43,20 @@
             79,
             70
         ],
-        "next": "GetReward"
+        "next": [
+            "GetReward",
+            "WeeklyMission"
+        ]
     },
     "MonthlyMission": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "每月任务",
-        "next": "GetReward"
+        "post_wait_freezes": 200,
+        "next": [
+            "GetReward",
+            "DailyMission"
+        ]
     },
     "WeeklyMission": {
         "recognition": "TemplateMatch",
@@ -77,7 +74,10 @@
             139,
             22
         ],
-        "next": "GetReward"
+        "next": [
+            "GetReward",
+            "AccumulatedMission"
+        ]
     },
     "AccumulatedMission": {
         "recognition": "TemplateMatch",
@@ -95,7 +95,10 @@
             139,
             22
         ],
-        "next": "GetReward"
+        "next": [
+            "GetReward",
+            "ChallengeMission"
+        ]
     },
     "ChallengeMission": {
         "recognition": "TemplateMatch",
@@ -113,7 +116,10 @@
             139,
             22
         ],
-        "next": "GetReward"
+        "next": [
+            "GetReward",
+            "EventMission"
+        ]
     },
     "EventMission": {
         "recognition": "TemplateMatch",
@@ -131,7 +137,11 @@
             139,
             22
         ],
-        "next": "GetReward"
+        "post_delay": 500,
+        "next": [
+            "GetReward",
+            "LimitedTimeMission"
+        ]
     },
     "LimitedTimeMission": {
         "recognition": "TemplateMatch",
@@ -149,7 +159,10 @@
             139,
             22
         ],
-        "next": "GetReward"
+        "next": [
+            "GetReward",
+            "BackToHomepage"
+        ]
     },
     "BackToHomepage": {
         "recognition": "TemplateMatch",
@@ -160,13 +173,6 @@
             150
         ],
         "template": "AtLimitedTimeMission__28_117_1220_50__0_67_1280_150.png",
-        "action": "Click",
-        "target": [
-            13,
-            17,
-            79,
-            70
-        ],
-        "pre_delay": 1000
+        "next": "GoBack"
     }
 }
