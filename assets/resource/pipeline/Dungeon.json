@@ -188,7 +188,8 @@
         "timeout": 180000,
         "interrupt": [
             "Auto",
-            "EndFight"
+            "EndFight",
+            "SkipStory"
         ],
         "next": "RunLeft"
     },
@@ -211,7 +212,8 @@
         "timeout": 180000,
         "interrupt": [
             "Auto",
-            "EndFight"
+            "EndFight",
+            "SkipStory"
         ],
         "next": "RunRight"
     }
