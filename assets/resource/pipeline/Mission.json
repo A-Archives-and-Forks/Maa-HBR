@@ -54,6 +54,25 @@
             70
         ],
         "post_wait_freezes": 500,
+        "next": "ConfirmAtDailyMission"
+    },
+    "ConfirmAtDailyMission": {
+        "recognition": "OCR",
+        "roi": [
+            77,
+            0,
+            109,
+            101
+        ],
+        "expected": "任务",
+        "action": "Click",
+        "target": [
+            66,
+            133,
+            139,
+            22
+        ],
+        "pre_wait_freezes": 1000,
         "next": [
             "GetReward",
             "WeeklyMission"
