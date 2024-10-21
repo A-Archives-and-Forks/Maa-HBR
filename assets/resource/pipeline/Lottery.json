@@ -1,0 +1,60 @@
+{
+    "Lottery": {
+        "recognition": "OCR",
+        "roi": [
+            158,
+            634,
+            58,
+            58
+        ],
+        "expected": "扭蛋",
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": "TraverseLottery"
+    },
+    "TraverseLottery": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            1192,
+            550,
+            66,
+            96
+        ],
+        "template": "NextLottery__1196_550_32_96__1146_500_132_196.png",
+        "green_mask": true,
+        "action": "Click",
+        "rate_limit": 2000,
+        "post_delay": 500,
+        "next": [
+            "FreeLottery",
+            "TraverseLottery",
+            "GoBackHomepage"
+        ]
+    },
+    "FreeLottery": {
+        "recognition": "OCR",
+        "expected": "每日1次免费",
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": "ConfirmLottery"
+    },
+    "ConfirmLottery": {
+        "recognition": "OCR",
+        "roi": [
+            709,
+            516,
+            190,
+            64
+        ],
+        "expected": "连抽",
+        "action": "Click",
+        "post_delay": 5000,
+        "interrupt": [
+            "SkipCutscene",
+            "GoBack",
+            "Click"
+        ],
+        "timeout": 120000,
+        "next": "TraverseLottery"
+    }
+}

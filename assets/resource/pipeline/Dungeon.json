@@ -1,0 +1,209 @@
+{
+    "SelectStory": {
+        "recognition": "OCR",
+        "roi": [
+            488,
+            405,
+            313,
+            137
+        ],
+        "action": "Click",
+        "pre_wait_freezes": 500,
+        "post_wait_freezes": 200,
+        "interrupt": [
+            "PreviousDay",
+            "NextDay"
+        ],
+        "next": "SelectDay"
+    },
+    "PreviousChapter": {
+        "recognition": "OCR",
+        "roi": [
+            488,
+            405,
+            313,
+            137
+        ],
+        "action": "Click",
+        "target": [
+            337,
+            279,
+            51,
+            86
+        ]
+    },
+    "NextChapter": {
+        "recognition": "OCR",
+        "roi": [
+            488,
+            405,
+            313,
+            137
+        ],
+        "action": "Click",
+        "target": [
+            892,
+            279,
+            51,
+            86
+        ]
+    },
+    "SelectDay": {
+        "recognition": "OCR",
+        "roi": [
+            566,
+            163,
+            705,
+            380
+        ],
+        "next": "StartFromTheMiddle"
+    },
+    "PreviousDay": {
+        "action": "Click",
+        "target": [
+            1032,
+            508,
+            77,
+            52
+        ]
+    },
+    "NextDay": {
+        "action": "Click",
+        "target": [
+            1032,
+            508,
+            77,
+            52
+        ]
+    },
+    "StartFromTheMiddle": {
+        "recognition": "OCR",
+        "expected": "从中途开始",
+        "action": "Click",
+        "interrupt": [
+            "PreviousTime",
+            "NextTime"
+        ],
+        "next": "SelectTime"
+    },
+    "SelectTime": {
+        "recognition": "OCR",
+        "roi": [
+            715,
+            330,
+            87,
+            61
+        ],
+        "action": "Click",
+        "target": [
+            1018,
+            333,
+            194,
+            52
+        ],
+        "timeout": 60000,
+        "interrupt": [
+            "OK",
+            "SkipStory"
+        ],
+        "next": "MainStoryDungeon"
+    },
+    "PreviousTime": {
+        "recognition": "OCR",
+        "action": "Click",
+        "target": [
+            1065,
+            80,
+            121,
+            71
+        ]
+    },
+    "NextTime": {
+        "recognition": "OCR",
+        "action": "Click",
+        "target": [
+            1065,
+            557,
+            121,
+            71
+        ]
+    },
+    "MainStoryDungeon": {
+        "recognition": "OCR",
+        "roi": [
+            61,
+            37,
+            172,
+            73
+        ],
+        "expected": "Day",
+        "next": "Menu"
+    },
+    "NextTimePeriod": {
+        "recognition": "OCR",
+        "roi": [
+            973,
+            566,
+            143,
+            154
+        ],
+        "expected": "到下一时间段",
+        "action": "Click",
+        "pre_wait_freezes": 500,
+        "timeout": 60000,
+        "interrupt": [
+            "OK",
+            "SkipStory"
+        ],
+        "next": [
+            "RunRight",
+            "NextTimePeriod"
+        ]
+    },
+    "RunRight": {
+        "recognition": "OCR",
+        "expected": "一边前进吧",
+        "action": "Swipe",
+        "begin": [
+            500,
+            300,
+            0,
+            0
+        ],
+        "end": [
+            700,
+            300,
+            0,
+            0
+        ],
+        "timeout": 180000,
+        "interrupt": [
+            "Auto",
+            "EndFight"
+        ],
+        "next": "RunLeft"
+    },
+    "RunLeft": {
+        "recognition": "OCR",
+        "expected": "一边前进吧",
+        "action": "Swipe",
+        "begin": [
+            700,
+            300,
+            0,
+            0
+        ],
+        "end": [
+            500,
+            300,
+            0,
+            0
+        ],
+        "timeout": 180000,
+        "interrupt": [
+            "Auto",
+            "EndFight"
+        ],
+        "next": "RunRight"
+    }
+}

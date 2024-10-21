@@ -1,14 +1,17 @@
 {
     "StartBattle": {
-        "next": [
-            "强化养成",
-            "SelectStageType",
+        "interrupt": [
+            "GoBackHomepage",
             "Auto",
             "EndFight",
             "ClickScreen",
-            "SelectBoss"
+            "SkipStory"
         ],
-        "interrupt": "GoBack"
+        "next": [
+            "StrengthenAndCultivate",
+            "SelectStageType",
+            "SelectBoss"
+        ]
     },
     "MainStory": {
         "recognition": "OCR",
@@ -19,7 +22,7 @@
             "SelectStageType"
         ]
     },
-    "强化养成": {
+    "StrengthenAndCultivate": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "强化/养成",
@@ -90,6 +93,10 @@
     },
     "SelectLevel": {
         "recognition": "OCR",
+        "replace": [
+            "，",
+            ","
+        ],
         "action": "Click",
         "target_offset": [
             200,
@@ -141,12 +148,12 @@
         ],
         "action": "Click",
         "template": "clear_AP_icon__840_396_43_42__790_346_143_142.png",
-        "next": "OK"
+        "next": "APOK"
     },
     "ZeroAP": {
         "recognition": "OCR",
         "expected": "体力不足",
-        "next": "ForceGoBack"
+        "next": "ForceGoBackHomepage"
     },
     "AddAP": {
         "action": "Click",
@@ -170,36 +177,51 @@
             146
         ],
         "action": "DoNothing",
-        "next": "OK"
+        "next": "APOK"
     },
-    "OK": {
+    "APOK": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "OK",
         "post_wait_freezes": 200,
         "next": [
             "ConsumeAPStones",
-            "OK",
-            "SelectTeam"
+            "APOK",
+            "SelectUnit"
         ]
     },
     "ConsumeAPStones": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "消耗体力石",
-        "next": "OK"
+        "next": "APOK"
     },
-    "SelectTeam": {
+    "SelectUnit": {
+        "recognition": "OCR",
+        "roi": [
+            53,
+            0,
+            136,
+            84
+        ],
+        "expected": "队伍",
         "action": "Click",
+        "pre_wait_freezes": 300,
         "next": "Sally"
     },
     "Sally": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "出击",
-        "next": [
+        "interrupt": [
             "Auto",
-            "EndFight"
+            "ClickScreen",
+            "EndFight",
+            "GiveUp",
+            "GoBack"
+        ],
+        "next": [
+            "AtHomepage"
         ],
         "timeout": 180000
     },
@@ -216,25 +238,17 @@
     "Full": {
         "recognition": "OCR",
         "action": "Click",
-        "expected": "FULL",
-        "next": "EndFight",
-        "timeout": 180000
+        "expected": "FULL"
     },
     "EndFight": {
         "recognition": "OCR",
         "action": "Click",
-        "expected": "战斗奖励",
-        "next": [
-            "EndFight",
-            "ClickScreen",
-            "GiveUp"
-        ]
+        "expected": "战斗奖励"
     },
     "GiveUp": {
         "recognition": "OCR",
         "action": "Click",
-        "expected": "放弃",
-        "next": "ClickScreen"
+        "expected": "放弃"
     },
     "ChallengeSetting": {
         "recognition": "OCR",
@@ -247,7 +261,7 @@
         "action": "Click",
         "expected": "设定",
         "pre_wait_freezes": 200,
-        "next": "SelectTeam"
+        "next": "SelectUnit"
     },
     "PowerSavingMode": {
         "recognition": "OCR",
@@ -276,8 +290,12 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "结束自动刷图",
+        "interrupt": [
+            "ClickScreen",
+            "EndFight"
+        ],
         "next": [
-            "EndFight",
+            "EndAutoSweep",
             "AtHomepage"
         ]
     }

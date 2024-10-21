@@ -2,38 +2,52 @@
     "StartHBR": {
         "action": "StartApp",
         "package": "com.bilibili.heaven",
-        "next": [
+        "interrupt": [
+            "AcceptAgreement",
             "Login",
+            "SkipCutscene",
+            "EndAutoSweep",
             "GoBack",
-            "AtHomepage",
-            "EndAutoSweep"
+            "ExitMenu",
+            "HomepageButton"
         ],
-        "timeout": 120000
+        "next": [
+            "AtHomepage"
+        ],
+        "timeout": 300000
     },
     "EndHBR": {
         "pre_delay": 2000,
         "action": "StopApp",
         "package": "com.bilibili.heaven"
     },
+    "AcceptAgreement": {
+        "recognition": "OCR",
+        "roi": [
+            628,
+            442,
+            176,
+            90
+        ],
+        "expected": "同意",
+        "action": "Click"
+    },
     "Login": {
         "recognition": "OCR",
-        "action": "Click",
         "expected": [
             "点击开始"
         ],
-        "timeout": 60000,
-        "next": [
-            "Login",
-            "AtHomepage",
-            "EndAutoSweep"
-        ]
+        "action": "Click"
     },
     "AtHomepage": {
         "recognition": "OCR",
-        "expected": [
-            "主页",
-            "Home"
-        ]
+        "roi": [
+            0,
+            0,
+            183,
+            134
+        ],
+        "expected": "主页"
     },
     "GoBack": {
         "recognition": "TemplateMatch",
@@ -44,13 +58,32 @@
             127,
             127
         ],
-        "action": "Click",
+        "action": "Click"
+    },
+    "GoBackHomepage": {
+        "interrupt": [
+            "GoBack",
+            "ExitMenu",
+            "HomepageButton"
+        ],
         "next": [
-            "AtHomepage",
-            "GoBack"
+            "AtHomepage"
         ]
     },
-    "ForceGoBack": {
+    "HomepageButton": {
+        "recognition": "OCR",
+        "roi": [
+            1058,
+            519,
+            222,
+            201
+        ],
+        "expected": "主页",
+        "action": "Click",
+        "pre_wait_freezes": 300,
+        "next": "OK"
+    },
+    "ForceGoBackHomepage": {
         "roi": [
             27,
             22,
@@ -60,19 +93,22 @@
         "action": "Click",
         "next": [
             "AtHomepage",
-            "ForceGoBack"
+            "ForceGoBackHomepage"
+        ]
+    },
+    "Click": {
+        "action": "Click",
+        "target": [
+            475,
+            320,
+            0,
+            0
         ]
     },
     "ClickScreen": {
         "recognition": "OCR",
         "action": "Click",
-        "expected": "点击画面继续",
-        "next": [
-            "ClickScreen",
-            "GoBack",
-            "SkipStory",
-            "AtHomepage"
-        ]
+        "expected": "点击画面继续"
     },
     "SkipStory": {
         "recognition": "TemplateMatch",
@@ -84,7 +120,7 @@
             145
         ],
         "action": "Click",
-        "next": "SkipStory"
+        "pre_wait_freezes": 200
     },
     "SwipeUp": {
         "action": "Swipe",
@@ -119,5 +155,68 @@
         ],
         "duration": 2000,
         "post_delay": 2000
+    },
+    "SkipCutscene": {
+        "recognition": "OCR",
+        "roi": [
+            1097,
+            37,
+            128,
+            50
+        ],
+        "expected": "SKIP",
+        "action": "Click",
+        "pre_delay": 500,
+        "post_wait_freezes": 200
+    },
+    "Menu": {
+        "recognition": "OCR",
+        "roi": [
+            56,
+            595,
+            97,
+            92
+        ],
+        "expected": "菜单",
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": "UnitButton"
+    },
+    "ExitMenu": {
+        "recognition": "OCR",
+        "roi": [
+            411,
+            19,
+            116,
+            55
+        ],
+        "expected": "Rank",
+        "action": "Click",
+        "target": [
+            27,
+            22,
+            50,
+            55
+        ],
+        "post_wait_freezes": 300
+    },
+    "UnitButton": {
+        "recognition": "OCR",
+        "roi": [
+            362,
+            522,
+            130,
+            126
+        ],
+        "expected": "队伍",
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": "SelectUnit"
+    },
+    "OK": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "OK",
+        "post_wait_freezes": 200
     }
 }

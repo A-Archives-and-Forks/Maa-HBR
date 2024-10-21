@@ -22,7 +22,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "OK",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 1000,
         "next": [
             "DailyMission",
             "WeeklyMission",
@@ -31,6 +31,16 @@
             "EventMission",
             "LimitedTimeMission",
             "BackToHomepage"
+        ]
+    },
+    "MonthlyMission": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "每月任务",
+        "post_wait_freezes": 2000,
+        "next": [
+            "GetReward",
+            "DailyMission"
         ]
     },
     "DailyMission": {
@@ -43,19 +53,10 @@
             79,
             70
         ],
+        "post_wait_freezes": 500,
         "next": [
             "GetReward",
             "WeeklyMission"
-        ]
-    },
-    "MonthlyMission": {
-        "recognition": "OCR",
-        "action": "Click",
-        "expected": "每月任务",
-        "post_wait_freezes": 200,
-        "next": [
-            "GetReward",
-            "DailyMission"
         ]
     },
     "WeeklyMission": {
@@ -173,6 +174,6 @@
             150
         ],
         "template": "AtLimitedTimeMission__28_117_1220_50__0_67_1280_150.png",
-        "next": "GoBack"
+        "next": "GoBackHomepage"
     }
 }

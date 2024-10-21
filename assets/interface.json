@@ -19,10 +19,6 @@
             "entry": "StartHBR"
         },
         {
-            "name": "关闭游戏",
-            "entry": "EndHBR"
-        },
-        {
             "name": "棱镜战",
             "entry": "StartBattle",
             "option": [
@@ -70,6 +66,10 @@
             }
         },
         {
+            "name": "每日免费扭蛋",
+            "entry": "Lottery"
+        },
+        {
             "name": "领取礼物",
             "entry": "Gift"
         },
@@ -78,32 +78,36 @@
             "entry": "Mission"
         },
         {
+            "name": "剧情迷宫挂机",
+            "entry": "MainStory",
+            "option": [
+                "选择队伍",
+                "选择剧情迷宫"
+            ]
+        },
+        {
             "name": "竞技场",
-            "entry": "StartBattle",
+            "entry": "MainStory",
             "option": [
                 "选择队伍",
                 "挂机方式",
-                "选择关卡"
+                "选择竞技场关卡"
             ],
             "pipeline_override": {
-                "StartBattle": {
-                    "next": "MainStory"
-                },
                 "SelectStageType": {
                     "expected": "竞技场",
-                    "next": "SkipStory"
-                },
-                "SkipStory": {
-                    "pre_delay": 1000,
-                    "post_delay": 2000,
-                    "next": [
+                    "interrupt": [
                         "SkipStory",
-                        "SelectLevel"
+                        "SwipeDown"
                     ],
-                    "interrupt": "SwipeDown"
+                    "next": "SelectLevel"
                 },
                 "StartFight": {
-                    "next": "SelectTeam"
+                    "next": "SelectUnit"
+                },
+                "SwipeDown": {
+                    "recognition": "OCR",
+                    "expected": "请选择训练项目"
                 }
             }
         },
@@ -210,7 +214,7 @@
                             "next": [
                                 "ZeroAP",
                                 "ClearAP",
-                                "OK"
+                                "APOK"
                             ]
                         }
                     }
@@ -219,7 +223,7 @@
                     "name": "1",
                     "pipeline_override": {
                         "StartFight": {
-                            "next": "OK"
+                            "next": "APOK"
                         },
                         "ConsumeNAPs": {
                             "expected": "1"
@@ -265,7 +269,7 @@
                 {
                     "name": "1",
                     "pipeline_override": {
-                        "SelectTeam": {
+                        "SelectUnit": {
                             "target": [
                                 317,
                                 48,
@@ -278,7 +282,7 @@
                 {
                     "name": "2",
                     "pipeline_override": {
-                        "SelectTeam": {
+                        "SelectUnit": {
                             "target": [
                                 359,
                                 48,
@@ -291,7 +295,7 @@
                 {
                     "name": "3",
                     "pipeline_override": {
-                        "SelectTeam": {
+                        "SelectUnit": {
                             "target": [
                                 401,
                                 48,
@@ -304,7 +308,7 @@
                 {
                     "name": "4",
                     "pipeline_override": {
-                        "SelectTeam": {
+                        "SelectUnit": {
                             "target": [
                                 444,
                                 48,
@@ -317,7 +321,7 @@
                 {
                     "name": "5",
                     "pipeline_override": {
-                        "SelectTeam": {
+                        "SelectUnit": {
                             "target": [
                                 489,
                                 48,
@@ -330,7 +334,7 @@
                 {
                     "name": "6",
                     "pipeline_override": {
-                        "SelectTeam": {
+                        "SelectUnit": {
                             "target": [
                                 546,
                                 48,
@@ -343,7 +347,7 @@
                 {
                     "name": "7",
                     "pipeline_override": {
-                        "SelectTeam": {
+                        "SelectUnit": {
                             "target": [
                                 593,
                                 48,
@@ -356,7 +360,7 @@
                 {
                     "name": "8",
                     "pipeline_override": {
-                        "SelectTeam": {
+                        "SelectUnit": {
                             "target": [
                                 633,
                                 48,
@@ -369,7 +373,7 @@
                 {
                     "name": "9",
                     "pipeline_override": {
-                        "SelectTeam": {
+                        "SelectUnit": {
                             "target": [
                                 679,
                                 48,
@@ -382,7 +386,7 @@
                 {
                     "name": "10",
                     "pipeline_override": {
-                        "SelectTeam": {
+                        "SelectUnit": {
                             "target": [
                                 723,
                                 48,
@@ -395,7 +399,7 @@
                 {
                     "name": "11",
                     "pipeline_override": {
-                        "SelectTeam": {
+                        "SelectUnit": {
                             "target": [
                                 780,
                                 48,
@@ -408,7 +412,7 @@
                 {
                     "name": "12",
                     "pipeline_override": {
-                        "SelectTeam": {
+                        "SelectUnit": {
                             "target": [
                                 823,
                                 48,
@@ -421,7 +425,7 @@
                 {
                     "name": "13",
                     "pipeline_override": {
-                        "SelectTeam": {
+                        "SelectUnit": {
                             "target": [
                                 868,
                                 48,
@@ -434,7 +438,7 @@
                 {
                     "name": "14",
                     "pipeline_override": {
-                        "SelectTeam": {
+                        "SelectUnit": {
                             "target": [
                                 910,
                                 48,
@@ -447,7 +451,7 @@
                 {
                     "name": "15",
                     "pipeline_override": {
-                        "SelectTeam": {
+                        "SelectUnit": {
                             "target": [
                                 952,
                                 48,
@@ -464,7 +468,7 @@
                 {
                     "name": "离线挂机",
                     "pipeline_override": {
-                        "EndFight": {
+                        "Sally": {
                             "next": "PowerSavingMode"
                         }
                     }
@@ -479,7 +483,7 @@
                 }
             ]
         },
-        "选择关卡": {
+        "选择竞技场关卡": {
             "cases": [
                 {
                     "name": "高级1（斩）",
@@ -730,6 +734,54 @@
                                 120
                             ],
                             "expected": "推荐战力：12,800"
+                        }
+                    }
+                }
+            ]
+        },
+        "选择剧情迷宫": {
+            "cases": [
+                {
+                    "name": "主线第二章Day25 4:00",
+                    "pipeline_override": {
+                        "SelectStageType": {
+                            "expected": "追溯过去",
+                            "interrupt": [
+                                "PreviousChapter",
+                                "NextChapter"
+                            ],
+                            "next": "SelectStory"
+                        },
+                        "SelectStory": {
+                            "expected": "第二章"
+                        },
+                        "PreviousChapter": {
+                            "expected": [
+                                "第三章",
+                                "第四章"
+                            ]
+                        },
+                        "NextChapter": {
+                            "expected": [
+                                "序章",
+                                "第一章"
+                            ]
+                        },
+                        "SelectDay": {
+                            "expected": "25"
+                        },
+                        "SelectTime": {
+                            "expected": "4:00"
+                        },
+                        "PreviousTime": {
+                            "recognition": "DirectHit"
+                        },
+                        "SelectUnit": {
+                            "interrupt": [
+                                "GoBack",
+                                "ExitMenu"
+                            ],
+                            "next": "NextTimePeriod"
                         }
                     }
                 }
