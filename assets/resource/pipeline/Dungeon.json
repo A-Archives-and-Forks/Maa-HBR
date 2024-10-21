@@ -14,9 +14,12 @@
             "PreviousDay",
             "NextDay"
         ],
-        "next": "SelectDay"
+        "next": [
+            "SelectStory",
+            "SelectDay"
+        ]
     },
-    "PreviousChapter": {
+    "PreviousStory": {
         "recognition": "OCR",
         "roi": [
             488,
@@ -32,7 +35,7 @@
             86
         ]
     },
-    "NextChapter": {
+    "NextStory": {
         "recognition": "OCR",
         "roi": [
             488,
@@ -84,7 +87,10 @@
             "PreviousTime",
             "NextTime"
         ],
-        "next": "SelectTime"
+        "next": [
+            "StartFromTheMiddle",
+            "SelectTime"
+        ]
     },
     "SelectTime": {
         "recognition": "OCR",
@@ -106,7 +112,10 @@
             "OK",
             "SkipStory"
         ],
-        "next": "MainStoryDungeon"
+        "next": [
+            "SelectTime",
+            "MainStoryDungeon"
+        ]
     },
     "PreviousTime": {
         "recognition": "OCR",

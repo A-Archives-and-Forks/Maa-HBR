@@ -80,7 +80,7 @@
         ],
         "expected": "主页",
         "action": "Click",
-        "pre_wait_freezes": 300,
+        "pre_wait_freezes": 500,
         "next": "OK"
     },
     "ForceGoBackHomepage": {
@@ -120,7 +120,7 @@
             145
         ],
         "action": "Click",
-        "pre_wait_freezes": 200
+        "pre_wait_freezes": 500
     },
     "SwipeUp": {
         "action": "Swipe",
@@ -167,7 +167,7 @@
         "expected": "SKIP",
         "action": "Click",
         "pre_delay": 500,
-        "post_wait_freezes": 200
+        "post_wait_freezes": 500
     },
     "Menu": {
         "recognition": "OCR",
@@ -179,8 +179,22 @@
         ],
         "expected": "菜单",
         "action": "Click",
-        "post_wait_freezes": 200,
+        "pre_wait_freezes": 500,
+        "post_wait_freezes": 500,
         "next": "UnitButton"
+    },
+    "UnitButton": {
+        "recognition": "OCR",
+        "roi": [
+            362,
+            522,
+            130,
+            126
+        ],
+        "expected": "队伍",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": "SelectUnit"
     },
     "ExitMenu": {
         "recognition": "OCR",
@@ -198,25 +212,12 @@
             50,
             55
         ],
-        "post_wait_freezes": 300
-    },
-    "UnitButton": {
-        "recognition": "OCR",
-        "roi": [
-            362,
-            522,
-            130,
-            126
-        ],
-        "expected": "队伍",
-        "action": "Click",
-        "post_wait_freezes": 200,
-        "next": "SelectUnit"
+        "post_wait_freezes": 500
     },
     "OK": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "OK",
-        "post_wait_freezes": 200
+        "post_wait_freezes": 500
     }
 }

@@ -747,21 +747,21 @@
                         "SelectStageType": {
                             "expected": "追溯过去",
                             "interrupt": [
-                                "PreviousChapter",
-                                "NextChapter"
+                                "PreviousStory",
+                                "NextStory"
                             ],
                             "next": "SelectStory"
                         },
                         "SelectStory": {
                             "expected": "第二章"
                         },
-                        "PreviousChapter": {
+                        "PreviousStory": {
                             "expected": [
                                 "第三章",
                                 "第四章"
                             ]
                         },
-                        "NextChapter": {
+                        "NextStory": {
                             "expected": [
                                 "序章",
                                 "第一章"
