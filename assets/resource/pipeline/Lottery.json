@@ -9,7 +9,7 @@
         ],
         "expected": "扭蛋",
         "action": "Click",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "next": "TraverseLottery"
     },
     "TraverseLottery": {
@@ -35,7 +35,7 @@
         "recognition": "OCR",
         "expected": "每日1次免费",
         "action": "Click",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "next": "ConfirmLottery"
     },
     "ConfirmLottery": {

@@ -9,7 +9,7 @@
         ],
         "action": "Click",
         "pre_wait_freezes": 500,
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "interrupt": [
             "PreviousDay",
             "NextDay"

@@ -17,7 +17,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "主线剧情",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "next": [
             "SelectStageType"
         ]
@@ -26,7 +26,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "强化/养成",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "next": [
             "SelectStageType"
         ]
@@ -54,7 +54,7 @@
             -20,
             0
         ],
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "next": "SelectBoss"
     },
     "SelectEvent": {
@@ -67,7 +67,7 @@
             0,
             0
         ],
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "next": [
             "EnterEventPrismBattle",
             "SelectEvent"
@@ -88,7 +88,7 @@
             -172,
             -2
         ],
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "next": "TopLevel"
     },
     "SelectLevel": {
@@ -104,7 +104,7 @@
             -140,
             10
         ],
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "next": [
             "SelectLevel",
             "StartFight"
@@ -119,7 +119,7 @@
         ],
         "index": -1,
         "order_by": "Vertical",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "next": [
             "TopLevel",
             "StartFight"
@@ -135,7 +135,7 @@
         ],
         "action": "Click",
         "expected": "战斗",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "next": "AddAP"
     },
     "ClearAP": {
@@ -183,7 +183,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "OK",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "next": [
             "ConsumeAPStones",
             "APOK",
@@ -260,7 +260,7 @@
         ],
         "action": "Click",
         "expected": "设定",
-        "pre_wait_freezes": 200,
+        "pre_wait_freezes": 500,
         "next": "SelectUnit"
     },
     "PowerSavingMode": {

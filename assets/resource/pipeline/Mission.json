@@ -10,7 +10,7 @@
         ],
         "expected": "任务",
         "next": "MonthlyMission",
-        "post_wait_freezes": 200
+        "post_wait_freezes": 500
     },
     "GetReward": {
         "recognition": "TemplateMatch",

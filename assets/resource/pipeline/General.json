@@ -81,6 +81,7 @@
         "expected": "主页",
         "action": "Click",
         "pre_wait_freezes": 500,
+        "post_wait_freezes": 500,
         "next": "OK"
     },
     "ForceGoBackHomepage": {
@@ -218,6 +219,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "OK",
+        "pre_wait_freezes": 500,
         "post_wait_freezes": 500
     }
 }
