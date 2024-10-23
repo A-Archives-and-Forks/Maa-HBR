@@ -121,8 +121,8 @@
         "order_by": "Vertical",
         "post_wait_freezes": 500,
         "next": [
-            "TopLevel",
-            "StartFight"
+            "StartFight",
+            "TopLevel"
         ]
     },
     "StartFight": {
@@ -136,6 +136,17 @@
         "action": "Click",
         "expected": "战斗",
         "post_wait_freezes": 500,
+        "next": "UseAPOrTickets"
+    },
+    "UseAPOrTickets": {
+        "recognition": "OCR",
+        "roi": [
+            425,
+            243,
+            438,
+            135
+        ],
+        "action": "Click",
         "next": "AddAP"
     },
     "ClearAP": {

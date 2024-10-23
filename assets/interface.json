@@ -23,7 +23,8 @@
             "entry": "StartBattle",
             "option": [
                 "棱镜战boss",
-                "消耗体力数",
+                "消耗体力/入场券",
+                "消耗数量",
                 "选择队伍"
             ],
             "pipeline_override": {
@@ -43,7 +44,8 @@
             "entry": "StartBattle",
             "option": [
                 "宝石棱镜战boss",
-                "消耗体力数",
+                "消耗体力/入场券",
+                "消耗数量",
                 "选择队伍"
             ],
             "pipeline_override": {
@@ -53,15 +55,39 @@
             }
         },
         {
-            "name": "活动棱镜战",
+            "name": "当期活动棱镜战",
             "entry": "StartBattle",
             "option": [
-                "消耗体力数",
+                "消耗体力/入场券",
+                "消耗数量",
                 "选择队伍"
             ],
             "pipeline_override": {
                 "StartBattle": {
                     "next": "Event"
+                }
+            }
+        },
+        {
+            "name": "精选活动棱镜战",
+            "entry": "StartBattle",
+            "option": [
+                "消耗体力/入场券",
+                "消耗数量",
+                "选择队伍"
+            ],
+            "pipeline_override": {
+                "StartBattle": {
+                    "next": "Event"
+                },
+                "SelectEvent": {
+                    "expected": "精选",
+                    "target_offset": [
+                        100,
+                        150,
+                        0,
+                        0
+                    ]
                 }
             }
         },
@@ -205,12 +231,12 @@
                 }
             ]
         },
-        "消耗体力数": {
+        "消耗数量": {
             "cases": [
                 {
                     "name": "清空剩余体力",
                     "pipeline_override": {
-                        "StartFight": {
+                        "UseAPOrTickets": {
                             "next": [
                                 "ZeroAP",
                                 "ClearAP",
@@ -222,7 +248,7 @@
                 {
                     "name": "1",
                     "pipeline_override": {
-                        "StartFight": {
+                        "UseAPOrTickets": {
                             "next": "APOK"
                         },
                         "ConsumeNAPs": {
@@ -782,6 +808,26 @@
                                 "ExitMenu"
                             ],
                             "next": "NextTimePeriod"
+                        }
+                    }
+                }
+            ]
+        },
+        "消耗体力/入场券": {
+            "cases": [
+                {
+                    "name": "体力",
+                    "pipeline_override": {
+                        "UseAPOrTickets": {
+                            "expected": "体力"
+                        }
+                    }
+                },
+                {
+                    "name": "入场券",
+                    "pipeline_override": {
+                        "UseAPOrTickets": {
+                            "expected": "棱镜战入场券"
                         }
                     }
                 }
