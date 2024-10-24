@@ -41,6 +41,7 @@
         ],
         "action": "Click",
         "expected": "活动",
+        "post_wait_freezes": 500,
         "next": [
             "SelectEvent"
         ]
@@ -67,6 +68,7 @@
             0,
             0
         ],
+        "pre_wait_freezes": 500,
         "post_wait_freezes": 500,
         "next": [
             "EnterEventPrismBattle",
@@ -77,6 +79,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "活动棱镜战",
+        "post_wait_freezes": 500,
         "next": "TopLevel"
     },
     "SelectBoss": {
@@ -217,7 +220,7 @@
         ],
         "expected": "队伍",
         "action": "Click",
-        "pre_wait_freezes": 300,
+        "pre_wait_freezes": 500,
         "next": "Sally"
     },
     "Sally": {
