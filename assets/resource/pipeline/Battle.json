@@ -28,7 +28,8 @@
         "expected": "强化/养成",
         "post_wait_freezes": 500,
         "next": [
-            "SelectStageType"
+            "SelectStageType",
+            "StrengthenAndCultivate"
         ]
     },
     "Event": {
@@ -56,6 +57,7 @@
             0
         ],
         "post_wait_freezes": 500,
+        "interrupt": "SwipeUp",
         "next": "SelectBoss"
     },
     "SelectEvent": {
@@ -201,7 +203,7 @@
         "next": [
             "ConsumeAPStones",
             "APOK",
-            "SelectUnit"
+            "UnitList"
         ]
     },
     "ConsumeAPStones": {
@@ -210,17 +212,34 @@
         "expected": "消耗体力石",
         "next": "APOK"
     },
+    "UnitList": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            1221,
+            36,
+            33,
+            30
+        ],
+        "template": "SelectUnit__1221_36_33_30__1171_0_109_116.png",
+        "action": "Click",
+        "pre_wait_freezes": 500,
+        "post_wait_freezes": 500,
+        "interrupt": "SwipeUp",
+        "next": [
+            "SelectUnit",
+            "UnitList"
+        ]
+    },
     "SelectUnit": {
         "recognition": "OCR",
         "roi": [
-            53,
-            0,
-            136,
-            84
+            378,
+            54,
+            475,
+            668
         ],
-        "expected": "队伍",
         "action": "Click",
-        "pre_wait_freezes": 500,
+        "post_wait_freezes": 500,
         "next": "Sally"
     },
     "Sally": {
@@ -275,7 +294,7 @@
         "action": "Click",
         "expected": "设定",
         "pre_wait_freezes": 500,
-        "next": "SelectUnit"
+        "next": "UnitList"
     },
     "PowerSavingMode": {
         "recognition": "OCR",

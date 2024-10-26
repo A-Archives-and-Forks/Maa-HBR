@@ -153,7 +153,7 @@
                     "next": "SelectLevel"
                 },
                 "StartFight": {
-                    "next": "SelectUnit"
+                    "next": "UnitList"
                 },
                 "SwipeDown": {
                     "recognition": "OCR",
@@ -244,14 +244,8 @@
                 {
                     "name": "掩面死神O",
                     "pipeline_override": {
-                        "宝石棱镜战": {
-                            "next": "SwipeUp"
-                        },
                         "SelectBoss": {
                             "expected": "掩面死神O"
-                        },
-                        "SwipeUp": {
-                            "next": "SelectBoss"
                         }
                     }
                 }
@@ -322,12 +316,7 @@
                     "name": "1",
                     "pipeline_override": {
                         "SelectUnit": {
-                            "target": [
-                                317,
-                                48,
-                                10,
-                                10
-                            ]
+                            "expected": "01"
                         }
                     }
                 },
@@ -335,12 +324,7 @@
                     "name": "2",
                     "pipeline_override": {
                         "SelectUnit": {
-                            "target": [
-                                359,
-                                48,
-                                10,
-                                10
-                            ]
+                            "expected": "02"
                         }
                     }
                 },
@@ -348,12 +332,7 @@
                     "name": "3",
                     "pipeline_override": {
                         "SelectUnit": {
-                            "target": [
-                                401,
-                                48,
-                                10,
-                                10
-                            ]
+                            "expected": "03"
                         }
                     }
                 },
@@ -361,12 +340,7 @@
                     "name": "4",
                     "pipeline_override": {
                         "SelectUnit": {
-                            "target": [
-                                444,
-                                48,
-                                10,
-                                10
-                            ]
+                            "expected": "04"
                         }
                     }
                 },
@@ -374,12 +348,7 @@
                     "name": "5",
                     "pipeline_override": {
                         "SelectUnit": {
-                            "target": [
-                                489,
-                                48,
-                                10,
-                                10
-                            ]
+                            "expected": "05"
                         }
                     }
                 },
@@ -387,12 +356,7 @@
                     "name": "6",
                     "pipeline_override": {
                         "SelectUnit": {
-                            "target": [
-                                546,
-                                48,
-                                10,
-                                10
-                            ]
+                            "expected": "06"
                         }
                     }
                 },
@@ -400,12 +364,7 @@
                     "name": "7",
                     "pipeline_override": {
                         "SelectUnit": {
-                            "target": [
-                                593,
-                                48,
-                                10,
-                                10
-                            ]
+                            "expected": "07"
                         }
                     }
                 },
@@ -413,12 +372,7 @@
                     "name": "8",
                     "pipeline_override": {
                         "SelectUnit": {
-                            "target": [
-                                633,
-                                48,
-                                10,
-                                10
-                            ]
+                            "expected": "08"
                         }
                     }
                 },
@@ -426,12 +380,7 @@
                     "name": "9",
                     "pipeline_override": {
                         "SelectUnit": {
-                            "target": [
-                                679,
-                                48,
-                                10,
-                                10
-                            ]
+                            "expected": "09"
                         }
                     }
                 },
@@ -439,12 +388,7 @@
                     "name": "10",
                     "pipeline_override": {
                         "SelectUnit": {
-                            "target": [
-                                723,
-                                48,
-                                10,
-                                10
-                            ]
+                            "expected": "10"
                         }
                     }
                 },
@@ -452,12 +396,7 @@
                     "name": "11",
                     "pipeline_override": {
                         "SelectUnit": {
-                            "target": [
-                                780,
-                                48,
-                                10,
-                                10
-                            ]
+                            "expected": "11"
                         }
                     }
                 },
@@ -465,12 +404,7 @@
                     "name": "12",
                     "pipeline_override": {
                         "SelectUnit": {
-                            "target": [
-                                823,
-                                48,
-                                10,
-                                10
-                            ]
+                            "expected": "12"
                         }
                     }
                 },
@@ -478,12 +412,7 @@
                     "name": "13",
                     "pipeline_override": {
                         "SelectUnit": {
-                            "target": [
-                                868,
-                                48,
-                                10,
-                                10
-                            ]
+                            "expected": "13"
                         }
                     }
                 },
@@ -491,12 +420,7 @@
                     "name": "14",
                     "pipeline_override": {
                         "SelectUnit": {
-                            "target": [
-                                910,
-                                48,
-                                10,
-                                10
-                            ]
+                            "expected": "14"
                         }
                     }
                 },
@@ -504,12 +428,47 @@
                     "name": "15",
                     "pipeline_override": {
                         "SelectUnit": {
-                            "target": [
-                                952,
-                                48,
-                                10,
-                                10
-                            ]
+                            "expected": "15"
+                        }
+                    }
+                },
+                {
+                    "name": "16",
+                    "pipeline_override": {
+                        "SelectUnit": {
+                            "expected": "16"
+                        }
+                    }
+                },
+                {
+                    "name": "17",
+                    "pipeline_override": {
+                        "SelectUnit": {
+                            "expected": "17"
+                        }
+                    }
+                },
+                {
+                    "name": "18",
+                    "pipeline_override": {
+                        "SelectUnit": {
+                            "expected": "18"
+                        }
+                    }
+                },
+                {
+                    "name": "19",
+                    "pipeline_override": {
+                        "SelectUnit": {
+                            "expected": "19"
+                        }
+                    }
+                },
+                {
+                    "name": "20",
+                    "pipeline_override": {
+                        "SelectUnit": {
+                            "expected": "20"
                         }
                     }
                 }
