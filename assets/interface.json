@@ -1,4 +1,9 @@
 {
+    "name": "Maa-HBR",
+    "version": "v0.1.0",
+    "url": "https://github.com/KarylDAZE/Maa-HBR",
+    "custom_title": "Maa-HBR",
+    "default_controller": "adb",
     "controller": [
         {
             "name": "安卓端",
@@ -7,7 +12,7 @@
     ],
     "resource": [
         {
-            "name": "官服",
+            "name": "Bilibili服",
             "path": [
                 "{PROJECT_DIR}/resource"
             ]
@@ -16,7 +21,9 @@
     "task": [
         {
             "name": "启动游戏",
-            "entry": "StartHBR"
+            "entry": "StartHBR",
+            "checked": true,
+            "doc": "启动游戏(若原本未启动)，并回到主页"
         },
         {
             "name": "棱镜战",
@@ -37,7 +44,10 @@
                         45
                     ]
                 }
-            }
+            },
+            "checked": false,
+            "repeatable": true,
+            "repeat_count": 1
         },
         {
             "name": "宝石棱镜战",
@@ -52,7 +62,10 @@
                 "SelectStageType": {
                     "expected": "宝石棱镜战"
                 }
-            }
+            },
+            "checked": false,
+            "repeatable": true,
+            "repeat_count": 1
         },
         {
             "name": "当期活动棱镜战",
@@ -66,7 +79,10 @@
                 "StartBattle": {
                     "next": "Event"
                 }
-            }
+            },
+            "checked": false,
+            "repeatable": true,
+            "repeat_count": 1
         },
         {
             "name": "精选活动棱镜战",
@@ -89,19 +105,25 @@
                         0
                     ]
                 }
-            }
+            },
+            "checked": false,
+            "repeatable": true,
+            "repeat_count": 1
         },
         {
             "name": "每日免费扭蛋",
-            "entry": "Lottery"
+            "entry": "Lottery",
+            "checked": true
         },
         {
             "name": "领取礼物",
-            "entry": "Gift"
+            "entry": "Gift",
+            "checked": true
         },
         {
             "name": "领取任务奖励",
-            "entry": "Mission"
+            "entry": "Mission",
+            "checked": true
         },
         {
             "name": "剧情迷宫挂机",
@@ -109,7 +131,9 @@
             "option": [
                 "选择队伍",
                 "选择剧情迷宫"
-            ]
+            ],
+            "checked": false,
+            "doc": "迷宫挂机刷取溶液或提升技能等级"
         },
         {
             "name": "竞技场",
@@ -135,7 +159,8 @@
                     "recognition": "OCR",
                     "expected": "请选择训练项目"
                 }
-            }
+            },
+            "checked": false
         },
         {
             "name": "时之修炼场",
@@ -149,7 +174,8 @@
                     "expected": "时之修炼场",
                     "next": "ChallengeSetting"
                 }
-            }
+            },
+            "checked": false
         }
     ],
     "option": {
@@ -833,6 +859,5 @@
                 }
             ]
         }
-    },
-    "version": "v0.0.1"
+    }
 }
