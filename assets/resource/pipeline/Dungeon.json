@@ -33,7 +33,8 @@
             279,
             51,
             86
-        ]
+        ],
+        "post_wait_freezes": 500
     },
     "NextStory": {
         "recognition": "OCR",
@@ -49,7 +50,8 @@
             279,
             51,
             86
-        ]
+        ],
+        "post_wait_freezes": 500
     },
     "SelectDay": {
         "recognition": "OCR",
@@ -59,6 +61,7 @@
             705,
             380
         ],
+        "post_wait_freezes": 500,
         "next": "StartFromTheMiddle"
     },
     "PreviousDay": {
@@ -68,7 +71,8 @@
             508,
             77,
             52
-        ]
+        ],
+        "post_wait_freezes": 500
     },
     "NextDay": {
         "action": "Click",
@@ -77,7 +81,8 @@
             508,
             77,
             52
-        ]
+        ],
+        "post_wait_freezes": 500
     },
     "StartFromTheMiddle": {
         "recognition": "OCR",
@@ -87,10 +92,28 @@
             "PreviousTime",
             "NextTime"
         ],
+        "post_wait_freezes": 500,
         "next": [
             "StartFromTheMiddle",
+            "SelectNormalStory",
             "SelectTime"
         ]
+    },
+    "SelectNormalStory": {
+        "recognition": "OCR",
+        "roi": [
+            834,
+            15,
+            387,
+            73
+        ],
+        "expected": "追溯过去",
+        "action": "Click",
+        "interrupt": [
+            "PreviousTime",
+            "NextTime"
+        ],
+        "next": "SelectTime"
     },
     "SelectTime": {
         "recognition": "OCR",
@@ -107,6 +130,7 @@
             194,
             52
         ],
+        "post_wait_freezes": 500,
         "timeout": 60000,
         "interrupt": [
             "OK",
@@ -125,7 +149,8 @@
             80,
             121,
             71
-        ]
+        ],
+        "post_wait_freezes": 500
     },
     "NextTime": {
         "recognition": "OCR",
@@ -135,7 +160,8 @@
             557,
             121,
             71
-        ]
+        ],
+        "post_wait_freezes": 500
     },
     "MainStoryDungeon": {
         "recognition": "OCR",
