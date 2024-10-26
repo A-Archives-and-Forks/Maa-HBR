@@ -39,7 +39,7 @@
         ],
         "action": "Click"
     },
-    "AtHomepage": {
+    "EndHomepage": {
         "recognition": "OCR",
         "roi": [
             0,
@@ -48,6 +48,23 @@
             134
         ],
         "expected": "主页"
+    },
+    "AtHomepage": {
+        "recognition": "OCR",
+        "roi": [
+            0,
+            0,
+            393,
+            618
+        ],
+        "expected": [
+            "主页",
+            "欢迎回来"
+        ],
+        "next": [
+            "SkipHomepageDialogue",
+            "EndHomepage"
+        ]
     },
     "GoBack": {
         "recognition": "TemplateMatch",
@@ -60,6 +77,19 @@
         ],
         "action": "Click",
         "post_delay": 1000
+    },
+    "SkipHomepageDialogue": {
+        "recognition": "OCR",
+        "expected": [
+            "欢迎回来",
+            "有什么需要我帮忙的吗"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "SkipHomepageDialogue",
+            "EndHomepage"
+        ]
     },
     "GoBackHomepage": {
         "interrupt": [
