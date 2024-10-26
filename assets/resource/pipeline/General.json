@@ -58,7 +58,8 @@
             127,
             127
         ],
-        "action": "Click"
+        "action": "Click",
+        "post_delay": 1000
     },
     "GoBackHomepage": {
         "interrupt": [
