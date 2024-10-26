@@ -47,7 +47,8 @@
             },
             "checked": false,
             "repeatable": true,
-            "repeat_count": 1
+            "repeat_count": 1,
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战"
         },
         {
             "name": "宝石棱镜战",
@@ -65,7 +66,8 @@
             },
             "checked": false,
             "repeatable": true,
-            "repeat_count": 1
+            "repeat_count": 1,
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战"
         },
         {
             "name": "当期活动棱镜战",
@@ -82,7 +84,8 @@
             },
             "checked": false,
             "repeatable": true,
-            "repeat_count": 1
+            "repeat_count": 1,
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战"
         },
         {
             "name": "精选活动棱镜战",
@@ -108,7 +111,8 @@
             },
             "checked": false,
             "repeatable": true,
-            "repeat_count": 1
+            "repeat_count": 1,
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战"
         },
         {
             "name": "每日免费扭蛋",
@@ -160,7 +164,8 @@
                     "expected": "请选择训练项目"
                 }
             },
-            "checked": false
+            "checked": false,
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战"
         },
         {
             "name": "时之修炼场",
@@ -175,7 +180,8 @@
                     "next": "ChallengeSetting"
                 }
             },
-            "checked": false
+            "checked": false,
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战"
         }
     ],
     "option": {
