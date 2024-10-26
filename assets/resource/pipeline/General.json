@@ -40,26 +40,26 @@
         "action": "Click"
     },
     "EndHomepage": {
-        "recognition": "OCR",
+        "recognition": "TemplateMatch",
         "roi": [
-            0,
-            0,
-            183,
-            134
+            20,
+            213,
+            149,
+            144
         ],
-        "expected": "主页"
+        "template": "AtHomePage1__70_263_49_44__20_213_149_144.png"
     },
     "AtHomepage": {
-        "recognition": "OCR",
+        "recognition": "TemplateMatch",
         "roi": [
-            0,
-            0,
-            393,
-            618
+            38,
+            239,
+            318,
+            305
         ],
-        "expected": [
-            "主页",
-            "欢迎回来"
+        "template": [
+            "AtHomePage1__70_263_49_44__20_213_149_144.png",
+            "AtHomePage2__235_360_85_139__185_310_185_239.png"
         ],
         "next": [
             "SkipHomepageDialogue",
@@ -79,11 +79,14 @@
         "post_delay": 1000
     },
     "SkipHomepageDialogue": {
-        "recognition": "OCR",
-        "expected": [
-            "欢迎回来",
-            "有什么需要我帮忙的吗"
+        "recognition": "TemplateMatch",
+        "roi": [
+            185,
+            310,
+            185,
+            239
         ],
+        "template": "AtHomePage2__235_360_85_139__185_310_185_239.png",
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
