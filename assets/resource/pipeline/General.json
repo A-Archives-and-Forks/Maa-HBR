@@ -7,9 +7,13 @@
             "Login",
             "SkipCutscene",
             "EndAutoSweep",
+            "EndFight",
+            "ClickScreen",
+            "SkipStory",
             "GoBack",
             "ExitMenu",
-            "HomepageButton"
+            "HomepageButton",
+            "OK"
         ],
         "next": [
             "AtHomepage"
@@ -68,12 +72,15 @@
     },
     "GoBack": {
         "recognition": "TemplateMatch",
-        "template": "GoBack__27_22_50_55__0_0_127_127.png",
+        "template": [
+            "GoBack__27_22_50_55__0_0_127_127.png",
+            "TopRightGoBack__1121_103_69_67__1071_53_169_167.png"
+        ],
         "roi": [
             0,
             0,
-            127,
-            127
+            1225,
+            190
         ],
         "action": "Click",
         "post_delay": 1000
@@ -229,7 +236,7 @@
         "expected": "队伍",
         "action": "Click",
         "post_wait_freezes": 500,
-        "next": "SelectUnit"
+        "next": "UnitList"
     },
     "ExitMenu": {
         "recognition": "OCR",
