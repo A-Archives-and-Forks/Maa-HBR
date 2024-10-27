@@ -21,7 +21,14 @@
 
 由 [MaaFramework](https://github.com/MaaAssistantArknights/MaaFramework) 和 [MFAWPF](https://github.com/SweetSmellFox/MFAWPF) 强力驱动
 
+
+## 环境要求
+使用MFAWPF GUI需要安装[**.NET8**](https://dotnet.microsoft.com/zh-cn/download)框架
+
+
 ## 快速开始
+
+视频演示：[自动化脚本Maa-HBR正式发布](https://www.bilibili.com/video/BV1xs14Y6ELJ)
 
 下载[Releases](https://github.com/KarylDAZE/Maa-HBR/releases)最新发行版中所用平台对应的压缩包，解压后打开Maa-HBR.exe即可开始使用。
 
@@ -31,6 +38,7 @@
 4. 启动任务
 
 GUI界面：![GUI](assets/resource/image/GUI.png)
+
 
 ## 注意事项
 - **队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。**
@@ -47,6 +55,7 @@ GUI界面：![GUI](assets/resource/image/GUI.png)
 - Q：为什么要在剧情迷宫挂机？
 - A：1、剧情迷宫刷取斩突打溶液效率远高于竞技场和时之修炼场。2、剧情迷宫战斗可以提升技能等级，而竞技场和时之修炼场不行。
 
+
 ## TODO
 
 - [x] 每日免费抽卡
@@ -59,6 +68,7 @@ GUI界面：![GUI](assets/resource/image/GUI.png)
 - [ ] 夏日泳装热带庆典挂机
 - [ ] BOSS战失败重新挑战？
 
+
 ## 问题反馈
 可以直接在[github issues](https://github.com/KarylDAZE/Maa-HBR/issues)发布issue，附上**详细的问题描述，相关截图，以及Maa-HBR目录下debug/maa.log文件**。
 
@@ -70,4 +80,4 @@ GUI界面：![GUI](assets/resource/image/GUI.png)
 - [MaaFramework](https://github.com/MaaAssistantArknights/MaaFramework)  
 基于图像识别的自动化黑盒测试框架
 - [MFAWPF](https://github.com/SweetSmellFox/MFAWPF)  
-  基于 MAA 全新架构的 通用 GUI。
+基于 MAA 全新架构的 通用 GUI。
