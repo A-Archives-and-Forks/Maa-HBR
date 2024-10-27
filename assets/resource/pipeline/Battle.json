@@ -86,6 +86,10 @@
     },
     "SelectBoss": {
         "recognition": "OCR",
+        "replace": [
+            " ",
+            ""
+        ],
         "action": "Click",
         "target_offset": [
             796,
@@ -93,6 +97,19 @@
             -172,
             -2
         ],
+        "post_wait_freezes": 500,
+        "next": "TopLevel"
+    },
+    "EnterOrbBossDoor": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            1280,
+            200
+        ],
+        "template": "ExclamationMark__254_32_62_50__204_0_162_132.png",
+        "action": "Click",
         "post_wait_freezes": 500,
         "next": "TopLevel"
     },
@@ -139,9 +156,16 @@
             265
         ],
         "action": "Click",
-        "expected": "战斗",
+        "expected": [
+            "战斗",
+            "挑战"
+        ],
         "post_wait_freezes": 500,
-        "next": "UseAPOrTickets"
+        "next": [
+            "UseAPOrTickets",
+            "UnitList",
+            "ConsumeAPStones"
+        ]
     },
     "UseAPOrTickets": {
         "recognition": "OCR",
@@ -151,6 +175,7 @@
             438,
             135
         ],
+        "expected": "体力",
         "action": "Click",
         "next": "AddAP"
     },
@@ -203,7 +228,8 @@
         "next": [
             "ConsumeAPStones",
             "APOK",
-            "UnitList"
+            "UnitList",
+            "StartFight"
         ]
     },
     "ConsumeAPStones": {
@@ -251,7 +277,8 @@
             "ClickScreen",
             "EndFight",
             "GiveUp",
-            "GoBack"
+            "GoBack",
+            "HomepageButton"
         ],
         "next": [
             "AtHomepage"

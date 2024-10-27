@@ -52,11 +52,12 @@ GUI界面：![GUI](assets/resource/image/GUI.png)
 - [x] 每日免费抽卡
 - [ ] 风格突破
 - [ ] 自动炼金
-- [ ] 光球boss
+- [x] 光球boss
 - [x] 精选活动棱镜战
 - [ ] 刷属性回廊
 - [x] 2-25挂机
 - [ ] 夏日泳装热带庆典挂机
+- [ ] BOSS战失败重新挑战？
 
 ## 问题反馈
 可以直接在[github issues](https://github.com/KarylDAZE/Maa-HBR/issues)发布issue，附上**详细的问题描述，相关截图，以及Maa-HBR目录下debug/maa.log文件**。

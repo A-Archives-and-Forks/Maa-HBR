@@ -70,6 +70,27 @@
             "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战"
         },
         {
+            "name": "光球BOSS",
+            "entry": "StartBattle",
+            "option": [
+                "光球boss",
+                "选择队伍"
+            ],
+            "pipeline_override": {
+                "SelectStageType": {
+                    "expected": "光球BOSS"
+                },
+                "SelectBoss": {
+                    "timeout": 30000,
+                    "next": "EnterOrbBossDoor"
+                }
+            },
+            "checked": false,
+            "repeatable": true,
+            "repeat_count": 1,
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战"
+        },
+        {
             "name": "当期活动棱镜战",
             "entry": "StartBattle",
             "option": [
@@ -252,6 +273,50 @@
                     "pipeline_override": {
                         "SelectBoss": {
                             "expected": "掩面死神O"
+                        }
+                    }
+                }
+            ]
+        },
+        "光球boss": {
+            "cases": [
+                {
+                    "name": "暴击光球-异度监测之眼R",
+                    "pipeline_override": {
+                        "SelectBoss": {
+                            "expected": "异度监测之眼R"
+                        }
+                    }
+                },
+                {
+                    "name": "复活光球-异度监测之眼B",
+                    "pipeline_override": {
+                        "SelectBoss": {
+                            "expected": "异度监测之眼B"
+                        }
+                    }
+                },
+                {
+                    "name": "驱动光球-异度监测之眼Y",
+                    "pipeline_override": {
+                        "SelectBoss": {
+                            "expected": "异度监测之眼Y"
+                        }
+                    }
+                },
+                {
+                    "name": "防护光球-异度监测之眼W",
+                    "pipeline_override": {
+                        "SelectBoss": {
+                            "expected": "异度监测之眼W"
+                        }
+                    }
+                },
+                {
+                    "name": "强攻光球-异度监测之眼P",
+                    "pipeline_override": {
+                        "SelectBoss": {
+                            "expected": "异度监测之眼P"
                         }
                     }
                 }
