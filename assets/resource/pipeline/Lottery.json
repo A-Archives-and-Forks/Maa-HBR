@@ -10,7 +10,10 @@
         "expected": "扭蛋",
         "action": "Click",
         "post_wait_freezes": 500,
-        "next": "TraverseLottery"
+        "next": [
+            "FreeLottery",
+            "TraverseLottery"
+        ]
     },
     "TraverseLottery": {
         "recognition": "TemplateMatch",
@@ -22,7 +25,7 @@
         ],
         "template": "NextLottery__1196_550_32_96__1146_500_132_196.png",
         "green_mask": true,
-        "threshold": 0.4,
+        "threshold": 0.1,
         "action": "Click",
         "rate_limit": 2000,
         "post_delay": 500,
