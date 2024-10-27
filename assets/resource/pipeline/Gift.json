@@ -9,20 +9,21 @@
             163
         ],
         "expected": "礼物",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
+        "interrupt": "GoBackHomepage",
         "next": "GetGift"
     },
     "GetGift": {
-        "recognition": "OCR",
-        "action": "Click",
+        "recognition": "TemplateMatch",
         "roi": [
-            1008,
-            613,
-            202,
-            44
+            987,
+            606,
+            242,
+            55
         ],
-        "expected": "键领取",
-        "post_wait_freezes": 200,
+        "template": "GetGift__987_606_242_55__937_556_342_155.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "GetGift",
             "GetConfirm",
@@ -39,14 +40,14 @@
             49
         ],
         "expected": "领取",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "next": "GetOK"
     },
     "GetOK": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "OK",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "next": [
             "GetOK",
             "GoBackHomepage"
