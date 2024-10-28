@@ -23,6 +23,8 @@
 
 
 ## 环境要求
+安装[**vc_redist**](https://aka.ms/vs/17/release/vc_redist.x64.exe)运行库
+
 使用MFAWPF GUI需要安装[**.NET8**](https://dotnet.microsoft.com/zh-cn/download)框架
 
 
@@ -61,6 +63,7 @@ GUI界面：![GUI](assets/resource/image/GUI.png)
 - [x] 每日免费抽卡
 - [ ] 风格突破
 - [ ] 自动炼金
+- [ ] 饰品自动洗词条
 - [x] 光球boss
 - [x] 精选活动棱镜战
 - [ ] 刷属性回廊
