@@ -1,6 +1,6 @@
 {
     "name": "Maa-HBR",
-    "version": "v0.1.0",
+    "version": "v0.2.2",
     "url": "https://github.com/KarylDAZE/Maa-HBR",
     "custom_title": "Maa-HBR",
     "default_controller": "adb",
@@ -112,6 +112,7 @@
             "name": "精选活动棱镜战",
             "entry": "StartBattle",
             "option": [
+                "第几个精选活动",
                 "消耗体力/入场券",
                 "消耗数量",
                 "选择队伍"
@@ -884,6 +885,26 @@
                     "pipeline_override": {
                         "UseAPOrTickets": {
                             "expected": "棱镜战入场券"
+                        }
+                    }
+                }
+            ]
+        },
+        "第几个精选活动": {
+            "cases": [
+                {
+                    "name": "1"
+                },
+                {
+                    "name": "2",
+                    "pipeline_override": {
+                        "SelectEvent": {
+                            "target_offset": [
+                                300,
+                                150,
+                                0,
+                                0
+                            ]
                         }
                     }
                 }
