@@ -160,7 +160,15 @@
             "战斗",
             "挑战"
         ],
-        "post_wait_freezes": 500,
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                99,
+                0,
+                1087,
+                595
+            ]
+        },
         "next": [
             "UseAPOrTickets",
             "UnitList",
@@ -217,6 +225,7 @@
             145,
             146
         ],
+        "expected": "1",
         "action": "DoNothing",
         "next": "APOK"
     },
@@ -241,10 +250,10 @@
     "UnitList": {
         "recognition": "TemplateMatch",
         "roi": [
-            1221,
-            36,
-            33,
-            30
+            1171,
+            0,
+            109,
+            116
         ],
         "template": "SelectUnit__1221_36_33_30__1171_0_109_116.png",
         "action": "Click",
@@ -264,6 +273,7 @@
             475,
             668
         ],
+        "expected": "1",
         "action": "Click",
         "post_wait_freezes": 500,
         "next": "Sally"
