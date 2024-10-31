@@ -1,0 +1,19 @@
+name: 提出建议
+description: 新功能或优化建议.
+labels: ['enhancement']
+body:
+  - type: checkboxes
+    id: check
+    attributes:
+      label: 是否已经存在相同issue?
+      description: 请搜索Issues查看是否已经存在描述了你要提出的bug的issue.
+      options:
+      - label: 我已经搜索了Issues
+        required: true
+  - type: textarea
+    id: describe
+    attributes:
+      label: 具体内容
+      description: 简要描述你的问题
+    validations:
+      required: true
