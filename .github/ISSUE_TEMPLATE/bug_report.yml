@@ -13,6 +13,13 @@ body:
   - type: textarea
     id: describe
     attributes:
+      label: 版本号
+      description: 输入你所使用的Maa-HBR版本号
+    validations:
+      required: true
+  - type: textarea
+    id: describe
+    attributes:
       label: 问题表现
       description: 简要描述你的问题
     validations:
