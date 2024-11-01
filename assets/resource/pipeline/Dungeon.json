@@ -215,7 +215,8 @@
         "interrupt": [
             "Auto",
             "EndFight",
-            "SkipStory"
+            "SkipStory",
+            "SkipCutscene"
         ],
         "next": "RunLeft"
     },
@@ -239,7 +240,8 @@
         "interrupt": [
             "Auto",
             "EndFight",
-            "SkipStory"
+            "SkipStory",
+            "SkipCutscene"
         ],
         "next": "RunRight"
     }
