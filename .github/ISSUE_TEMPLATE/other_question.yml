@@ -11,6 +11,13 @@ body:
       - label: 我已经搜索了Issues
         required: true
   - type: textarea
+    id: version
+    attributes:
+      label: 版本号
+      description: 输入你所使用的Maa-HBR版本号
+    validations:
+      required: true
+  - type: textarea
     id: describe
     attributes:
       label: 具体内容
