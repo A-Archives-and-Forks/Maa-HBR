@@ -10,8 +10,22 @@
         ],
         "expected": "礼物",
         "post_wait_freezes": 500,
-        "interrupt": "GoBackHomepage",
-        "next": "GetGift"
+        "next": "GiftBox"
+    },
+    "GiftBox": {
+        "recognition": "OCR",
+        "roi": [
+            0,
+            0,
+            245,
+            110
+        ],
+        "expected": "礼物箱",
+        "post_wait_freezes": 500,
+        "next": [
+            "GetGift",
+            "GoBackHomepage"
+        ]
     },
     "GetGift": {
         "recognition": "TemplateMatch",

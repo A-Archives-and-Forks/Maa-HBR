@@ -88,10 +88,10 @@
     "SkipHomepageDialogue": {
         "recognition": "TemplateMatch",
         "roi": [
-            185,
-            310,
-            185,
-            239
+            0,
+            183,
+            573,
+            392
         ],
         "template": "AtHomePage2__0_233_523_292__0_183_573_392.png",
         "action": "Click",
