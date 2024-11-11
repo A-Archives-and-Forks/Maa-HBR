@@ -65,6 +65,10 @@
             "AtHomePage1__70_263_49_44__20_213_149_144.png",
             "AtHomePage2__0_233_523_292__0_183_573_392.png"
         ],
+        "threshold": [
+            0.7,
+            0.8
+        ],
         "next": [
             "SkipHomepageDialogue",
             "EndHomepage"
