@@ -197,6 +197,7 @@
         ],
         "action": "Click",
         "template": "clear_AP_icon__840_396_43_42__790_346_143_142.png",
+        "threshold": 0.9,
         "next": "APOK"
     },
     "ZeroAP": {
