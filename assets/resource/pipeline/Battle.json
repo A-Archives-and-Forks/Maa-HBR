@@ -35,10 +35,10 @@
     "Event": {
         "recognition": "OCR",
         "roi": [
-            648,
-            542,
-            85,
-            95
+            657,
+            569,
+            54,
+            33
         ],
         "action": "Click",
         "expected": "活动",
@@ -294,7 +294,7 @@
         "next": [
             "AtHomepage"
         ],
-        "timeout": 180000
+        "timeout": 300000
     },
     "Auto": {
         "recognition": "OCR",
