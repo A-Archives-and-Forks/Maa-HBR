@@ -10,6 +10,7 @@
         "expected": "扭蛋",
         "action": "Click",
         "post_wait_freezes": 500,
+        "interrupt": "OK",
         "next": [
             "FreeLottery",
             "TraverseLottery"
