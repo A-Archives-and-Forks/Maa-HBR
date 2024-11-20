@@ -40,7 +40,10 @@
         "expected": "每日1次免费",
         "action": "Click",
         "post_wait_freezes": 500,
-        "next": "ConfirmLottery"
+        "next": [
+            "ConfirmLottery",
+            "FreeLottery"
+        ]
     },
     "ConfirmLottery": {
         "recognition": "OCR",
@@ -62,7 +65,8 @@
         "timeout": 120000,
         "next": [
             "TraverseLottery",
-            "AtHomepage"
+            "AtHomepage",
+            "ConfirmLottery"
         ]
     }
 }
