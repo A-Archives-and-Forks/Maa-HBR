@@ -109,6 +109,7 @@
             200
         ],
         "template": "ExclamationMark__254_32_62_50__204_0_162_132.png",
+        "threshold": 0.5,
         "action": "Click",
         "post_wait_freezes": 500,
         "next": "TopLevel"
