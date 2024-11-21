@@ -1,6 +1,6 @@
 {
     "name": "Maa-HBR",
-    "version": "v0.2.6",
+    "version": "v0.2.7",
     "url": "https://github.com/KarylDAZE/Maa-HBR",
     "custom_title": "Maa-HBR",
     "default_controller": "adb",
@@ -139,7 +139,10 @@
         {
             "name": "每日免费扭蛋",
             "entry": "Lottery",
-            "checked": true
+            "checked": true,
+            "repeatable": true,
+            "repeat_count": 1,
+            "doc": "由于登录扭蛋池会在进行每日免费抽卡后移动卡池位置到末尾，进而导致没有抽取其他免费卡池，所以此时需要将本任务重复次数设置为2"
         },
         {
             "name": "领取礼物",

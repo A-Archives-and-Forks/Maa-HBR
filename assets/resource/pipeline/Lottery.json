@@ -37,8 +37,15 @@
         ]
     },
     "FreeLottery": {
-        "recognition": "OCR",
-        "expected": "每日1次免费",
+        "recognition": "TemplateMatch",
+        "template": "FreeLottery__845_410_198_67__795_360_298_167.png",
+        "roi": [
+            666,
+            352,
+            548,
+            188
+        ],
+        "threshold": 0.9,
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
