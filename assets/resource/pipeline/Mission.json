@@ -16,6 +16,7 @@
         "recognition": "TemplateMatch",
         "template": "MissionGetReward__999_606_210_53__949_556_310_153.png",
         "action": "Click",
+        "post_wait_freezes": 2000,
         "next": "MissionOK"
     },
     "MissionOK": {
