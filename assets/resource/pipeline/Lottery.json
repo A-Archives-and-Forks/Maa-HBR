@@ -48,6 +48,7 @@
         "threshold": 0.9,
         "action": "Click",
         "post_wait_freezes": 500,
+        "interrupt": "OK",
         "next": [
             "ConfirmLottery",
             "FreeLottery"
