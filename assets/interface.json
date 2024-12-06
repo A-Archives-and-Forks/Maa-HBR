@@ -1,6 +1,6 @@
 {
     "name": "Maa-HBR",
-    "version": "v0.2.9",
+    "version": "v0.2.10",
     "url": "https://github.com/KarylDAZE/Maa-HBR",
     "custom_title": "Maa-HBR",
     "default_controller": "adb",
@@ -343,6 +343,20 @@
                     "pipeline_override": {
                         "SelectBoss": {
                             "expected": "空无B",
+                            "target_offset": [
+                                800,
+                                30,
+                                -400,
+                                -20
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "软化光球-空无W",
+                    "pipeline_override": {
+                        "SelectBoss": {
+                            "expected": "空无W",
                             "target_offset": [
                                 800,
                                 30,
