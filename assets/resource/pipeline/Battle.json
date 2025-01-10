@@ -162,7 +162,8 @@
         "action": "Click",
         "expected": [
             "战斗",
-            "挑战"
+            "挑战",
+            "部队编队"
         ],
         "post_wait_freezes": {
             "time": 500,
@@ -329,15 +330,31 @@
     "ChallengeSetting": {
         "recognition": "OCR",
         "roi": [
-            702,
-            543,
-            214,
-            154
+            455,
+            535,
+            686,
+            159
+        ],
+        "expected": "部队编队",
+        "pre_wait_freezes": 500,
+        "next": "StartFight"
+    },
+    "PowerSavingSweep": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            455,
+            535,
+            686,
+            159
         ],
         "action": "Click",
-        "expected": "设定",
+        "template": [
+            "PowerSavingSweep__832_583_247_75__782_533_347_175.png",
+            "PowerSavingSweep__809_557_205_70__759_507_305_170.png"
+        ],
         "pre_wait_freezes": 500,
-        "next": "UnitList"
+        "interrupt": "OK",
+        "next": "AtAutoSweep"
     },
     "PowerSavingMode": {
         "recognition": "OCR",
@@ -349,8 +366,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "再次挑战",
-        "post_delay": 3000,
-        "next": "EndHBR"
+        "next": "AtAutoSweep"
     },
     "FightAgainLoop": {
         "action": "Click",
@@ -361,6 +377,12 @@
             34
         ],
         "next": "FightAgainLoop"
+    },
+    "AtAutoSweep": {
+        "recognition": "OCR",
+        "expected": "结束自动刷图",
+        "post_delay": 1000,
+        "next": "EndHBR"
     },
     "EndAutoSweep": {
         "recognition": "OCR",

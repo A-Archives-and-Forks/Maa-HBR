@@ -183,6 +183,9 @@
                     ],
                     "next": "SelectLevel"
                 },
+                "SelectLevel": {
+                    "next": "ChallengeSetting"
+                },
                 "StartFight": {
                     "next": "UnitList"
                 },
@@ -636,6 +639,12 @@
                     "pipeline_override": {
                         "Sally": {
                             "next": "PowerSavingMode"
+                        },
+                        "ChallengeSetting": {
+                            "next": [
+                                "PowerSavingSweep",
+                                "StartFight"
+                            ]
                         }
                     }
                 },
