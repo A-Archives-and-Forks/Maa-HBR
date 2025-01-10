@@ -911,6 +911,132 @@
                             "expected": "推荐战力：12,800"
                         }
                     }
+                },
+                {
+                    "name": "绝级1（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：13,200"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级1（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：13,200"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级1（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：13,200"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级2（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：14,500"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级2（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：14,500"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级2（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：14,500"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级3（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：15,300"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级3（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：15,300"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级3（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：15,300"
+                        }
+                    }
                 }
             ]
         },
