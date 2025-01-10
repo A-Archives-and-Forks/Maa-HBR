@@ -1,6 +1,6 @@
 {
     "name": "Maa-HBR",
-    "version": "v0.2.12",
+    "version": "v0.3.0",
     "url": "https://github.com/KarylDAZE/Maa-HBR",
     "custom_title": "Maa-HBR",
     "default_controller": "adb",
@@ -74,6 +74,8 @@
             "entry": "StartBattle",
             "option": [
                 "光球boss",
+                "消耗体力/入场券",
+                "消耗数量",
                 "选择队伍"
             ],
             "pipeline_override": {
@@ -277,6 +279,14 @@
                     "pipeline_override": {
                         "SelectBoss": {
                             "expected": "掩面死神O"
+                        }
+                    }
+                },
+                {
+                    "name": "阿拉克尼巨蛛A",
+                    "pipeline_override": {
+                        "SelectBoss": {
+                            "expected": "阿拉克尼巨蛛A"
                         }
                     }
                 }
@@ -957,7 +967,7 @@
                     "name": "入场券",
                     "pipeline_override": {
                         "UseAPOrTickets": {
-                            "expected": "棱镜战入场券"
+                            "expected": "入场券"
                         }
                     }
                 }

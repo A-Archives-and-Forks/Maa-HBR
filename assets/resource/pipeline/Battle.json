@@ -112,7 +112,10 @@
         "threshold": 0.5,
         "action": "Click",
         "post_wait_freezes": 500,
-        "next": "TopLevel"
+        "next": [
+            "TopLevel",
+            "EnterOrbBossDoor"
+        ]
     },
     "SelectLevel": {
         "recognition": "OCR",
