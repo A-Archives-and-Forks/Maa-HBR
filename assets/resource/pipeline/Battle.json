@@ -87,8 +87,18 @@
     "SelectBoss": {
         "recognition": "OCR",
         "replace": [
-            " ",
-            ""
+            [
+                " ",
+                ""
+            ],
+            [
+                "电",
+                "雹"
+            ],
+            [
+                "電",
+                "雹"
+            ]
         ],
         "action": "Click",
         "target_offset": [
