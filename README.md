@@ -61,7 +61,6 @@ GUI界面：![GUI](assets/resource/image/GUI.png)
 ## TODO
 
 - [x] 每日免费抽卡
-- [ ] 风格突破
 - [ ] 自动炼金
 - [ ] 饰品自动洗词条
 - [x] 光球boss
