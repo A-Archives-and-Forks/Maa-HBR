@@ -1,6 +1,6 @@
 {
     "name": "Maa-HBR",
-    "version": "v0.3.1",
+    "version": "v0.3.2",
     "url": "https://github.com/KarylDAZE/Maa-HBR",
     "custom_title": "Maa-HBR",
     "default_controller": "adb",
@@ -473,6 +473,9 @@
                 {
                     "name": "1",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "01"
+                        },
                         "SelectUnit": {
                             "expected": "01"
                         }
@@ -481,6 +484,9 @@
                 {
                     "name": "2",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "02"
+                        },
                         "SelectUnit": {
                             "expected": "02"
                         }
@@ -489,6 +495,9 @@
                 {
                     "name": "3",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "03"
+                        },
                         "SelectUnit": {
                             "expected": "03"
                         }
@@ -497,6 +506,9 @@
                 {
                     "name": "4",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "04"
+                        },
                         "SelectUnit": {
                             "expected": "04"
                         }
@@ -505,6 +517,9 @@
                 {
                     "name": "5",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "05"
+                        },
                         "SelectUnit": {
                             "expected": "05"
                         }
@@ -513,6 +528,9 @@
                 {
                     "name": "6",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "06"
+                        },
                         "SelectUnit": {
                             "expected": "06"
                         }
@@ -521,6 +539,9 @@
                 {
                     "name": "7",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "07"
+                        },
                         "SelectUnit": {
                             "expected": "07"
                         }
@@ -529,6 +550,9 @@
                 {
                     "name": "8",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "08"
+                        },
                         "SelectUnit": {
                             "expected": "08"
                         }
@@ -537,6 +561,9 @@
                 {
                     "name": "9",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "09"
+                        },
                         "SelectUnit": {
                             "expected": "09"
                         }
@@ -545,6 +572,9 @@
                 {
                     "name": "10",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "10"
+                        },
                         "SelectUnit": {
                             "expected": "10"
                         }
@@ -553,6 +583,9 @@
                 {
                     "name": "11",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "11"
+                        },
                         "SelectUnit": {
                             "expected": "11"
                         }
@@ -561,6 +594,9 @@
                 {
                     "name": "12",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "12"
+                        },
                         "SelectUnit": {
                             "expected": "12"
                         }
@@ -569,6 +605,9 @@
                 {
                     "name": "13",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "13"
+                        },
                         "SelectUnit": {
                             "expected": "13"
                         }
@@ -577,6 +616,9 @@
                 {
                     "name": "14",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "14"
+                        },
                         "SelectUnit": {
                             "expected": "14"
                         }
@@ -585,6 +627,9 @@
                 {
                     "name": "15",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "15"
+                        },
                         "SelectUnit": {
                             "expected": "15"
                         }
@@ -593,6 +638,9 @@
                 {
                     "name": "16",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "16"
+                        },
                         "SelectUnit": {
                             "expected": "16"
                         }
@@ -601,6 +649,9 @@
                 {
                     "name": "17",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "17"
+                        },
                         "SelectUnit": {
                             "expected": "17"
                         }
@@ -609,6 +660,9 @@
                 {
                     "name": "18",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "18"
+                        },
                         "SelectUnit": {
                             "expected": "18"
                         }
@@ -617,6 +671,9 @@
                 {
                     "name": "19",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "19"
+                        },
                         "SelectUnit": {
                             "expected": "19"
                         }
@@ -625,6 +682,9 @@
                 {
                     "name": "20",
                     "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "20"
+                        },
                         "SelectUnit": {
                             "expected": "20"
                         }

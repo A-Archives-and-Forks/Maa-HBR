@@ -253,6 +253,7 @@
         "next": [
             "ConsumeAPStones",
             "APOK",
+            "hasSelectedUnit",
             "UnitList",
             "StartFight"
         ]
@@ -262,6 +263,18 @@
         "action": "Click",
         "expected": "消耗体力石",
         "next": "APOK"
+    },
+    "hasSelectedUnit": {
+        "recognition": "OCR",
+        "roi": [
+            256,
+            58,
+            833,
+            61
+        ],
+        "pre_wait_freezes": 500,
+        "post_wait_freezes": 500,
+        "next": "Sally"
     },
     "UnitList": {
         "recognition": "TemplateMatch",
