@@ -197,7 +197,7 @@
     },
     "RunRight": {
         "recognition": "OCR",
-        "expected": "一边前进吧",
+        "expected": "前进吧",
         "action": "Swipe",
         "begin": [
             500,
@@ -222,7 +222,7 @@
     },
     "RunLeft": {
         "recognition": "OCR",
-        "expected": "一边前进吧",
+        "expected": "前进吧",
         "action": "Swipe",
         "begin": [
             700,
