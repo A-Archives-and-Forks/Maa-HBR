@@ -1,6 +1,6 @@
 {
     "name": "Maa-HBR",
-    "version": "v0.3.3",
+    "version": "v0.3.4",
     "url": "https://github.com/KarylDAZE/Maa-HBR",
     "custom_title": "Maa-HBR",
     "default_controller": "adb",
@@ -80,7 +80,8 @@
             ],
             "pipeline_override": {
                 "SelectStageType": {
-                    "expected": "光球BOSS"
+                    "expected": "光球BOSS",
+                    "next": "SelectOrbBossType"
                 },
                 "SelectBoss": {
                     "timeout": 30000,
@@ -300,6 +301,14 @@
                 {
                     "name": "暴击光球-异度监测之眼R",
                     "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target_offset": [
+                                -260,
+                                65,
+                                -150,
+                                -20
+                            ]
+                        },
                         "SelectBoss": {
                             "expected": "异度监测之眼R"
                         }
@@ -308,6 +317,14 @@
                 {
                     "name": "复活光球-异度监测之眼B",
                     "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target_offset": [
+                                -260,
+                                65,
+                                -150,
+                                -20
+                            ]
+                        },
                         "SelectBoss": {
                             "expected": "异度监测之眼B"
                         }
@@ -316,6 +333,14 @@
                 {
                     "name": "驱动光球-异度监测之眼Y",
                     "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target_offset": [
+                                -260,
+                                65,
+                                -150,
+                                -20
+                            ]
+                        },
                         "SelectBoss": {
                             "expected": "异度监测之眼Y"
                         }
@@ -324,6 +349,14 @@
                 {
                     "name": "防护光球-异度监测之眼W",
                     "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target_offset": [
+                                -260,
+                                65,
+                                -150,
+                                -20
+                            ]
+                        },
                         "SelectBoss": {
                             "expected": "异度监测之眼W"
                         }
@@ -332,6 +365,14 @@
                 {
                     "name": "强攻光球-异度监测之眼P",
                     "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target_offset": [
+                                -260,
+                                65,
+                                -150,
+                                -20
+                            ]
+                        },
                         "SelectBoss": {
                             "expected": "异度监测之眼P"
                         }
@@ -340,6 +381,14 @@
                 {
                     "name": "集中光球-空无R",
                     "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target_offset": [
+                                80,
+                                65,
+                                -150,
+                                -20
+                            ]
+                        },
                         "SelectBoss": {
                             "expected": "空无R",
                             "target_offset": [
@@ -354,6 +403,14 @@
                 {
                     "name": "填充光球-空无B",
                     "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target_offset": [
+                                80,
+                                65,
+                                -150,
+                                -20
+                            ]
+                        },
                         "SelectBoss": {
                             "expected": "空无B",
                             "target_offset": [
@@ -368,6 +425,14 @@
                 {
                     "name": "治愈光球-空无Y",
                     "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target_offset": [
+                                80,
+                                65,
+                                -150,
+                                -20
+                            ]
+                        },
                         "SelectBoss": {
                             "expected": "空无Y",
                             "target_offset": [
@@ -382,6 +447,14 @@
                 {
                     "name": "软化光球-空无W",
                     "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target_offset": [
+                                80,
+                                65,
+                                -150,
+                                -20
+                            ]
+                        },
                         "SelectBoss": {
                             "expected": "空无W",
                             "target_offset": [
@@ -396,6 +469,14 @@
                 {
                     "name": "衰灭光球-空无P",
                     "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target_offset": [
+                                80,
+                                65,
+                                -150,
+                                -20
+                            ]
+                        },
                         "SelectBoss": {
                             "expected": "空无P",
                             "target_offset": [
@@ -404,6 +485,22 @@
                                 -400,
                                 -20
                             ]
+                        }
+                    }
+                },
+                {
+                    "name": "阿蒙之门B",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target_offset": [
+                                400,
+                                65,
+                                -150,
+                                -20
+                            ]
+                        },
+                        "SelectBoss": {
+                            "expected": "阿蒙之门B"
                         }
                     }
                 }

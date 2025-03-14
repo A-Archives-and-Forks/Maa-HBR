@@ -84,6 +84,14 @@
         "post_wait_freezes": 500,
         "next": "TopLevel"
     },
+    "SelectOrbBossType": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "INFORMATION",
+        "post_wait_freezes": 500,
+        "interrupt": "SwipeUp",
+        "next": "SelectBoss"
+    },
     "SelectBoss": {
         "recognition": "OCR",
         "replace": [
@@ -118,7 +126,10 @@
             1280,
             200
         ],
-        "template": "ExclamationMark__254_32_62_50__204_0_162_132.png",
+        "template": [
+            "ExclamationMark__254_32_62_50__204_0_162_132.png",
+            "ExclamationMark2__273_17_77_77__223_0_177_144.png"
+        ],
         "threshold": 0.5,
         "action": "Click",
         "post_wait_freezes": 500,
