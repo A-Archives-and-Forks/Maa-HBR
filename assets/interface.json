@@ -1,6 +1,6 @@
 {
     "name": "Maa-HBR",
-    "version": "v0.3.4",
+    "version": "v0.3.5",
     "url": "https://github.com/KarylDAZE/Maa-HBR",
     "custom_title": "Maa-HBR",
     "default_controller": "adb",
@@ -125,13 +125,7 @@
                     "next": "Event"
                 },
                 "SelectEvent": {
-                    "expected": "精选",
-                    "target_offset": [
-                        100,
-                        150,
-                        0,
-                        0
-                    ]
+                    "expected": "精选"
                 }
             },
             "checked": false,
@@ -1268,7 +1262,17 @@
         "第几个精选活动": {
             "cases": [
                 {
-                    "name": "1"
+                    "name": "1",
+                    "pipeline_override": {
+                        "SelectEvent": {
+                            "target_offset": [
+                                100,
+                                150,
+                                0,
+                                0
+                            ]
+                        }
+                    }
                 },
                 {
                     "name": "2",
