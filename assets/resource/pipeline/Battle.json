@@ -299,7 +299,7 @@
         "template": "SelectUnit__1221_36_33_30__1171_0_109_116.png",
         "action": "Click",
         "pre_wait_freezes": 500,
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 2000,
         "interrupt": "SwipeUp",
         "next": [
             "SelectUnit",
@@ -316,6 +316,7 @@
         ],
         "expected": "1",
         "action": "Click",
+        "pre_wait_freezes": 500,
         "post_wait_freezes": 500,
         "next": "Sally"
     },

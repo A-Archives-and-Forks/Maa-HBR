@@ -1,6 +1,6 @@
 {
     "name": "Maa-HBR",
-    "version": "v0.3.5",
+    "version": "v0.3.6",
     "url": "https://github.com/KarylDAZE/Maa-HBR",
     "custom_title": "Maa-HBR",
     "default_controller": "adb",
@@ -125,7 +125,16 @@
                     "next": "Event"
                 },
                 "SelectEvent": {
-                    "expected": "精选"
+                    "roi": [
+                        451,
+                        57,
+                        331,
+                        86
+                    ],
+                    "expected": [
+                        "开放中",
+                        "精选"
+                    ]
                 }
             },
             "checked": false,
