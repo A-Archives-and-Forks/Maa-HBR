@@ -1295,6 +1295,19 @@
                             ]
                         }
                     }
+                },
+                {
+                    "name": "3",
+                    "pipeline_override": {
+                        "SelectEvent": {
+                            "target_offset": [
+                                500,
+                                150,
+                                0,
+                                0
+                            ]
+                        }
+                    }
                 }
             ]
         }
