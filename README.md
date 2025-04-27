@@ -12,6 +12,10 @@
 基于Maa全新架构的HBR自动化小助手
 <!-- prettier-ignore-end -->
 
+![GitHub License](https://img.shields.io/github/license/KarylDAZE/Maa-HBR)
+![GitHub Repo stars](https://img.shields.io/github/stars/KarylDAZE/Maa-HBR)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/KarylDAZE/Maa-HBR/total)
+[![mirrorc](https://img.shields.io/badge/Mirror%E9%85%B1-%239af3f6?logo=countingworkspro&logoColor=4f46e5)](https://mirrorchyan.com/zh/projects)
 
 </div>
 
@@ -53,20 +57,17 @@ GUI界面：![GUI](assets/resource/image/GUI.png)
 
 ## Q&A
 - Q：为什么竞技场和时之修炼场需要在线挂机？
-- A：竞技场和时之修炼场离线挂机的每场战斗耗时分别min(通关时间+20s,50s)和min(通关时间+20s,80s)，而在线挂机每场战斗的“额外消耗时间”（过场和加载时间）约为8s左右（如果设备和网络环境较差，耗时可能更长），即每场战斗耗时为通关时间+额外消耗时间=通关时间+8s，收益更高。
+- A：竞技场和时之修炼场离线挂机的每场战斗耗时分别min(通关时间+20s,50s)和min(通关时间+20s,80s)，而在线挂机每场战斗的“额外消耗时间”（过场和加载时间）约为8s左右（如果设备和网络环境较差，耗时可能更长）（当前游戏版本普遍存在长时间挂机后游戏变得非常卡顿的情况），即每场战斗耗时为通关时间+额外消耗时间=通关时间+8s，收益更高。
 - Q：为什么要在剧情迷宫挂机？
 - A：1、剧情迷宫刷取斩突打溶液效率远高于竞技场和时之修炼场。2、剧情迷宫战斗可以提升技能等级，而竞技场和时之修炼场不行。
-
+- Q：为什么要在技术模拟战挂机？
+- A：技术模拟战可以在竞技场/时之修炼场离线挂机的同时挂机，并且可以升级风格技能，但效率可能低于剧情迷宫挂机。
 
 ## TODO
 
-- [x] 每日免费抽卡
 - [ ] 自动炼金
 - [ ] 饰品自动洗词条
-- [x] 光球boss
-- [x] 精选活动棱镜战
 - [ ] 刷属性回廊
-- [x] 2-25挂机
 - [ ] 夏日泳装热带庆典挂机
 - [ ] BOSS战失败重新挑战？
 
