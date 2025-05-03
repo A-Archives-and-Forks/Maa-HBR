@@ -1,6 +1,6 @@
 {
     "name": "Maa-HBR",
-    "version": "v0.3.8",
+    "version": "v0.4.0",
     "url": "https://github.com/KarylDAZE/Maa-HBR",
     "custom_title": "Maa-HBR",
     "mirrorchyan_rid": "Maa-HBR",
@@ -149,7 +149,7 @@
             "checked": true,
             "repeatable": true,
             "repeat_count": 1,
-            "doc": "由于登录扭蛋池会在进行每日免费抽卡后移动卡池位置到末尾，进而导致没有抽取其他免费卡池，所以此时需要将本任务重复次数设置为2"
+            "doc": "需要设置为不小于当前存在免费扭蛋次数的卡池数。例如有2个卡池有免费扭蛋次数，则至少设置为2。"
         },
         {
             "name": "领取礼物",
@@ -200,7 +200,7 @@
                 }
             },
             "checked": false,
-            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战"
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。v0.4.0版本开始，离线挂机不会自动退出游戏。"
         },
         {
             "name": "时之修炼场",
@@ -216,7 +216,30 @@
                 }
             },
             "checked": false,
-            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战"
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。v0.4.0版本开始，离线挂机不会自动退出游戏。"
+        },
+        {
+            "name": "技术模拟战",
+            "entry": "StartCasual",
+            "option": [
+                "选择队伍",
+                "选择技术模拟战关卡"
+            ],
+            "pipeline_override": {
+                "hasSelectedUnit": {
+                    "interrupt": "GoBack",
+                    "next": "StartArtsBattle"
+                },
+                "SelectUnit": {
+                    "interrupt": "GoBack",
+                    "next": "StartArtsBattle"
+                }
+            },
+            "doc": "建议在技术模拟战前，先执行竞技场或时之修炼场离线挂机，充分获取收益"
+        },
+        {
+            "name": "退出游戏",
+            "entry": "EndHBR"
         }
     ],
     "option": {
@@ -1307,6 +1330,77 @@
                                 0,
                                 0
                             ]
+                        }
+                    }
+                }
+            ]
+        },
+        "选择技术模拟战关卡": {
+            "cases": [
+                {
+                    "name": "31A 普通",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31A\\]普通"
+                        }
+                    }
+                },
+                {
+                    "name": "31A 困难",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31A\\]困难"
+                        }
+                    }
+                },
+                {
+                    "name": "31B 普通",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31B\\]普通"
+                        }
+                    }
+                },
+                {
+                    "name": "31B 困难",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31B\\]困难"
+                        }
+                    }
+                },
+                {
+                    "name": "31E 普通",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31E\\]普通"
+                        }
+                    }
+                },
+                {
+                    "name": "31E 困难",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31E\\]困难"
+                        }
+                    }
+                },
+                {
+                    "name": "MIX 困难",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[MIX\\]困难"
+                        }
+                    }
+                },
+                {
+                    "name": "无尽模式",
+                    "pipeline_override": {
+                        "SelectArtsBattleMode": {
+                            "next": "SelectArtsBattleEndless"
+                        },
+                        "SelectArtsBattleLevel": {
+                            "expected": "无尽模式"
                         }
                     }
                 }

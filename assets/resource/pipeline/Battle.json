@@ -346,12 +346,24 @@
             "AUTOOFF",
             "AUTO OFF"
         ],
-        "next": "Full"
+        "interrupt": [
+            "Full",
+            "Auto"
+        ],
+        "next": "IsAutoOn"
     },
     "Full": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "FULL"
+    },
+    "IsAutoOn": {
+        "recognition": "OCR",
+        "expected": "AUTO ON",
+        "replace": [
+            "AUTOON",
+            "AUTO ON"
+        ]
     },
     "EndFight": {
         "recognition": "OCR",
@@ -417,8 +429,7 @@
     "AtAutoSweep": {
         "recognition": "OCR",
         "expected": "结束自动刷图",
-        "post_delay": 1000,
-        "next": "EndHBR"
+        "post_delay": 1000
     },
     "EndAutoSweep": {
         "recognition": "OCR",
