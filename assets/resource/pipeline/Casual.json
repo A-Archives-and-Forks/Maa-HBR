@@ -53,9 +53,11 @@
             150
         ],
         "post_wait_freezes": 500,
+        "timeout": 7200000,
         "next": [
             "SelectArtsBattleNormal",
-            "SwipeToTop"
+            "SwipeToTop",
+            "EndArtsBattle"
         ]
     },
     "SelectArtsBattleEndless": {
@@ -68,9 +70,11 @@
             177,
             62
         ],
+        "timeout": 7200000,
         "next": [
             "SelectArtsBattleEndless",
-            "SwipeToTop"
+            "SwipeToTop",
+            "EndArtsBattle"
         ]
     },
     "SwipeToTop": {
@@ -130,7 +134,7 @@
         "next": [
             "EndArtsBattle"
         ],
-        "timeout": 1200000
+        "timeout": 7200000
     },
     "EndArtsBattle": {
         "recognition": "OCR",
