@@ -23,7 +23,7 @@
 
 本项目使用图像识别+模拟控制，用于简化Heaven Burns Red/炽焰天穹/绯染天空/红烧天堂每日流程。
 
-由 [MaaFramework](https://github.com/MaaAssistantArknights/MaaFramework) 和 [MFAWPF](https://github.com/SweetSmellFox/MFAWPF) 强力驱动
+由 [MaaFramework](https://github.com/MaaAssistantArknights/MaaFramework) 和 [MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia) 强力驱动
 
 
 ## 环境要求
@@ -83,5 +83,5 @@ GUI界面：![GUI](assets/resource/image/GUI.png)
 
 - [MaaFramework](https://github.com/MaaAssistantArknights/MaaFramework)  
 基于图像识别的自动化黑盒测试框架
-- [MFAWPF](https://github.com/SweetSmellFox/MFAWPF)  
+- [MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)  
 基于 MAA 全新架构的 通用 GUI。

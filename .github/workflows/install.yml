@@ -113,7 +113,7 @@ jobs:
         shell: bash
         run: |
           mv ./install/MFAAvalonia.exe ./install/Maa-HBR.exe
-          cp ./assets/resource/image/logo.ico ./install
+          cp ./assets/resource/image/logo.ico ./install/Assets
 
       - uses: actions/upload-artifact@v4
         with:
