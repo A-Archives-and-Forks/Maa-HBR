@@ -1,29 +1,27 @@
 {
     "StartHBR": {
         "action": "StartApp",
-        "package": "com.bilibili.heaven",
-        "interrupt": [
-            "AcceptAgreement",
-            "Login",
-            "SkipCutscene",
-            "EndAutoSweep",
-            "EndFight",
-            "ClickScreen",
-            "SkipStory",
-            "GoBack",
-            "ExitMenu",
-            "HomepageButton",
-            "OK"
-        ],
-        "next": [
-            "AtHomepage"
-        ],
-        "timeout": 300000
+        "package": "com.bilibili.heaven"
     },
     "EndHBR": {
         "pre_delay": 2000,
         "action": "StopApp",
         "package": "com.bilibili.heaven"
+    },
+    "EndHBR_PC": {
+        "action": "DoNothing",
+        "pre_delay": 2000,
+        "interrupt": "Menu",
+        "next": "EndGame"
+    },
+    "EndGame": {
+        "recognition": "OCR",
+        "expected": "结束游戏",
+        "action": "Click",
+        "next": [
+            "OK",
+            "EndGame"
+        ]
     },
     "AcceptAgreement": {
         "recognition": "OCR",
@@ -107,13 +105,22 @@
     },
     "GoBackHomepage": {
         "interrupt": [
+            "AcceptAgreement",
+            "Login",
+            "SkipCutscene",
+            "EndAutoSweep",
+            "EndFight",
+            "ClickScreen",
+            "SkipStory",
             "GoBack",
             "ExitMenu",
-            "HomepageButton"
+            "HomepageButton",
+            "OK"
         ],
         "next": [
             "AtHomepage"
-        ]
+        ],
+        "timeout": 300000
     },
     "HomepageButton": {
         "recognition": "OCR",
@@ -202,6 +209,40 @@
         "duration": 2000,
         "post_delay": 2000
     },
+    "SwipeLeft": {
+        "action": "Swipe",
+        "begin": [
+            681,
+            320,
+            0,
+            0
+        ],
+        "end": [
+            200,
+            320,
+            0,
+            0
+        ],
+        "duration": 2000,
+        "post_delay": 2000
+    },
+    "SwipeRight": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            320,
+            0,
+            0
+        ],
+        "end": [
+            681,
+            320,
+            0,
+            0
+        ],
+        "duration": 2000,
+        "post_delay": 2000
+    },
     "SkipCutscene": {
         "recognition": "OCR",
         "roi": [
@@ -226,8 +267,7 @@
         "expected": "菜单",
         "action": "Click",
         "pre_wait_freezes": 500,
-        "post_wait_freezes": 500,
-        "next": "UnitButton"
+        "post_wait_freezes": 500
     },
     "UnitButton": {
         "recognition": "OCR",
@@ -245,12 +285,17 @@
     "ExitMenu": {
         "recognition": "OCR",
         "roi": [
-            411,
-            19,
-            116,
-            55
+            361,
+            547,
+            530,
+            156
         ],
-        "expected": "Rank",
+        "expected": [
+            "队伍",
+            "角色",
+            "风格",
+            "持有物"
+        ],
         "action": "Click",
         "target": [
             27,

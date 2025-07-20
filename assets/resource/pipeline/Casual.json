@@ -4,10 +4,10 @@
         "recognition": "OCR",
         "expected": "休闲",
         "roi": [
-            800,
-            603,
-            198,
-            86
+            326,
+            558,
+            954,
+            162
         ],
         "post_wait_freezes": 500,
         "interrupt": [
@@ -149,9 +149,9 @@
         "post_wait_freezes": 1000,
         "interrupt": "SkipCutscene",
         "next": [
-            "EndArtsBattle",
             "SelectArtsBattleMode",
-            "SelectArtsBattleLevel"
+            "SelectArtsBattleLevel",
+            "EndArtsBattle"
         ],
         "timeout": 1200000
     }

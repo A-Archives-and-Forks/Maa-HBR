@@ -87,10 +87,10 @@
     "SelectOrbBossType": {
         "recognition": "OCR",
         "action": "Click",
-        "expected": "INFORMATION",
+        "expected": "OrbBoss",
         "post_wait_freezes": 500,
-        "interrupt": "SwipeUp",
-        "next": "SelectBoss"
+        "interrupt": "SwipeLeft",
+        "next": "SelectOrbBoss"
     },
     "SelectBoss": {
         "recognition": "OCR",
@@ -118,25 +118,12 @@
         "post_wait_freezes": 500,
         "next": "TopLevel"
     },
-    "EnterOrbBossDoor": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            0,
-            0,
-            1280,
-            200
-        ],
-        "template": [
-            "ExclamationMark__254_32_62_50__204_0_162_132.png",
-            "ExclamationMark2__273_17_77_77__223_0_177_144.png"
-        ],
-        "threshold": 0.5,
+    "SelectOrbBoss": {
+        "recognition": "OCR",
         "action": "Click",
         "post_wait_freezes": 500,
-        "next": [
-            "TopLevel",
-            "EnterOrbBossDoor"
-        ]
+        "interrupt": "AddOrbLevel",
+        "next": "HasSelectedOrbLevel"
     },
     "SelectLevel": {
         "recognition": "OCR",
@@ -171,6 +158,27 @@
             "StartFight",
             "TopLevel"
         ]
+    },
+    "AddOrbLevel": {
+        "action": "Click",
+        "target": [
+            967,
+            133,
+            22,
+            25
+        ],
+        "post_wait_freezes": 500
+    },
+    "HasSelectedOrbLevel": {
+        "recognition": "OCR",
+        "roi": [
+            801,
+            123,
+            107,
+            40
+        ],
+        "action": "DoNothing",
+        "next": "StartFight"
     },
     "StartFight": {
         "recognition": "OCR",
@@ -324,23 +332,30 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "出击",
+        "post_wait_freezes": 1000,
         "interrupt": [
+            "OK",
             "Auto",
             "ClickScreen",
             "EndFight",
             "GiveUp",
             "GoBack",
-            "HomepageButton",
-            "OK"
+            "HomepageButton"
         ],
         "next": [
             "AtHomepage"
         ],
-        "timeout": 300000
+        "timeout": 1200000
     },
     "Auto": {
         "recognition": "OCR",
         "action": "Click",
+        "roi": [
+            166,
+            0,
+            476,
+            80
+        ],
         "expected": "AUTO OFF",
         "replace": [
             "AUTOOFF",
@@ -355,10 +370,22 @@
     "Full": {
         "recognition": "OCR",
         "action": "Click",
+        "roi": [
+            166,
+            0,
+            476,
+            80
+        ],
         "expected": "FULL"
     },
     "IsAutoOn": {
         "recognition": "OCR",
+        "roi": [
+            166,
+            0,
+            476,
+            80
+        ],
         "expected": "AUTO ON",
         "replace": [
             "AUTOON",

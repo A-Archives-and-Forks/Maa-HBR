@@ -1,6 +1,6 @@
 {
     "name": "Maa-HBR",
-    "version": "v0.4.1",
+    "version": "v0.5.0",
     "url": "https://github.com/KarylDAZE/Maa-HBR",
     "custom_title": "Maa-HBR",
     "mirrorchyan_rid": "Maa-HBR",
@@ -9,6 +9,14 @@
         {
             "name": "安卓端",
             "type": "Adb"
+        },
+        {
+            "name": "PC端",
+            "type": "Win32",
+            "win32": {
+                "input": 1,
+                "screencap": 4
+            }
         }
     ],
     "resource": [
@@ -23,8 +31,14 @@
         {
             "name": "启动游戏",
             "entry": "StartHBR",
-            "checked": true,
-            "doc": "启动游戏(若原本未启动)，并回到主页"
+            "check": true,
+            "doc": "启动游戏(若原本未启动)。\n注：无法通过此任务启动PC端HBR。若需要启动PC端HBR请在设置-启动设置中进行相关设定"
+        },
+        {
+            "name": "回到主页",
+            "entry": "GoBackHomepage",
+            "check": true,
+            "doc": "启动游戏后必须回到主页，才能正常执行其他任务。"
         },
         {
             "name": "棱镜战",
@@ -46,10 +60,10 @@
                     ]
                 }
             },
-            "checked": false,
+            "check": false,
             "repeatable": true,
             "repeat_count": 1,
-            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战"
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
         },
         {
             "name": "宝石棱镜战",
@@ -65,16 +79,17 @@
                     "expected": "宝石棱镜战"
                 }
             },
-            "checked": false,
+            "check": false,
             "repeatable": true,
             "repeat_count": 1,
-            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战"
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
         },
         {
             "name": "光球BOSS",
             "entry": "StartBattle",
             "option": [
                 "光球boss",
+                "光球boss难度",
                 "消耗体力/入场券",
                 "消耗数量",
                 "选择队伍"
@@ -83,16 +98,12 @@
                 "SelectStageType": {
                     "expected": "光球BOSS",
                     "next": "SelectOrbBossType"
-                },
-                "SelectBoss": {
-                    "timeout": 30000,
-                    "next": "EnterOrbBossDoor"
                 }
             },
-            "checked": false,
+            "check": false,
             "repeatable": true,
             "repeat_count": 1,
-            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战"
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
         },
         {
             "name": "当期活动棱镜战",
@@ -107,10 +118,10 @@
                     "next": "Event"
                 }
             },
-            "checked": false,
+            "check": false,
             "repeatable": true,
             "repeat_count": 1,
-            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战"
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
         },
         {
             "name": "精选活动棱镜战",
@@ -138,15 +149,15 @@
                     ]
                 }
             },
-            "checked": false,
+            "check": false,
             "repeatable": true,
             "repeat_count": 1,
-            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战"
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
         },
         {
             "name": "每日免费扭蛋",
             "entry": "Lottery",
-            "checked": true,
+            "check": true,
             "repeatable": true,
             "repeat_count": 1,
             "doc": "需要设置为不小于当前存在免费扭蛋次数的卡池数。例如有2个卡池有免费扭蛋次数，则至少设置为2。"
@@ -154,12 +165,12 @@
         {
             "name": "领取礼物",
             "entry": "Gift",
-            "checked": true
+            "check": true
         },
         {
             "name": "领取任务奖励",
             "entry": "Mission",
-            "checked": true
+            "check": true
         },
         {
             "name": "剧情迷宫挂机",
@@ -168,7 +179,12 @@
                 "选择队伍",
                 "选择剧情迷宫"
             ],
-            "checked": false,
+            "pipeline_override": {
+                "Menu": {
+                    "next": "UnitButton"
+                }
+            },
+            "check": false,
             "doc": "迷宫挂机刷取溶液或提升技能等级"
         },
         {
@@ -199,7 +215,7 @@
                     "expected": "请选择训练项目"
                 }
             },
-            "checked": false,
+            "check": false,
             "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。v0.4.0版本开始，离线挂机不会自动退出游戏。"
         },
         {
@@ -215,7 +231,7 @@
                     "next": "ChallengeSetting"
                 }
             },
-            "checked": false,
+            "check": false,
             "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。v0.4.0版本开始，离线挂机不会自动退出游戏。"
         },
         {
@@ -231,6 +247,7 @@
                     "next": "StartArtsBattle"
                 },
                 "SelectUnit": {
+                    "post_wait_freezes": 1000,
                     "interrupt": "GoBack",
                     "next": "StartArtsBattle"
                 }
@@ -238,8 +255,12 @@
             "doc": "建议在技术模拟战前，先执行竞技场或时之修炼场离线挂机，充分获取收益"
         },
         {
-            "name": "退出游戏",
+            "name": "退出游戏(安卓端)",
             "entry": "EndHBR"
+        },
+        {
+            "name": "退出游戏(PC端)",
+            "entry": "EndHBR_PC"
         }
     ],
     "option": {
@@ -329,14 +350,14 @@
                     "name": "暴击光球-异度监测之眼R",
                     "pipeline_override": {
                         "SelectOrbBossType": {
-                            "target_offset": [
-                                -260,
-                                65,
-                                -150,
-                                -20
+                            "target": [
+                                172,
+                                115,
+                                155,
+                                25
                             ]
                         },
-                        "SelectBoss": {
+                        "SelectOrbBoss": {
                             "expected": "异度监测之眼R"
                         }
                     }
@@ -345,14 +366,14 @@
                     "name": "复活光球-异度监测之眼B",
                     "pipeline_override": {
                         "SelectOrbBossType": {
-                            "target_offset": [
-                                -260,
-                                65,
-                                -150,
-                                -20
+                            "target": [
+                                172,
+                                115,
+                                155,
+                                25
                             ]
                         },
-                        "SelectBoss": {
+                        "SelectOrbBoss": {
                             "expected": "异度监测之眼B"
                         }
                     }
@@ -361,14 +382,14 @@
                     "name": "驱动光球-异度监测之眼Y",
                     "pipeline_override": {
                         "SelectOrbBossType": {
-                            "target_offset": [
-                                -260,
-                                65,
-                                -150,
-                                -20
+                            "target": [
+                                172,
+                                115,
+                                155,
+                                25
                             ]
                         },
-                        "SelectBoss": {
+                        "SelectOrbBoss": {
                             "expected": "异度监测之眼Y"
                         }
                     }
@@ -377,14 +398,14 @@
                     "name": "防护光球-异度监测之眼W",
                     "pipeline_override": {
                         "SelectOrbBossType": {
-                            "target_offset": [
-                                -260,
-                                65,
-                                -150,
-                                -20
+                            "target": [
+                                172,
+                                115,
+                                155,
+                                25
                             ]
                         },
-                        "SelectBoss": {
+                        "SelectOrbBoss": {
                             "expected": "异度监测之眼W"
                         }
                     }
@@ -393,14 +414,14 @@
                     "name": "强攻光球-异度监测之眼P",
                     "pipeline_override": {
                         "SelectOrbBossType": {
-                            "target_offset": [
-                                -260,
-                                65,
-                                -150,
-                                -20
+                            "target": [
+                                172,
+                                115,
+                                155,
+                                25
                             ]
                         },
-                        "SelectBoss": {
+                        "SelectOrbBoss": {
                             "expected": "异度监测之眼P"
                         }
                     }
@@ -409,21 +430,15 @@
                     "name": "集中光球-空无R",
                     "pipeline_override": {
                         "SelectOrbBossType": {
-                            "target_offset": [
-                                80,
-                                65,
-                                -150,
-                                -20
+                            "target": [
+                                569,
+                                114,
+                                139,
+                                28
                             ]
                         },
-                        "SelectBoss": {
-                            "expected": "空无R",
-                            "target_offset": [
-                                800,
-                                30,
-                                -400,
-                                -20
-                            ]
+                        "SelectOrbBoss": {
+                            "expected": "空无R"
                         }
                     }
                 },
@@ -431,21 +446,15 @@
                     "name": "填充光球-空无B",
                     "pipeline_override": {
                         "SelectOrbBossType": {
-                            "target_offset": [
-                                80,
-                                65,
-                                -150,
-                                -20
+                            "target": [
+                                569,
+                                114,
+                                139,
+                                28
                             ]
                         },
-                        "SelectBoss": {
-                            "expected": "空无B",
-                            "target_offset": [
-                                800,
-                                30,
-                                -400,
-                                -20
-                            ]
+                        "SelectOrbBoss": {
+                            "expected": "空无B"
                         }
                     }
                 },
@@ -453,21 +462,15 @@
                     "name": "治愈光球-空无Y",
                     "pipeline_override": {
                         "SelectOrbBossType": {
-                            "target_offset": [
-                                80,
-                                65,
-                                -150,
-                                -20
+                            "target": [
+                                569,
+                                114,
+                                139,
+                                28
                             ]
                         },
-                        "SelectBoss": {
-                            "expected": "空无Y",
-                            "target_offset": [
-                                800,
-                                30,
-                                -400,
-                                -20
-                            ]
+                        "SelectOrbBoss": {
+                            "expected": "空无Y"
                         }
                     }
                 },
@@ -475,21 +478,15 @@
                     "name": "软化光球-空无W",
                     "pipeline_override": {
                         "SelectOrbBossType": {
-                            "target_offset": [
-                                80,
-                                65,
-                                -150,
-                                -20
+                            "target": [
+                                569,
+                                114,
+                                139,
+                                28
                             ]
                         },
-                        "SelectBoss": {
-                            "expected": "空无W",
-                            "target_offset": [
-                                800,
-                                30,
-                                -400,
-                                -20
-                            ]
+                        "SelectOrbBoss": {
+                            "expected": "空无W"
                         }
                     }
                 },
@@ -497,21 +494,31 @@
                     "name": "衰灭光球-空无P",
                     "pipeline_override": {
                         "SelectOrbBossType": {
-                            "target_offset": [
-                                80,
-                                65,
-                                -150,
-                                -20
+                            "target": [
+                                569,
+                                114,
+                                139,
+                                28
                             ]
                         },
-                        "SelectBoss": {
-                            "expected": "空无P",
-                            "target_offset": [
-                                800,
-                                30,
-                                -400,
-                                -20
+                        "SelectOrbBoss": {
+                            "expected": "空无P"
+                        }
+                    }
+                },
+                {
+                    "name": "阿蒙之门R",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                954,
+                                111,
+                                136,
+                                31
                             ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "阿蒙之门R"
                         }
                     }
                 },
@@ -519,19 +526,104 @@
                     "name": "阿蒙之门B",
                     "pipeline_override": {
                         "SelectOrbBossType": {
-                            "target_offset": [
-                                400,
-                                65,
-                                -150,
-                                -20
+                            "target": [
+                                954,
+                                111,
+                                136,
+                                31
                             ]
                         },
-                        "SelectBoss": {
+                        "SelectOrbBoss": {
                             "expected": "阿蒙之门B"
+                        }
+                    }
+                },
+                {
+                    "name": "阿蒙之门Y",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                954,
+                                111,
+                                136,
+                                31
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "阿蒙之门Y"
+                        }
+                    }
+                },
+                {
+                    "name": "阿蒙之门W",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                954,
+                                111,
+                                136,
+                                31
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "阿蒙之门W"
+                        }
+                    }
+                },
+                {
+                    "name": "阿蒙之门P",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                954,
+                                111,
+                                136,
+                                31
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "阿蒙之门P"
                         }
                     }
                 }
             ]
+        },
+        "光球boss难度": {
+            "cases": [
+                {
+                    "name": "Lv.1",
+                    "pipeline_override": {
+                        "HasSelectedOrbLevel": {
+                            "expected": "1"
+                        }
+                    }
+                },
+                {
+                    "name": "Lv.2",
+                    "pipeline_override": {
+                        "HasSelectedOrbLevel": {
+                            "expected": "2"
+                        }
+                    }
+                },
+                {
+                    "name": "Lv.3",
+                    "pipeline_override": {
+                        "HasSelectedOrbLevel": {
+                            "expected": "3"
+                        }
+                    }
+                },
+                {
+                    "name": "Lv.4",
+                    "pipeline_override": {
+                        "HasSelectedOrbLevel": {
+                            "expected": "4"
+                        }
+                    }
+                }
+            ],
+            "default_case": "Lv.4"
         },
         "消耗数量": {
             "cases": [
@@ -1221,6 +1313,36 @@
                             "expected": "推荐战力：15,300"
                         }
                     }
+                },
+                {
+                    "name": "绝级4",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "expected": "等级4",
+                            "target_offset": [
+                                562,
+                                21,
+                                -10,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "特别训练1",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "expected": "推荐战力：15,800"
+                        }
+                    }
+                },
+                {
+                    "name": "特别训练2",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "expected": "推荐战力：17,000"
+                        }
+                    }
                 }
             ]
         },
@@ -1243,7 +1365,8 @@
                         "PreviousStory": {
                             "expected": [
                                 "第三章",
-                                "第四章"
+                                "第四章",
+                                "第五章"
                             ]
                         },
                         "NextStory": {
@@ -1279,6 +1402,17 @@
                     "pipeline_override": {
                         "UseAPOrTickets": {
                             "expected": "体力"
+                        }
+                    }
+                },
+                {
+                    "name": "备用体力",
+                    "pipeline_override": {
+                        "UseAPOrTickets": {
+                            "expected": "体力"
+                        },
+                        "ConsumeAPStones": {
+                            "expected": "消耗备用体力"
                         }
                     }
                 },
@@ -1366,6 +1500,22 @@
                     "pipeline_override": {
                         "SelectArtsBattleLevel": {
                             "expected": "\\[31B\\]困难"
+                        }
+                    }
+                },
+                {
+                    "name": "31C 普通",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31C\\]普通"
+                        }
+                    }
+                },
+                {
+                    "name": "31C 困难",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31C\\]困难"
                         }
                     }
                 },
