@@ -340,7 +340,8 @@
             "EndFight",
             "GiveUp",
             "GoBack",
-            "HomepageButton"
+            "HomepageButton",
+            "SkipTimeLimitShop"
         ],
         "next": [
             "AtHomepage"

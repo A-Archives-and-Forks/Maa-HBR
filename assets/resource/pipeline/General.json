@@ -115,7 +115,8 @@
             "GoBack",
             "ExitMenu",
             "HomepageButton",
-            "OK"
+            "OK",
+            "SkipTimeLimitShop"
         ],
         "next": [
             "AtHomepage"
@@ -138,12 +139,13 @@
     },
     "ForceGoBackHomepage": {
         "roi": [
-            27,
-            22,
-            50,
-            55
+            0,
+            0,
+            20,
+            20
         ],
         "action": "Click",
+        "post_wait_freezes": 1000,
         "next": [
             "AtHomepage",
             "ForceGoBackHomepage"
@@ -311,5 +313,23 @@
         "expected": "OK",
         "pre_wait_freezes": 500,
         "post_wait_freezes": 500
+    },
+    "SkipTimeLimitShop": {
+        "recognition": "OCR",
+        "roi": [
+            469,
+            80,
+            329,
+            113
+        ],
+        "expected": "限时商店",
+        "action": "Click",
+        "target": [
+            0,
+            0,
+            20,
+            20
+        ],
+        "pre_wait_freezes": 500
     }
 }
