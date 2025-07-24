@@ -2,10 +2,10 @@
     "Lottery": {
         "recognition": "OCR",
         "roi": [
-            158,
-            634,
-            58,
-            58
+            161,
+            644,
+            53,
+            39
         ],
         "expected": "扭蛋",
         "action": "Click",
@@ -13,7 +13,8 @@
         "interrupt": "OK",
         "next": [
             "FreeLottery",
-            "TraverseLottery"
+            "TraverseLottery",
+            "Lottery"
         ]
     },
     "TraverseLottery": {

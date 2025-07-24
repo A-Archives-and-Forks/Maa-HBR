@@ -17,7 +17,10 @@
             "ClickScreen",
             "SkipStory"
         ],
-        "next": "EnterArtsBattle"
+        "next": [
+            "EnterArtsBattle",
+            "StartCasual"
+        ]
     },
     "EnterArtsBattle": {
         "recognition": "OCR",
@@ -55,9 +58,9 @@
         "post_wait_freezes": 500,
         "timeout": 7200000,
         "next": [
-            "SelectArtsBattleNormal",
             "SwipeToTop",
-            "EndArtsBattle"
+            "EndArtsBattle",
+            "SelectArtsBattleNormal"
         ]
     },
     "SelectArtsBattleEndless": {
@@ -72,9 +75,9 @@
         ],
         "timeout": 7200000,
         "next": [
-            "SelectArtsBattleEndless",
             "SwipeToTop",
-            "EndArtsBattle"
+            "EndArtsBattle",
+            "SelectArtsBattleEndless"
         ]
     },
     "SwipeToTop": {
@@ -104,7 +107,10 @@
         ],
         "pre_wait_freezes": 500,
         "index": 0,
-        "next": "SelectUnitButton"
+        "next": [
+            "SelectUnitButton",
+            "SelectArtsBattleLevel"
+        ]
     },
     "SelectUnitButton": {
         "recognition": "OCR",
@@ -112,9 +118,9 @@
         "expected": "选择队伍",
         "post_wait_freezes": 500,
         "next": [
-            "SelectUnitButton",
             "hasSelectedUnit",
-            "UnitList"
+            "UnitList",
+            "SelectUnitButton"
         ]
     },
     "StartArtsBattle": {

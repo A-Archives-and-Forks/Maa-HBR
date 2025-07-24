@@ -75,7 +75,20 @@
     "GoBack": {
         "recognition": "TemplateMatch",
         "template": [
-            "GoBack__27_22_50_55__0_0_127_127.png",
+            "GoBack__27_22_50_55__0_0_127_127.png"
+        ],
+        "roi": [
+            0,
+            0,
+            1225,
+            190
+        ],
+        "action": "Click",
+        "post_wait_freezes": 2000
+    },
+    "ExitWindow": {
+        "recognition": "TemplateMatch",
+        "template": [
             "TopRightGoBack__1121_103_69_67__1071_53_169_167.png"
         ],
         "roi": [
@@ -85,7 +98,7 @@
             190
         ],
         "action": "Click",
-        "post_delay": 1000
+        "post_wait_freezes": 2000
     },
     "SkipHomepageDialogue": {
         "recognition": "TemplateMatch",
@@ -113,6 +126,7 @@
             "ClickScreen",
             "SkipStory",
             "GoBack",
+            "ExitWindow",
             "ExitMenu",
             "HomepageButton",
             "OK",

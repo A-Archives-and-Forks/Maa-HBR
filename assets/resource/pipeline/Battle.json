@@ -19,7 +19,8 @@
         "expected": "主线剧情",
         "post_wait_freezes": 500,
         "next": [
-            "SelectStageType"
+            "SelectStageType",
+            "MainStory"
         ]
     },
     "StrengthenAndCultivate": {
@@ -58,7 +59,10 @@
         ],
         "post_wait_freezes": 500,
         "interrupt": "SwipeUp",
-        "next": "SelectBoss"
+        "next": [
+            "SelectBoss",
+            "SelectStageType"
+        ]
     },
     "SelectEvent": {
         "recognition": "OCR",

@@ -9,7 +9,10 @@
             167
         ],
         "expected": "任务",
-        "next": "MonthlyMission",
+        "next": [
+            "MonthlyMission",
+            "Mission"
+        ],
         "post_wait_freezes": 500
     },
     "GetReward": {

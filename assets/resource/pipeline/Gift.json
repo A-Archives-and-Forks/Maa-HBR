@@ -10,7 +10,10 @@
         ],
         "expected": "礼物",
         "post_wait_freezes": 500,
-        "next": "GiftBox"
+        "next": [
+            "GiftBox",
+            "Gift"
+        ]
     },
     "GiftBox": {
         "recognition": "OCR",
