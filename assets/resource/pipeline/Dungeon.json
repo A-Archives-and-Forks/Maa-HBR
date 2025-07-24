@@ -86,7 +86,16 @@
     },
     "StartFromTheMiddle": {
         "recognition": "OCR",
-        "expected": "从中途开始",
+        "roi": [
+            639,
+            230,
+            354,
+            267
+        ],
+        "expected": [
+            "从中途开始",
+            "追溯过去"
+        ],
         "action": "Click",
         "interrupt": [
             "PreviousTime",
