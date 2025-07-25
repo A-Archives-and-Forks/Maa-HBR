@@ -12,22 +12,44 @@
         "post_wait_freezes": 500,
         "interrupt": "OK",
         "next": [
-            "FreeLottery",
-            "TraverseLottery",
+            "AtLottery",
             "Lottery"
         ]
     },
-    "TraverseLottery": {
-        "recognition": "TemplateMatch",
+    "AtLottery": {
+        "recognition": "OCR",
         "roi": [
-            1192,
-            550,
-            66,
-            96
+            86,
+            7,
+            112,
+            74
         ],
-        "template": "NextLottery__1196_550_32_96__1146_500_132_196.png",
-        "green_mask": true,
-        "threshold": 0.1,
+        "expected": "Lottery",
+        "post_wait_freezes": 500,
+        "next": [
+            "FreeLottery",
+            "TraverseLottery"
+        ]
+    },
+    "TraverseLottery": {
+        "recognition": "OCR",
+        "roi": [
+            760,
+            539,
+            504,
+            122
+        ],
+        "expected": [
+            "还剩",
+            "扭蛋",
+            "Step"
+        ],
+        "target": [
+            809,
+            582,
+            129,
+            37
+        ],
         "action": "Click",
         "rate_limit": 2000,
         "post_delay": 500,
