@@ -133,12 +133,14 @@
             304,
             72
         ],
-        "post_wait_freezes": 500,
+        "pre_wait_freezes": 1000,
+        "post_wait_freezes": 1000,
         "interrupt": [
             "Auto"
         ],
         "next": [
-            "EndArtsBattle"
+            "EndArtsBattle",
+            "StartArtsBattle"
         ],
         "timeout": 7200000
     },
@@ -156,7 +158,7 @@
         "interrupt": "SkipCutscene",
         "next": [
             "SelectArtsBattleMode",
-            "SelectArtsBattleLevel",
+            "SwipeToTop",
             "EndArtsBattle"
         ],
         "timeout": 1200000
