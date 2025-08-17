@@ -69,5 +69,66 @@
             "GetOK",
             "GoBackHomepage"
         ]
+    },
+    "WeeklyFreeGift": {
+        "post_wait_freezes": 1000,
+        "next": [
+            "HasWeeklyFreeGift",
+            "GoBackHomepage"
+        ]
+    },
+    "HasWeeklyFreeGift": {
+        "recognition": "OCR",
+        "expected": "免费礼包",
+        "roi": [
+            921,
+            34,
+            252,
+            83
+        ],
+        "action": "Click",
+        "target": [
+            1113,
+            40,
+            25,
+            26
+        ],
+        "post_wait_freezes": 1000,
+        "next": [
+            "PurchaseWeeklyFreeGift",
+            "HasWeeklyFreeGift"
+        ]
+    },
+    "PurchaseWeeklyFreeGift": {
+        "recognition": "OCR",
+        "expected": "每周免费礼包",
+        "action": "Click",
+        "target_offset": [
+            14,
+            114,
+            -30,
+            0
+        ],
+        "post_wait_freezes": 1000,
+        "next": [
+            "ConfirmPurchase",
+            "PurchaseWeeklyFreeGift"
+        ]
+    },
+    "ConfirmPurchase": {
+        "recognition": "OCR",
+        "expected": "进行购买",
+        "roi": [
+            295,
+            458,
+            726,
+            178
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "ConfirmPurchase",
+            "GoBackHomepage"
+        ]
     }
 }

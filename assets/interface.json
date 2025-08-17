@@ -1,6 +1,6 @@
 {
     "name": "Maa-HBR",
-    "version": "v0.5.6",
+    "version": "v0.5.7",
     "url": "https://github.com/KarylDAZE/Maa-HBR",
     "custom_title": "Maa-HBR",
     "mirrorchyan_rid": "Maa-HBR",
@@ -170,6 +170,11 @@
         {
             "name": "领取任务奖励",
             "entry": "Mission",
+            "check": true
+        },
+        {
+            "name": "领取每周免费礼包",
+            "entry": "WeeklyFreeGift",
             "check": true
         },
         {
