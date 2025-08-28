@@ -152,18 +152,22 @@
         "next": "OK"
     },
     "ForceGoBackHomepage": {
+        "post_wait_freezes": 1000,
+        "interrupt": [
+            "ExitWindow",
+            "ClickTopLeft"
+        ],
+        "next": "AtHomepage"
+    },
+    "ClickTopLeft": {
+        "action": "Click",
         "roi": [
             0,
             0,
             20,
             20
         ],
-        "action": "Click",
-        "post_wait_freezes": 1000,
-        "next": [
-            "AtHomepage",
-            "ForceGoBackHomepage"
-        ]
+        "post_wait_freezes": 1000
     },
     "Click": {
         "action": "Click",
