@@ -13,6 +13,7 @@
         "interrupt": "OK",
         "next": [
             "AtLottery",
+            "AtLottery1",
             "Lottery"
         ]
     },
@@ -25,6 +26,21 @@
             74
         ],
         "expected": "Lottery",
+        "post_wait_freezes": 500,
+        "next": [
+            "FreeLottery",
+            "TraverseLottery"
+        ]
+    },
+    "AtLottery1": {
+        "recognition": "OCR",
+        "roi": [
+            68,
+            673,
+            80,
+            24
+        ],
+        "expected": "扭蛋",
         "post_wait_freezes": 500,
         "next": [
             "FreeLottery",

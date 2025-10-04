@@ -1,6 +1,6 @@
 {
     "name": "Maa-HBR",
-    "version": "v0.5.9",
+    "version": "v0.5.10",
     "url": "https://github.com/KarylDAZE/Maa-HBR",
     "custom_title": "Maa-HBR",
     "mirrorchyan_rid": "Maa-HBR",
@@ -163,6 +163,11 @@
             "doc": "需要设置为不小于当前存在免费扭蛋次数的卡池数。例如有2个卡池有免费扭蛋次数，则至少设置为2。"
         },
         {
+            "name": "领取每周免费礼包",
+            "entry": "WeeklyFreeGift",
+            "check": true
+        },
+        {
             "name": "领取礼物",
             "entry": "Gift",
             "check": true
@@ -170,11 +175,6 @@
         {
             "name": "领取任务奖励",
             "entry": "Mission",
-            "check": true
-        },
-        {
-            "name": "领取每周免费礼包",
-            "entry": "WeeklyFreeGift",
             "check": true
         },
         {
