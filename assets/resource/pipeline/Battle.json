@@ -350,6 +350,7 @@
             "ClickScreen",
             "EndFight",
             "GiveUp",
+            "ExitWindow",
             "GoBack",
             "HomepageButton",
             "SkipTimeLimitShop"

@@ -67,6 +67,10 @@
             0.7,
             0.8
         ],
+        "interrupt": [
+            "ExitWindow",
+            "GoBack"
+        ],
         "next": [
             "SkipHomepageDialogue",
             "EndHomepage"
