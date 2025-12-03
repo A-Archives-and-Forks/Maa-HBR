@@ -1,14 +1,16 @@
 {
     "StartBattle": {
+        "interrupt": [
+            "GoBackHomepage",
+            "Auto",
+            "EndFight",
+            "ClickScreen",
+            "SkipStory"
+        ],
         "next": [
             "StrengthenAndCultivate",
             "SelectStageType",
-            "SelectBoss",
-            "[JumpBack]GoBackHomepage",
-            "[JumpBack]Auto",
-            "[JumpBack]EndFight",
-            "[JumpBack]ClickScreen",
-            "[JumpBack]SkipStory"
+            "SelectBoss"
         ]
     },
     "MainStory": {
@@ -62,10 +64,10 @@
             0
         ],
         "post_wait_freezes": 500,
+        "interrupt": "SwipeUp",
         "next": [
             "SelectBoss",
-            "SelectStageType",
-            "[JumpBack]SwipeUp"
+            "SelectStageType"
         ]
     },
     "SelectEvent": {
@@ -90,19 +92,15 @@
         "action": "Click",
         "expected": "活动棱镜战",
         "post_wait_freezes": 500,
-        "next": [
-            "TopLevel"
-        ]
+        "next": "TopLevel"
     },
     "SelectOrbBossType": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "OrbBoss",
         "post_wait_freezes": 500,
-        "next": [
-            "SelectOrbBoss",
-            "[JumpBack]SwipeLeft"
-        ]
+        "interrupt": "SwipeLeft",
+        "next": "SelectOrbBoss"
     },
     "SelectBoss": {
         "recognition": "OCR",
@@ -128,18 +126,14 @@
             -2
         ],
         "post_wait_freezes": 500,
-        "next": [
-            "TopLevel"
-        ]
+        "next": "TopLevel"
     },
     "SelectOrbBoss": {
         "recognition": "OCR",
         "action": "Click",
         "post_wait_freezes": 500,
-        "next": [
-            "HasSelectedOrbLevel",
-            "[JumpBack]AddOrbLevel"
-        ]
+        "interrupt": "AddOrbLevel",
+        "next": "HasSelectedOrbLevel"
     },
     "SelectLevel": {
         "recognition": "OCR",
@@ -194,9 +188,7 @@
             40
         ],
         "action": "DoNothing",
-        "next": [
-            "StartFight"
-        ]
+        "next": "StartFight"
     },
     "StartFight": {
         "recognition": "OCR",
@@ -221,12 +213,12 @@
                 595
             ]
         },
+        "interrupt": "OK",
         "next": [
             "UseAPOrTickets",
             "hasSelectedUnit",
             "UnitList",
-            "ConsumeAPStones",
-            "[JumpBack]OK"
+            "ConsumeAPStones"
         ]
     },
     "UseAPOrTickets": {
@@ -239,9 +231,7 @@
         ],
         "expected": "体力",
         "action": "Click",
-        "next": [
-            "AddAP"
-        ]
+        "next": "AddAP"
     },
     "ClearAP": {
         "recognition": "TemplateMatch",
@@ -254,16 +244,12 @@
         "action": "Click",
         "template": "clear_AP_icon__840_396_43_42__790_346_143_142.png",
         "threshold": 0.9,
-        "next": [
-            "APOK"
-        ]
+        "next": "APOK"
     },
     "ZeroAP": {
         "recognition": "OCR",
         "expected": "体力不足",
-        "next": [
-            "ForceGoBackHomepage"
-        ]
+        "next": "ForceGoBackHomepage"
     },
     "AddAP": {
         "action": "Click",
@@ -288,9 +274,7 @@
         ],
         "expected": "1",
         "action": "DoNothing",
-        "next": [
-            "APOK"
-        ]
+        "next": "APOK"
     },
     "APOK": {
         "recognition": "OCR",
@@ -309,9 +293,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "消耗体力石",
-        "next": [
-            "APOK"
-        ]
+        "next": "APOK"
     },
     "hasSelectedUnit": {
         "recognition": "OCR",
@@ -323,9 +305,7 @@
         ],
         "pre_wait_freezes": 500,
         "post_wait_freezes": 500,
-        "next": [
-            "Sally"
-        ]
+        "next": "Sally"
     },
     "UnitList": {
         "recognition": "TemplateMatch",
@@ -339,10 +319,10 @@
         "action": "Click",
         "pre_wait_freezes": 500,
         "post_wait_freezes": 2000,
+        "interrupt": "SwipeUp",
         "next": [
             "SelectUnit",
-            "UnitList",
-            "[JumpBack]SwipeUp"
+            "UnitList"
         ]
     },
     "SelectUnit": {
@@ -357,26 +337,26 @@
         "action": "Click",
         "pre_wait_freezes": 500,
         "post_wait_freezes": 500,
-        "next": [
-            "Sally"
-        ]
+        "next": "Sally"
     },
     "Sally": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "出击",
         "post_wait_freezes": 1000,
+        "interrupt": [
+            "OK",
+            "Auto",
+            "ClickScreen",
+            "EndFight",
+            "GiveUp",
+            "ExitWindow",
+            "GoBack",
+            "HomepageButton",
+            "SkipTimeLimitShop"
+        ],
         "next": [
-            "AtHomepage",
-            "[JumpBack]OK",
-            "[JumpBack]Auto",
-            "[JumpBack]ClickScreen",
-            "[JumpBack]EndFight",
-            "[JumpBack]GiveUp",
-            "[JumpBack]ExitWindow",
-            "[JumpBack]GoBack",
-            "[JumpBack]HomepageButton",
-            "[JumpBack]SkipTimeLimitShop"
+            "AtHomepage"
         ],
         "timeout": 1200000
     },
@@ -394,11 +374,11 @@
             "AUTOOFF",
             "AUTO OFF"
         ],
-        "next": [
-            "IsAutoOn",
-            "[JumpBack]Full",
-            "[JumpBack]Auto"
-        ]
+        "interrupt": [
+            "Full",
+            "Auto"
+        ],
+        "next": "IsAutoOn"
     },
     "Full": {
         "recognition": "OCR",
@@ -445,9 +425,7 @@
         ],
         "expected": "部队编队",
         "pre_wait_freezes": 500,
-        "next": [
-            "StartFight"
-        ]
+        "next": "StartFight"
     },
     "PowerSavingSweep": {
         "recognition": "TemplateMatch",
@@ -463,26 +441,20 @@
             "PowerSavingSweep__809_557_205_70__759_507_305_170.png"
         ],
         "pre_wait_freezes": 500,
-        "next": [
-            "AtAutoSweep",
-            "[JumpBack]OK"
-        ]
+        "interrupt": "OK",
+        "next": "AtAutoSweep"
     },
     "PowerSavingMode": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "省电模式",
-        "next": [
-            "FightAgain"
-        ]
+        "next": "FightAgain"
     },
     "FightAgain": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "再次挑战",
-        "next": [
-            "AtAutoSweep"
-        ]
+        "next": "AtAutoSweep"
     },
     "FightAgainLoop": {
         "action": "Click",
@@ -492,9 +464,7 @@
             128,
             34
         ],
-        "next": [
-            "FightAgainLoop"
-        ]
+        "next": "FightAgainLoop"
     },
     "AtAutoSweep": {
         "recognition": "OCR",
@@ -505,11 +475,13 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "结束自动刷图",
+        "interrupt": [
+            "ClickScreen",
+            "EndFight"
+        ],
         "next": [
             "EndAutoSweep",
-            "AtHomepage",
-            "[JumpBack]ClickScreen",
-            "[JumpBack]EndFight"
+            "AtHomepage"
         ]
     }
 }

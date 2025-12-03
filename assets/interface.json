@@ -1,21 +1,24 @@
 {
+    "interface_version": 2,
     "name": "Maa-HBR",
-    "version": "v0.5.12",
-    "url": "https://github.com/KarylDAZE/Maa-HBR",
-    "custom_title": "Maa-HBR",
+    "label": "Maa-HBR",
+    "version": "v0.6.0",
+    "icon": "assets/resource/image/logo.ico",
+    "github": "https://github.com/KarylDAZE/Maa-HBR",
     "mirrorchyan_rid": "Maa-HBR",
-    "default_controller": "adb",
+    "license": "LICENSE.md",
+    "contact": "https://github.com/KarylDAZE https://space.bilibili.com/36896210",
     "controller": [
         {
-            "name": "安卓端",
+            "name": "模拟器",
             "type": "Adb"
         },
         {
             "name": "PC端",
             "type": "Win32",
             "win32": {
-                "input": 1,
-                "screencap": 4
+                "mouse": "Seize",
+                "screencap": "DXGI_DesktopDup"
             }
         }
     ],
@@ -31,13 +34,13 @@
         {
             "name": "启动游戏",
             "entry": "StartHBR",
-            "check": true,
+            "default_check": true,
             "doc": "启动游戏(若原本未启动)。\n注：无法通过此任务启动PC端HBR。若需要启动PC端HBR请在设置-启动设置中进行相关设定"
         },
         {
             "name": "回到主页",
             "entry": "GoBackHomepage",
-            "check": true,
+            "default_check": true,
             "doc": "启动游戏后必须回到主页，才能正常执行其他任务。"
         },
         {
@@ -60,7 +63,7 @@
                     ]
                 }
             },
-            "check": false,
+            "default_check": false,
             "repeatable": true,
             "repeat_count": 1,
             "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
@@ -79,7 +82,7 @@
                     "expected": "宝石棱镜战"
                 }
             },
-            "check": false,
+            "default_check": false,
             "repeatable": true,
             "repeat_count": 1,
             "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
@@ -100,7 +103,7 @@
                     "next": "SelectOrbBossType"
                 }
             },
-            "check": false,
+            "default_check": false,
             "repeatable": true,
             "repeat_count": 1,
             "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
@@ -118,7 +121,7 @@
                     "next": "Event"
                 }
             },
-            "check": false,
+            "default_check": false,
             "repeatable": true,
             "repeat_count": 1,
             "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
@@ -149,7 +152,7 @@
                     ]
                 }
             },
-            "check": false,
+            "default_check": false,
             "repeatable": true,
             "repeat_count": 1,
             "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
@@ -157,7 +160,7 @@
         {
             "name": "每日免费扭蛋",
             "entry": "Lottery",
-            "check": true,
+            "default_check": true,
             "repeatable": true,
             "repeat_count": 1,
             "doc": "需要设置为不小于当前存在免费扭蛋次数的卡池数。例如有2个卡池有免费扭蛋次数，则至少设置为2。"
@@ -165,17 +168,17 @@
         {
             "name": "领取每周免费礼包",
             "entry": "WeeklyFreeGift",
-            "check": true
+            "default_check": true
         },
         {
             "name": "领取礼物",
             "entry": "Gift",
-            "check": true
+            "default_check": true
         },
         {
             "name": "领取任务奖励",
             "entry": "Mission",
-            "check": true
+            "default_check": true
         },
         {
             "name": "剧情迷宫挂机",
@@ -189,7 +192,7 @@
                     "next": "UnitButton"
                 }
             },
-            "check": false,
+            "default_check": false,
             "doc": "迷宫挂机刷取溶液或提升技能等级"
         },
         {
@@ -220,7 +223,7 @@
                     "expected": "请选择训练项目"
                 }
             },
-            "check": false,
+            "default_check": false,
             "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。v0.4.0版本开始，离线挂机不会自动退出游戏。"
         },
         {
@@ -236,7 +239,7 @@
                     "next": "ChallengeSetting"
                 }
             },
-            "check": false,
+            "default_check": false,
             "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。v0.4.0版本开始，离线挂机不会自动退出游戏。"
         },
         {

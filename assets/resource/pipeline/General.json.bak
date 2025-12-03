@@ -11,10 +11,8 @@
     "EndHBR_PC": {
         "action": "DoNothing",
         "pre_delay": 2000,
-        "next": [
-            "EndGame",
-            "[JumpBack]Menu"
-        ]
+        "interrupt": "Menu",
+        "next": "EndGame"
     },
     "EndGame": {
         "recognition": "OCR",
@@ -69,11 +67,13 @@
             0.7,
             0.8
         ],
+        "interrupt": [
+            "ExitWindow",
+            "GoBack"
+        ],
         "next": [
             "SkipHomepageDialogue",
-            "EndHomepage",
-            "[JumpBack]ExitWindow",
-            "[JumpBack]GoBack"
+            "EndHomepage"
         ]
     },
     "GoBack": {
@@ -121,21 +121,23 @@
         ]
     },
     "GoBackHomepage": {
+        "interrupt": [
+            "AcceptAgreement",
+            "Login",
+            "SkipCutscene",
+            "EndAutoSweep",
+            "EndFight",
+            "ClickScreen",
+            "SkipStory",
+            "GoBack",
+            "ExitWindow",
+            "ExitMenu",
+            "HomepageButton",
+            "OK",
+            "SkipTimeLimitShop"
+        ],
         "next": [
-            "AtHomepage",
-            "[JumpBack]AcceptAgreement",
-            "[JumpBack]Login",
-            "[JumpBack]SkipCutscene",
-            "[JumpBack]EndAutoSweep",
-            "[JumpBack]EndFight",
-            "[JumpBack]ClickScreen",
-            "[JumpBack]SkipStory",
-            "[JumpBack]GoBack",
-            "[JumpBack]ExitWindow",
-            "[JumpBack]ExitMenu",
-            "[JumpBack]HomepageButton",
-            "[JumpBack]OK",
-            "[JumpBack]SkipTimeLimitShop"
+            "AtHomepage"
         ],
         "timeout": 300000
     },
@@ -151,17 +153,15 @@
         "action": "Click",
         "pre_wait_freezes": 500,
         "post_wait_freezes": 500,
-        "next": [
-            "OK"
-        ]
+        "next": "OK"
     },
     "ForceGoBackHomepage": {
         "post_wait_freezes": 1000,
-        "next": [
-            "AtHomepage",
-            "[JumpBack]ExitWindow",
-            "[JumpBack]ClickTopLeft"
-        ]
+        "interrupt": [
+            "ExitWindow",
+            "ClickTopLeft"
+        ],
+        "next": "AtHomepage"
     },
     "ClickTopLeft": {
         "action": "Click",
@@ -304,9 +304,7 @@
         "expected": "队伍",
         "action": "Click",
         "post_wait_freezes": 500,
-        "next": [
-            "UnitList"
-        ]
+        "next": "UnitList"
     },
     "ExitMenu": {
         "recognition": "OCR",

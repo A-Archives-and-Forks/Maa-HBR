@@ -108,13 +108,6 @@ jobs:
             echo "Skipping copy MFA for Android."
           fi
 
-      - name: Custom Actions
-        if: matrix.os == 'win'
-        shell: bash
-        run: |
-          mv ./install/MFAAvalonia.exe ./install/Maa-HBR.exe
-          cp ./assets/resource/image/logo.ico ./install/Assets
-
       - uses: actions/upload-artifact@v4
         with:
           name: Maa-HBR-${{ matrix.os }}-${{ matrix.arch }}

@@ -10,14 +10,16 @@
             162
         ],
         "post_wait_freezes": 500,
+        "interrupt": [
+            "GoBackHomepage",
+            "Auto",
+            "EndFight",
+            "ClickScreen",
+            "SkipStory"
+        ],
         "next": [
             "EnterArtsBattle",
-            "StartCasual",
-            "[JumpBack]GoBackHomepage",
-            "[JumpBack]Auto",
-            "[JumpBack]EndFight",
-            "[JumpBack]ClickScreen",
-            "[JumpBack]SkipStory"
+            "StartCasual"
         ]
     },
     "EnterArtsBattle": {
@@ -30,9 +32,7 @@
             -80,
             0
         ],
-        "next": [
-            "SelectArtsBattleMode"
-        ]
+        "next": "SelectArtsBattleMode"
     },
     "SelectArtsBattleMode": {
         "recognition": "OCR",
@@ -43,9 +43,7 @@
             214,
             83
         ],
-        "next": [
-            "SelectArtsBattleNormal"
-        ]
+        "next": "SelectArtsBattleNormal"
     },
     "SelectArtsBattleNormal": {
         "recognition": "OCR",
@@ -93,9 +91,9 @@
             0
         ],
         "post_wait_freezes": 1000,
+        "interrupt": "SwipeUp",
         "next": [
-            "SelectArtsBattleLevel",
-            "[JumpBack]SwipeUp"
+            "SelectArtsBattleLevel"
         ]
     },
     "SelectArtsBattleLevel": {
@@ -137,10 +135,12 @@
         ],
         "pre_wait_freezes": 1000,
         "post_wait_freezes": 1000,
+        "interrupt": [
+            "Auto"
+        ],
         "next": [
             "EndArtsBattle",
-            "StartArtsBattle",
-            "[JumpBack]Auto"
+            "StartArtsBattle"
         ],
         "timeout": 7200000
     },
@@ -155,11 +155,11 @@
             99
         ],
         "post_wait_freezes": 1000,
+        "interrupt": "SkipCutscene",
         "next": [
             "SelectArtsBattleMode",
             "SwipeToTop",
-            "EndArtsBattle",
-            "[JumpBack]SkipCutscene"
+            "EndArtsBattle"
         ],
         "timeout": 1200000
     }
