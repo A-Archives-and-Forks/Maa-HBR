@@ -29,7 +29,7 @@
 ## 环境要求
 安装[**vc_redist**](https://aka.ms/vs/17/release/vc_redist.x64.exe)运行库
 
-使用MFAWPF GUI需要安装[**.NET8**](https://dotnet.microsoft.com/zh-cn/download)框架
+使用MFAAvalonia GUI需要安装[**.NET10**](https://dotnet.microsoft.com/zh-cn/download)框架
 
 
 ## 快速开始
