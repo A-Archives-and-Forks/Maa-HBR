@@ -2,7 +2,7 @@
     "interface_version": 2,
     "name": "Maa-HBR",
     "label": "Maa-HBR",
-    "version": "v0.6.0",
+    "version": "v0.6.1",
     "icon": "assets/resource/image/logo.ico",
     "github": "https://github.com/KarylDAZE/Maa-HBR",
     "mirrorchyan_rid": "Maa-HBR",
@@ -206,11 +206,12 @@
             "pipeline_override": {
                 "SelectStageType": {
                     "expected": "竞技场",
-                    "interrupt": [
-                        "SkipStory",
-                        "SwipeDown"
-                    ],
-                    "next": "SelectLevel"
+                    "next": [
+                        "SelectLevel",
+                        "SelectStageType",
+                        "[JumpBack]SkipStory",
+                        "[JumpBack]SwipeDown"
+                    ]
                 },
                 "SelectLevel": {
                     "next": "ChallengeSetting"
@@ -251,13 +252,17 @@
             ],
             "pipeline_override": {
                 "hasSelectedUnit": {
-                    "interrupt": "GoBack",
-                    "next": "StartArtsBattle"
+                    "next": [
+                        "StartArtsBattle",
+                        "[JumpBack]GoBack"
+                    ]
                 },
                 "SelectUnit": {
                     "post_wait_freezes": 1000,
-                    "interrupt": "GoBack",
-                    "next": "StartArtsBattle"
+                    "next": [
+                        "StartArtsBattle",
+                        "[JumpBack]GoBack"
+                    ]
                 }
             },
             "doc": "建议在技术模拟战前，先执行竞技场或时之修炼场离线挂机，充分获取收益"
@@ -1361,11 +1366,11 @@
                     "pipeline_override": {
                         "SelectStageType": {
                             "expected": "追溯过去",
-                            "interrupt": [
-                                "PreviousStory",
-                                "NextStory"
-                            ],
-                            "next": "SelectStory"
+                            "next": [
+                                "SelectStory",
+                                "[JumpBack]PreviousStory",
+                                "[JumpBack]NextStory"
+                            ]
                         },
                         "SelectStory": {
                             "expected": "第二章"
@@ -1393,11 +1398,11 @@
                             "recognition": "DirectHit"
                         },
                         "SelectUnit": {
-                            "interrupt": [
-                                "GoBack",
-                                "ExitMenu"
-                            ],
-                            "next": "NextTimePeriod"
+                            "next": [
+                                "NextTimePeriod",
+                                "[JumpBack]GoBack",
+                                "[JumpBack]ExitMenu"
+                            ]
                         }
                     }
                 }
