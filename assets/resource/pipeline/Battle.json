@@ -15,6 +15,12 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "主线剧情",
+        "roi": [
+            481,
+            568,
+            157,
+            88
+        ],
         "post_wait_freezes": 500,
         "next": [
             "SelectStageType",
