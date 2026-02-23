@@ -1533,6 +1533,22 @@
                     }
                 },
                 {
+                    "name": "31D 普通",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31D\\]普通"
+                        }
+                    }
+                },
+                {
+                    "name": "31D 困难",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31D\\]困难"
+                        }
+                    }
+                },
+                {
                     "name": "31E 普通",
                     "pipeline_override": {
                         "SelectArtsBattleLevel": {
@@ -1545,6 +1561,22 @@
                     "pipeline_override": {
                         "SelectArtsBattleLevel": {
                             "expected": "\\[31E\\]困难"
+                        }
+                    }
+                },
+                {
+                    "name": "31F 普通",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31F\\]普通"
+                        }
+                    }
+                },
+                {
+                    "name": "31F 困难",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31F\\]困难"
                         }
                     }
                 },
