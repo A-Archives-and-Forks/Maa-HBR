@@ -204,7 +204,6 @@
             "entry": "MainStory",
             "option": [
                 "选择队伍",
-                "挂机方式",
                 "选择竞技场关卡"
             ],
             "pipeline_override": {
@@ -217,9 +216,6 @@
                         "[JumpBack]SwipeDown"
                     ]
                 },
-                "SelectLevel": {
-                    "next": "ChallengeSetting"
-                },
                 "StartFight": {
                     "next": "UnitList"
                 },
@@ -229,23 +225,12 @@
                 }
             },
             "default_check": false,
-            "description": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。v0.4.0版本开始，离线挂机不会自动退出游戏。"
+            "description": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。"
         },
         {
             "name": "时之修炼场",
-            "entry": "StartBattle",
-            "option": [
-                "选择队伍",
-                "挂机方式"
-            ],
-            "pipeline_override": {
-                "SelectStageType": {
-                    "expected": "时之修炼场",
-                    "next": "ChallengeSetting"
-                }
-            },
-            "default_check": false,
-            "description": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。v0.4.0版本开始，离线挂机不会自动退出游戏。"
+            "entry": "EnterTimeTrainingArena",
+            "default_check": true
         },
         {
             "name": "技术模拟战",
@@ -268,8 +253,7 @@
                         "[JumpBack]GoBack"
                     ]
                 }
-            },
-            "description": "建议在技术模拟战前，先执行竞技场或时之修炼场离线挂机，充分获取收益"
+            }
         },
         {
             "name": "退出游戏(安卓端)",
@@ -934,33 +918,6 @@
                         },
                         "SelectUnit": {
                             "expected": "20"
-                        }
-                    }
-                }
-            ]
-        },
-        "挂机方式": {
-            "type": "select",
-            "cases": [
-                {
-                    "name": "离线挂机",
-                    "pipeline_override": {
-                        "Sally": {
-                            "next": "PowerSavingMode"
-                        },
-                        "ChallengeSetting": {
-                            "next": [
-                                "PowerSavingSweep",
-                                "StartFight"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "在线挂机",
-                    "pipeline_override": {
-                        "EndFight": {
-                            "next": "FightAgainLoop"
                         }
                     }
                 }

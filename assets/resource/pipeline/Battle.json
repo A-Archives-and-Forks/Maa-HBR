@@ -456,54 +456,11 @@
         "action": "Click",
         "expected": "放弃"
     },
-    "ChallengeSetting": {
-        "recognition": "OCR",
-        "roi": [
-            455,
-            535,
-            686,
-            159
-        ],
-        "expected": "部队编队",
-        "pre_wait_freezes": 500,
-        "next": [
-            "StartFight"
-        ]
-    },
-    "PowerSavingSweep": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            455,
-            535,
-            686,
-            159
-        ],
-        "action": "Click",
-        "template": [
-            "PowerSavingSweep__832_583_247_75__782_533_347_175.png",
-            "PowerSavingSweep__809_557_205_70__759_507_305_170.png"
-        ],
-        "pre_wait_freezes": 500,
-        "next": [
-            "AtAutoSweep",
-            "[JumpBack]OK"
-        ]
-    },
-    "PowerSavingMode": {
-        "recognition": "OCR",
-        "action": "Click",
-        "expected": "省电模式",
-        "next": [
-            "FightAgain"
-        ]
-    },
     "FightAgain": {
         "recognition": "OCR",
         "action": "Click",
         "expected": "再次挑战",
-        "next": [
-            "AtAutoSweep"
-        ]
+        "next": []
     },
     "FightAgainLoop": {
         "action": "Click",
@@ -517,11 +474,6 @@
             "FightAgainLoop"
         ]
     },
-    "AtAutoSweep": {
-        "recognition": "OCR",
-        "expected": "结束自动刷图",
-        "post_delay": 1000
-    },
     "EndAutoSweep": {
         "recognition": "OCR",
         "action": "Click",
@@ -532,5 +484,40 @@
             "[JumpBack]ClickScreen",
             "[JumpBack]EndFight"
         ]
+    },
+    "EnterTimeTrainingArena": {
+        "recognition": "TemplateMatch",
+        "template": "TimeTrainingArena.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "[JumpBack]EndAutoSweepButton",
+            "[JumpBack]OK",
+            "[JumpBack]AutoSweepButton",
+            "[JumpBack]EndFight",
+            "AtHomepage"
+        ]
+    },
+    "EndAutoSweepButton": {
+        "recognition": "OCR",
+        "roi": [
+            408,
+            496,
+            485,
+            217
+        ],
+        "action": "Click",
+        "expected": "修炼结束"
+    },
+    "AutoSweepButton": {
+        "recognition": "OCR",
+        "roi": [
+            408,
+            496,
+            485,
+            217
+        ],
+        "action": "Click",
+        "expected": "自动刷图"
     }
 }
