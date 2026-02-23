@@ -50,7 +50,8 @@
                 "棱镜战boss",
                 "消耗体力/入场券",
                 "消耗数量",
-                "选择队伍"
+                "选择队伍",
+                "是否跳过战斗"
             ],
             "pipeline_override": {
                 "SelectStageType": {
@@ -75,7 +76,8 @@
                 "宝石棱镜战boss",
                 "消耗体力/入场券",
                 "消耗数量",
-                "选择队伍"
+                "选择队伍",
+                "是否跳过战斗"
             ],
             "pipeline_override": {
                 "SelectStageType": {
@@ -114,7 +116,8 @@
             "option": [
                 "消耗体力/入场券",
                 "消耗数量",
-                "选择队伍"
+                "选择队伍",
+                "是否跳过战斗"
             ],
             "pipeline_override": {
                 "StartBattle": {
@@ -133,7 +136,8 @@
                 "第几个精选活动",
                 "消耗体力/入场券",
                 "消耗数量",
-                "选择队伍"
+                "选择队伍",
+                "是否跳过战斗"
             ],
             "pipeline_override": {
                 "StartBattle": {
@@ -278,6 +282,7 @@
     ],
     "option": {
         "棱镜战boss": {
+            "type": "select",
             "cases": [
                 {
                     "name": "深渊重锤",
@@ -306,6 +311,7 @@
             ]
         },
         "宝石棱镜战boss": {
+            "type": "select",
             "cases": [
                 {
                     "name": "群山重锤",
@@ -358,6 +364,7 @@
             ]
         },
         "光球boss": {
+            "type": "select",
             "cases": [
                 {
                     "name": "暴击光球-异度监测之眼R",
@@ -602,6 +609,7 @@
             ]
         },
         "光球boss难度": {
+            "type": "select",
             "cases": [
                 {
                     "name": "Lv.1",
@@ -639,6 +647,7 @@
             "default_case": "Lv.4"
         },
         "消耗数量": {
+            "type": "select",
             "cases": [
                 {
                     "name": "清空剩余体力",
@@ -706,6 +715,7 @@
             ]
         },
         "选择队伍": {
+            "type": "select",
             "cases": [
                 {
                     "name": "1",
@@ -930,6 +940,7 @@
             ]
         },
         "挂机方式": {
+            "type": "select",
             "cases": [
                 {
                     "name": "离线挂机",
@@ -956,6 +967,7 @@
             ]
         },
         "选择竞技场关卡": {
+            "type": "select",
             "cases": [
                 {
                     "name": "高级1（斩）",
@@ -1368,6 +1380,7 @@
             ]
         },
         "选择剧情迷宫": {
+            "type": "select",
             "cases": [
                 {
                     "name": "主线第二章Day25 4:00",
@@ -1417,6 +1430,7 @@
             ]
         },
         "消耗体力/入场券": {
+            "type": "select",
             "cases": [
                 {
                     "name": "体力(不足时使用体力石)",
@@ -1476,6 +1490,7 @@
             ]
         },
         "第几个精选活动": {
+            "type": "select",
             "cases": [
                 {
                     "name": "1",
@@ -1519,6 +1534,7 @@
             ]
         },
         "选择技术模拟战关卡": {
+            "type": "select",
             "cases": [
                 {
                     "name": "31A 普通",
@@ -1634,6 +1650,25 @@
                             "expected": "无尽模式"
                         }
                     }
+                }
+            ]
+        },
+        "是否跳过战斗": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "StartFight": {
+                            "expected": "跳过"
+                        },
+                        "Sally": {
+                            "expected": "跳过"
+                        }
+                    }
+                },
+                {
+                    "name": "No"
                 }
             ]
         }

@@ -370,6 +370,12 @@
         ],
         "expected": "1",
         "action": "Click",
+        "target_offset": [
+            50,
+            0,
+            0,
+            0
+        ],
         "pre_wait_freezes": 500,
         "post_wait_freezes": 500,
         "next": [
