@@ -236,15 +236,29 @@
         ]
     },
     "UseAPOrTickets": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            253,
+            297,
+            784,
+            98
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "AtConfirmConsumeRate",
+            "[JumpBack]OK"
+        ]
+    },
+    "AtConfirmConsumeRate": {
         "recognition": "OCR",
         "roi": [
-            425,
-            243,
-            438,
-            135
+            469,
+            457,
+            155,
+            83
         ],
-        "expected": "体力",
-        "action": "Click",
+        "expected": "奖励倍率",
         "next": [
             "AddAP"
         ]
@@ -252,33 +266,28 @@
     "ClearAP": {
         "recognition": "TemplateMatch",
         "roi": [
-            790,
-            346,
-            143,
-            142
+            898,
+            434,
+            156,
+            157
         ],
         "action": "Click",
-        "template": "clear_AP_icon__840_396_43_42__790_346_143_142.png",
+        "template": "ClearAp.png",
         "threshold": 0.9,
         "next": [
             "APOK"
         ]
     },
-    "ZeroAP": {
-        "recognition": "OCR",
-        "expected": "体力不足",
-        "next": [
-            "ForceGoBackHomepage"
-        ]
-    },
     "AddAP": {
-        "action": "Click",
-        "target": [
-            774,
-            398,
-            35,
-            34
+        "recognition": "TemplateMatch",
+        "template": "AddAp.png",
+        "roi": [
+            810,
+            432,
+            159,
+            160
         ],
+        "action": "Click",
         "next": [
             "ConsumeNAPs",
             "AddAP"
@@ -287,10 +296,10 @@
     "ConsumeNAPs": {
         "recognition": "OCR",
         "roi": [
-            642,
-            343,
-            145,
-            146
+            704,
+            446,
+            34,
+            96
         ],
         "expected": "1",
         "action": "DoNothing",

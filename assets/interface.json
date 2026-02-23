@@ -643,11 +643,19 @@
                 {
                     "name": "清空剩余体力",
                     "pipeline_override": {
-                        "UseAPOrTickets": {
+                        "AtConfirmConsumeRate": {
                             "next": [
-                                "ZeroAP",
                                 "ClearAP",
                                 "APOK"
+                            ]
+                        },
+                        "APOK": {
+                            "next": [
+                                "APOK",
+                                "hasSelectedUnit",
+                                "UnitList",
+                                "StartFight",
+                                "ForceGoBackHomepage"
                             ]
                         }
                     }
@@ -655,7 +663,7 @@
                 {
                     "name": "1",
                     "pipeline_override": {
-                        "UseAPOrTickets": {
+                        "AtConfirmConsumeRate": {
                             "next": "APOK"
                         },
                         "ConsumeNAPs": {
@@ -1411,18 +1419,22 @@
         "消耗体力/入场券": {
             "cases": [
                 {
-                    "name": "体力",
+                    "name": "体力(不足时使用体力石)",
                     "pipeline_override": {
                         "UseAPOrTickets": {
-                            "expected": "体力"
+                            "template": [
+                                "ConsumeAp.png"
+                            ]
                         }
                     }
                 },
                 {
-                    "name": "备用体力",
+                    "name": "体力(不足时使用备用体力)",
                     "pipeline_override": {
                         "UseAPOrTickets": {
-                            "expected": "体力"
+                            "template": [
+                                "ConsumeAp.png"
+                            ]
                         },
                         "ConsumeAPStones": {
                             "expected": "消耗备用体力"
@@ -1430,10 +1442,34 @@
                     }
                 },
                 {
+                    "name": "备用体力",
+                    "pipeline_override": {
+                        "UseAPOrTickets": {
+                            "template": [
+                                "ConsumeBackupAp.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "体力石",
+                    "pipeline_override": {
+                        "UseAPOrTickets": {
+                            "template": [
+                                "ConsumeApStone.png"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "入场券",
                     "pipeline_override": {
                         "UseAPOrTickets": {
-                            "expected": "入场券"
+                            "template": [
+                                "ConsumeDungeonTicket.png",
+                                "ConsumePrismTicket.png",
+                                "ConsumeOrbTicket.png"
+                            ]
                         }
                     }
                 }
