@@ -134,6 +134,7 @@
             "[JumpBack]ExitWindow",
             "[JumpBack]ExitMenu",
             "[JumpBack]HomepageButton",
+            "[JumpBack]Cancel",
             "[JumpBack]OK",
             "[JumpBack]SkipTimeLimitShop"
         ],
@@ -329,6 +330,19 @@
             50,
             55
         ],
+        "post_wait_freezes": 500
+    },
+    "Cancel": {
+        "recognition": "OCR",
+        "roi": [
+            94,
+            461,
+            1126,
+            238
+        ],
+        "action": "Click",
+        "expected": "取消",
+        "pre_wait_freezes": 500,
         "post_wait_freezes": 500
     },
     "OK": {
