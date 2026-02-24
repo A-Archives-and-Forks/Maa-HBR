@@ -143,6 +143,9 @@
                 "StartBattle": {
                     "next": "Event"
                 },
+                "Event": {
+                    "next": "EnterPastStoryEvent"
+                },
                 "SelectEvent": {
                     "roi": [
                         451,

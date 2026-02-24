@@ -74,6 +74,15 @@
             "[JumpBack]SwipeUp"
         ]
     },
+    "EnterPastStoryEvent": {
+        "recognition": "OCR",
+        "expected": "STORY",
+        "action": "Click",
+        "next": [
+            "SelectEvent",
+            "EnterPastStoryEvent"
+        ]
+    },
     "SelectEvent": {
         "recognition": "OCR",
         "action": "Click",
