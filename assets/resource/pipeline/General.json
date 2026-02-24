@@ -186,7 +186,10 @@
     "ClickScreen": {
         "recognition": "OCR",
         "action": "Click",
-        "expected": "点击画面继续"
+        "expected": [
+            "点击画面继续",
+            "上吧"
+        ]
     },
     "SkipStory": {
         "recognition": "TemplateMatch",

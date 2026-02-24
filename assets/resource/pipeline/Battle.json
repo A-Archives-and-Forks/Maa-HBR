@@ -167,6 +167,15 @@
             "SelectDungeonLevel"
         ]
     },
+    "ArenaTraining": {
+        "recognition": "OCR",
+        "expected": "竞技场训练",
+        "action": "Click",
+        "next": [
+            "StartFight",
+            "ArenaTraining"
+        ]
+    },
     "SelectLevel": {
         "recognition": "OCR",
         "replace": [
@@ -496,6 +505,7 @@
             128,
             34
         ],
+        "post_delay": 1000,
         "next": [
             "FightAgainLoop"
         ]
