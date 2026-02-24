@@ -67,7 +67,7 @@
             "default_check": false,
             "repeatable": true,
             "repeat_count": 1,
-            "description": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
+            "description": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。"
         },
         {
             "name": "宝石棱镜战",
@@ -87,7 +87,7 @@
             "default_check": false,
             "repeatable": true,
             "repeat_count": 1,
-            "description": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
+            "description": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。"
         },
         {
             "name": "光球BOSS",
@@ -108,7 +108,7 @@
             "default_check": false,
             "repeatable": true,
             "repeat_count": 1,
-            "description": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
+            "description": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。"
         },
         {
             "name": "当期活动棱镜战",
@@ -127,7 +127,7 @@
             "default_check": false,
             "repeatable": true,
             "repeat_count": 1,
-            "description": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
+            "description": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。"
         },
         {
             "name": "精选活动棱镜战",
@@ -159,7 +159,70 @@
             "default_check": false,
             "repeatable": true,
             "repeat_count": 1,
-            "description": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
+            "description": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。"
+        },
+        {
+            "name": "强化回廊扫荡",
+            "entry": "StartBattle",
+            "option": [
+                "选择强化回廊关卡",
+                "消耗体力/入场券",
+                "消耗数量",
+                "选择队伍"
+            ],
+            "pipeline_override": {
+                "SelectStageType": {
+                    "expected": "废域",
+                    "next": [
+                        "SelectDungeonType",
+                        "SelectStageType"
+                    ]
+                },
+                "StartFight": {
+                    "expected": "跳过"
+                },
+                "Sally": {
+                    "expected": "跳过"
+                }
+            },
+            "default_check": false,
+            "repeatable": true,
+            "repeat_count": 1,
+            "description": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。"
+        },
+        {
+            "name": "宝珠迷宫扫荡",
+            "entry": "StartBattle",
+            "option": [
+                "消耗体力/入场券",
+                "消耗数量",
+                "选择队伍"
+            ],
+            "pipeline_override": {
+                "SelectStageType": {
+                    "expected": "废域",
+                    "next": [
+                        "SelectDungeonType",
+                        "SelectStageType"
+                    ]
+                },
+                "SelectDungeonType": {
+                    "expected": "宝珠迷宫"
+                },
+                "StartFight": {
+                    "expected": "跳过"
+                },
+                "Sally": {
+                    "expected": "跳过"
+                },
+                "SelectDungeonLevel": {
+                    "expected": "B46-B50"
+                }
+            },
+            "default_check": false,
+            "repeatable": true,
+            "repeat_count": 1,
+            "description": "目前仅支持扫荡B46-B50。\n队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。"
         },
         {
             "name": "每日免费扭蛋",
@@ -648,8 +711,11 @@
                                 "hasSelectedUnit",
                                 "UnitList",
                                 "StartFight",
-                                "ForceGoBackHomepage"
+                                "ApNotEnough"
                             ]
+                        },
+                        "ApNotEnough": {
+                            "next": "ForceGoBackHomepage"
                         }
                     }
                 },
@@ -1605,6 +1671,59 @@
                         },
                         "SelectArtsBattleLevel": {
                             "expected": "无尽模式"
+                        }
+                    }
+                }
+            ]
+        },
+        "选择强化回廊关卡": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "炎之回廊",
+                    "pipeline_override": {
+                        "SelectDungeonLevel": {
+                            "expected": "炎之回廊"
+                        }
+                    }
+                },
+                {
+                    "name": "冰之回廊",
+                    "pipeline_override": {
+                        "SelectDungeonLevel": {
+                            "expected": "冰之回廊"
+                        }
+                    }
+                },
+                {
+                    "name": "雷之回廊",
+                    "pipeline_override": {
+                        "SelectDungeonLevel": {
+                            "expected": "雷之回廊"
+                        }
+                    }
+                },
+                {
+                    "name": "光之回廊",
+                    "pipeline_override": {
+                        "SelectDungeonLevel": {
+                            "expected": "光之回廊"
+                        }
+                    }
+                },
+                {
+                    "name": "暗之回廊",
+                    "pipeline_override": {
+                        "SelectDungeonLevel": {
+                            "expected": "暗之回廊"
+                        }
+                    }
+                },
+                {
+                    "name": "黄金跳虫巢穴",
+                    "pipeline_override": {
+                        "SelectDungeonLevel": {
+                            "expected": "黄金跳虫巢穴"
                         }
                     }
                 }

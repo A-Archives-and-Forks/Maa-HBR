@@ -147,6 +147,26 @@
             "[JumpBack]AddOrbLevel"
         ]
     },
+    "SelectDungeonType": {
+        "recognition": "OCR",
+        "expected": "强化回廊",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "SelectDungeonLevel",
+            "[JumpBack]SwipeLeft"
+        ]
+    },
+    "SelectDungeonLevel": {
+        "recognition": "OCR",
+        "expected": "炎之回廊",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "StartFight",
+            "SelectDungeonLevel"
+        ]
+    },
     "SelectLevel": {
         "recognition": "OCR",
         "replace": [
@@ -209,7 +229,7 @@
         "roi": [
             277,
             411,
-            723,
+            1000,
             265
         ],
         "action": "Click",
@@ -327,6 +347,12 @@
         "next": [
             "APOK"
         ]
+    },
+    "ApNotEnough": {
+        "recognition": "OCR",
+        "expected": "体力不足",
+        "action": "DoNothing",
+        "post_wait_freezes": 500
     },
     "hasSelectedUnit": {
         "recognition": "OCR",
