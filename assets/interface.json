@@ -3,7 +3,7 @@
     "name": "Maa-HBR",
     "label": "Maa-HBR",
     "version": "v1.0.0",
-    "icon": "assets/resource/image/logo.ico",
+    "icon": "resource/image/logo.ico",
     "github": "https://github.com/KarylDAZE/Maa-HBR",
     "mirrorchyan_rid": "Maa-HBR",
     "license": "LICENSE.md",
