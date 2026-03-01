@@ -2,7 +2,7 @@
     "interface_version": 2,
     "name": "Maa-HBR",
     "label": "Maa-HBR",
-    "version": "v1.0.0",
+    "version": "v1.0.1",
     "icon": "resource/image/logo.ico",
     "github": "https://github.com/KarylDAZE/Maa-HBR",
     "mirrorchyan_rid": "Maa-HBR",
@@ -251,6 +251,11 @@
             "default_check": true
         },
         {
+            "name": "时之修炼场",
+            "entry": "EnterTimeTrainingArena",
+            "default_check": true
+        },
+        {
             "name": "剧情迷宫挂机",
             "entry": "MainStory",
             "option": [
@@ -264,11 +269,6 @@
             },
             "default_check": false,
             "description": "迷宫挂机刷取溶液或提升技能等级"
-        },
-        {
-            "name": "时之修炼场",
-            "entry": "EnterTimeTrainingArena",
-            "default_check": true
         },
         {
             "name": "竞技场挂机",
