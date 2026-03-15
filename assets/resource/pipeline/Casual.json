@@ -88,9 +88,7 @@
         "expected": "赛季点数",
         "target": [
             1172,
-            106,
-            0,
-            0
+            106
         ],
         "post_wait_freezes": 1000,
         "next": [
