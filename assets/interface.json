@@ -2,7 +2,7 @@
     "interface_version": 2,
     "name": "Maa-HBR",
     "label": "Maa-HBR",
-    "version": "v1.0.3",
+    "version": "v1.0.4",
     "icon": "resource/image/logo.ico",
     "github": "https://github.com/KarylDAZE/Maa-HBR",
     "mirrorchyan_rid": "Maa-HBR",
@@ -178,7 +178,8 @@
                     "expected": "废域",
                     "next": [
                         "SelectDungeonType",
-                        "SelectStageType"
+                        "SelectStageType",
+                        "[JumpBack]ClickPreviousPage"
                     ]
                 },
                 "StartFight": {
@@ -206,7 +207,8 @@
                     "expected": "废域",
                     "next": [
                         "SelectDungeonType",
-                        "SelectStageType"
+                        "SelectStageType",
+                        "[JumpBack]ClickPreviousPage"
                     ]
                 },
                 "SelectDungeonType": {
@@ -226,6 +228,39 @@
             "repeatable": true,
             "repeat_count": 1,
             "description": "目前仅支持扫荡B46-B50。\n队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。"
+        },
+        {
+            "name": "圣环之庭扫荡",
+            "entry": "StartBattle",
+            "option": [
+                "选择圣环之庭关卡",
+                "消耗体力/入场券",
+                "消耗数量",
+                "选择队伍"
+            ],
+            "pipeline_override": {
+                "SelectStageType": {
+                    "expected": "废域",
+                    "next": [
+                        "SelectDungeonType",
+                        "SelectStageType",
+                        "[JumpBack]ClickPreviousPage"
+                    ]
+                },
+                "SelectDungeonType": {
+                    "expected": "圣环之庭"
+                },
+                "StartFight": {
+                    "expected": "跳过"
+                },
+                "Sally": {
+                    "expected": "跳过"
+                }
+            },
+            "default_check": false,
+            "repeatable": true,
+            "repeat_count": 1,
+            "description": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。"
         },
         {
             "name": "每日免费扭蛋",
@@ -1310,6 +1345,19 @@
                     "pipeline_override": {
                         "SelectDungeonLevel": {
                             "expected": "黄金跳虫巢穴"
+                        }
+                    }
+                }
+            ]
+        },
+        "选择圣环之庭关卡": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "雷鸣之庭",
+                    "pipeline_override": {
+                        "SelectDungeonLevel": {
+                            "expected": "雷鸣之庭"
                         }
                     }
                 }

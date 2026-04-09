@@ -156,6 +156,17 @@
             "[JumpBack]AddOrbLevel"
         ]
     },
+    "ClickPreviousPage": {
+        "action": "Click",
+        "target": [
+            372,
+            286,
+            24,
+            73
+        ],
+        "post_delay": 1000,
+        "post_wait_freezes": 500
+    },
     "SelectDungeonType": {
         "recognition": "OCR",
         "expected": "强化回廊",
