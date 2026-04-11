@@ -156,13 +156,29 @@
             "[JumpBack]AddOrbLevel"
         ]
     },
-    "ClickPreviousPage": {
+    "DungeonClickToFirstPage": {
         "action": "Click",
         "target": [
             372,
-            286,
-            24,
-            73
+            304,
+            26,
+            49
+        ],
+        "repeat": 4,
+        "repeat_wait_freezes": 1000,
+        "next": [
+            "SelectDungeonType",
+            "SelectStageType",
+            "[JumpBack]ClickNextPage"
+        ]
+    },
+    "ClickNextPage": {
+        "action": "Click",
+        "target": [
+            883,
+            304,
+            26,
+            42
         ],
         "post_delay": 1000,
         "post_wait_freezes": 500

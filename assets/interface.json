@@ -2,7 +2,7 @@
     "interface_version": 2,
     "name": "Maa-HBR",
     "label": "Maa-HBR",
-    "version": "v1.0.4",
+    "version": "v1.0.5",
     "icon": "resource/image/logo.ico",
     "github": "https://github.com/KarylDAZE/Maa-HBR",
     "mirrorchyan_rid": "Maa-HBR",
@@ -176,11 +176,7 @@
             "pipeline_override": {
                 "SelectStageType": {
                     "expected": "废域",
-                    "next": [
-                        "SelectDungeonType",
-                        "SelectStageType",
-                        "[JumpBack]ClickPreviousPage"
-                    ]
+                    "next": "DungeonClickToFirstPage"
                 },
                 "StartFight": {
                     "expected": "跳过"
@@ -205,11 +201,7 @@
             "pipeline_override": {
                 "SelectStageType": {
                     "expected": "废域",
-                    "next": [
-                        "SelectDungeonType",
-                        "SelectStageType",
-                        "[JumpBack]ClickPreviousPage"
-                    ]
+                    "next": "DungeonClickToFirstPage"
                 },
                 "SelectDungeonType": {
                     "expected": "宝珠迷宫"
@@ -241,11 +233,7 @@
             "pipeline_override": {
                 "SelectStageType": {
                     "expected": "废域",
-                    "next": [
-                        "SelectDungeonType",
-                        "SelectStageType",
-                        "[JumpBack]ClickPreviousPage"
-                    ]
+                    "next": "DungeonClickToFirstPage"
                 },
                 "SelectDungeonType": {
                     "expected": "圣环之庭"
