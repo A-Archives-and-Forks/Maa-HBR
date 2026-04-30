@@ -136,7 +136,8 @@
             "[JumpBack]HomepageButton",
             "[JumpBack]Cancel",
             "[JumpBack]OK",
-            "[JumpBack]SkipTimeLimitShop"
+            "[JumpBack]SkipTimeLimitShop",
+            "[JumpBack]SkipBaseball"
         ],
         "timeout": 300000
     },
@@ -354,5 +355,12 @@
             20
         ],
         "pre_wait_freezes": 500
+    },
+    "SkipBaseball": {
+        "recognition": "OCR",
+        "expected": "中路反击",
+        "action": "Click",
+        "pre_wait_freezes": 500,
+        "post_wait_freezes": 500
     }
 }
