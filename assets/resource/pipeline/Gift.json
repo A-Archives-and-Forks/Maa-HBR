@@ -57,8 +57,11 @@
             49
         ],
         "expected": "领取",
-        "post_wait_freezes": 500,
-        "next": "GetOK"
+        "post_wait_freezes": 1000,
+        "next": [
+            "GetOK",
+            "GetCancel"
+        ]
     },
     "GetOK": {
         "recognition": "OCR",
@@ -69,6 +72,13 @@
             "GetOK",
             "GoBackHomepage"
         ]
+    },
+    "GetCancel": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "取消",
+        "post_wait_freezes": 500,
+        "next": "GoBackHomepage"
     },
     "WeeklyFreeGift": {
         "post_wait_freezes": 1000,
