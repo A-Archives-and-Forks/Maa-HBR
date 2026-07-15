@@ -44,16 +44,14 @@
         "action": "Click"
     },
     "LoginButton": {
-        "recognition": "OCR",
+        "recognition": "TemplateMatch",
         "roi": [
-            456,
-            350,
-            365,
-            82
+            455,
+            322,
+            356,
+            140
         ],
-        "expected": [
-            "登录"
-        ],
+        "template": "LoginButton.png",
         "action": "Click"
     },
     "EndHomepage": {
