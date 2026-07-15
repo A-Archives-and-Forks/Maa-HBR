@@ -445,10 +445,8 @@
                     "pipeline_override": {
                         "SelectOrbBossType": {
                             "target": [
-                                172,
-                                115,
-                                155,
-                                25
+                                201,
+                                124
                             ]
                         },
                         "SelectOrbBoss": {
@@ -461,10 +459,8 @@
                     "pipeline_override": {
                         "SelectOrbBossType": {
                             "target": [
-                                172,
-                                115,
-                                155,
-                                25
+                                201,
+                                124
                             ]
                         },
                         "SelectOrbBoss": {
@@ -477,10 +473,8 @@
                     "pipeline_override": {
                         "SelectOrbBossType": {
                             "target": [
-                                172,
-                                115,
-                                155,
-                                25
+                                201,
+                                124
                             ]
                         },
                         "SelectOrbBoss": {
@@ -493,10 +487,8 @@
                     "pipeline_override": {
                         "SelectOrbBossType": {
                             "target": [
-                                172,
-                                115,
-                                155,
-                                25
+                                201,
+                                124
                             ]
                         },
                         "SelectOrbBoss": {
@@ -509,10 +501,8 @@
                     "pipeline_override": {
                         "SelectOrbBossType": {
                             "target": [
-                                172,
-                                115,
-                                155,
-                                25
+                                201,
+                                124
                             ]
                         },
                         "SelectOrbBoss": {
@@ -525,10 +515,8 @@
                     "pipeline_override": {
                         "SelectOrbBossType": {
                             "target": [
-                                569,
-                                114,
-                                139,
-                                28
+                                490,
+                                124
                             ]
                         },
                         "SelectOrbBoss": {
@@ -541,10 +529,8 @@
                     "pipeline_override": {
                         "SelectOrbBossType": {
                             "target": [
-                                569,
-                                114,
-                                139,
-                                28
+                                490,
+                                124
                             ]
                         },
                         "SelectOrbBoss": {
@@ -557,10 +543,8 @@
                     "pipeline_override": {
                         "SelectOrbBossType": {
                             "target": [
-                                569,
-                                114,
-                                139,
-                                28
+                                490,
+                                124
                             ]
                         },
                         "SelectOrbBoss": {
@@ -573,10 +557,8 @@
                     "pipeline_override": {
                         "SelectOrbBossType": {
                             "target": [
-                                569,
-                                114,
-                                139,
-                                28
+                                490,
+                                124
                             ]
                         },
                         "SelectOrbBoss": {
@@ -589,10 +571,8 @@
                     "pipeline_override": {
                         "SelectOrbBossType": {
                             "target": [
-                                569,
-                                114,
-                                139,
-                                28
+                                490,
+                                124
                             ]
                         },
                         "SelectOrbBoss": {
@@ -605,10 +585,8 @@
                     "pipeline_override": {
                         "SelectOrbBossType": {
                             "target": [
-                                954,
-                                111,
-                                136,
-                                31
+                                778,
+                                126
                             ]
                         },
                         "SelectOrbBoss": {
@@ -621,10 +599,8 @@
                     "pipeline_override": {
                         "SelectOrbBossType": {
                             "target": [
-                                954,
-                                111,
-                                136,
-                                31
+                                778,
+                                126
                             ]
                         },
                         "SelectOrbBoss": {
@@ -637,10 +613,8 @@
                     "pipeline_override": {
                         "SelectOrbBossType": {
                             "target": [
-                                954,
-                                111,
-                                136,
-                                31
+                                778,
+                                126
                             ]
                         },
                         "SelectOrbBoss": {
@@ -653,10 +627,8 @@
                     "pipeline_override": {
                         "SelectOrbBossType": {
                             "target": [
-                                954,
-                                111,
-                                136,
-                                31
+                                778,
+                                126
                             ]
                         },
                         "SelectOrbBoss": {
@@ -669,14 +641,63 @@
                     "pipeline_override": {
                         "SelectOrbBossType": {
                             "target": [
-                                954,
-                                111,
-                                136,
-                                31
+                                778,
+                                126
                             ]
                         },
                         "SelectOrbBoss": {
                             "expected": "阿蒙之门P"
+                        }
+                    }
+                },
+                {
+                    "name": "异度监测之眼Ω",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                1074,
+                                126
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "recognition": "TemplateMatch",
+                            "template": [
+                                "OrbBossOmega1.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "空无Ω",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                1074,
+                                126
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "recognition": "TemplateMatch",
+                            "template": [
+                                "OrbBossOmega2.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "阿蒙之门Ω",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                1074,
+                                126
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "recognition": "TemplateMatch",
+                            "template": [
+                                "OrbBossOmega3.png"
+                            ]
                         }
                     }
                 }
