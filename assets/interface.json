@@ -2,7 +2,7 @@
     "interface_version": 2,
     "name": "Maa-HBR",
     "label": "Maa-HBR",
-    "version": "v1.1.2",
+    "version": "v1.2.0",
     "icon": "resource/image/logo.ico",
     "github": "https://github.com/KarylDAZE/Maa-HBR",
     "mirrorchyan_rid": "Maa-HBR",
@@ -18,7 +18,7 @@
             "type": "Win32",
             "win32": {
                 "mouse": "Seize",
-                "screencap": "DXGI_DesktopDup"
+                "screencap": "FramePool"
             }
         }
     ],
