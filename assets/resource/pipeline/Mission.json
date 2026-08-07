@@ -35,7 +35,8 @@
             "ChallengeMission",
             "EventMission",
             "LimitedTimeMission",
-            "BackToHomepage"
+            "BackToHomepage",
+            "[JumpBack]ClickScreen"
         ]
     },
     "MonthlyMission": {
