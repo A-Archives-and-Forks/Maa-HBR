@@ -45,8 +45,7 @@
             83
         ],
         "next": [
-            "SelectArtsBattleNormal",
-            "[JumpBack]ClickScreen"
+            "SelectArtsBattleNormal"
         ]
     },
     "SelectArtsBattleNormal": {
